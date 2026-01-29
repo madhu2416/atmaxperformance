@@ -541,3 +541,19 @@ h1, h2, h3 {
   width: 120px;  /* adjust size */
   height: auto;
 }
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
