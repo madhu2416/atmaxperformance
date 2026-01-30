@@ -226,22 +226,24 @@ h1, h2, h3 {
   color: #00695c;
 }
 
-.treatment-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
+/* ---------- Treatments Responsive ---------- */
+@media (max-width: 768px) {
+  .treatment-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 20px;
+  }
+
+  .treatment-card {
+    padding: 20px;
+  }
 }
 
-.treatment-card {
-  padding: 30px;
-  background: linear-gradient(135deg, #005c4b, #00796b);
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
-  color: #e0f2f1;
+@media (max-width: 768px) {
+  .treatment-card {
+    min-height: 180px;
+  }
 }
-
+ 
 .treatment-card:hover {
   transform: scale(1.05);
   background: #00c896;
@@ -456,20 +458,16 @@ h1, h2, h3 {
 }
 
 /* Track for scrolling services */
-.services-track {
-  display: flex;
-  gap: 20px;
-  animation: marquee 40s linear infinite;
-}
+/* ---------- Mobile: Faster Services Sliding ---------- */
+@media (max-width: 768px) {
+  .services-track {
+    animation-duration: 20s; /* faster on mobile */
+  }
 
-/* Individual service card */
-.service {
-  flex: 0 0 auto;
-  width: 260px;
-  text-align: center;
-  cursor: pointer;
+  .service {
+    width: 220px; /* slightly smaller cards */
+  }
 }
-
 /* Marquee animation */
 @keyframes marquee {
   0% { transform: translateX(0); }
