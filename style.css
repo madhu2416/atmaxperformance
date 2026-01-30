@@ -1,488 +1,97 @@
+/* ================= RESET & BASE ================= */
+* {
+  box-sizing: border-box;
+}
 
-
-
-
-/* ---------- General Styles ---------- */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #0d1f1a;
-  line-height: 1.6;
+  color: #004d40;
+  line-height: 1.5;
 }
 
 h1, h2, h3 {
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 
-/* ---------- What Sets Us Apart ---------- */
-.sets-us-apart {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #d4f7e3; /* swapped to light green */
-  color: #004d40;             /* dark text for contrast */
-  border-radius: 12px;        /* optional */
-}
-
-.sets-us-apart h2 {
-  color: #00695c; /* heading color */
-  margin-bottom: 20px;
-}
-.sets-us-apart p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-/* ---------- Hero Section ---------- */
+/* ================= HERO ================= */
 .hero {
-  text-align: center;
+  min-height: 70vh;
   padding: 80px 20px;
   background: linear-gradient(135deg, #004d40, #003f35);
-}
-
-.hero h1, .hero .tagline {
-  color: #e0f2f1;
-}
-
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero .tagline {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* ---------- ATP ---------- */
-/* Hero Section */
-.hero {
-  position: relative;
-  text-align: center;
-  padding: 120px 20px;
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #004d40, #003f35);
-  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+  position: relative;
 }
 
-.hero h1.hero-title {
+.hero-title {
   font-size: 4rem;
+  letter-spacing: 8px;
   color: #00c896;
-  font-weight: bold;
-  letter-spacing: 10px;
-  position: relative;
-  z-index: 2;
 }
 
 .hero .tagline {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #e0f2f1;
-  margin-top: 20px;
-  z-index: 2;
-}
-.hero {
-  width: 100%;
-  height: 60vh; /* adjust vertical height */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out; /* smooth change */
-}
-.hero-title.no-gap {
-  display: inline-block;
-  letter-spacing: 0;
-  font-size: 6rem;
 }
 
-.bubble-letter {
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-/* Bubble Letters (hover effect) */
-.bubble-letter {
-  display: inline-block;
-  position: relative;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-
-.bubble-letter:hover {
-  transform: scale(1.5);
-  color: #fff;
-  text-shadow: 0 0 20px #00c896, 0 0 30px #00c896;
-}
-
-/* Big background bubbles */
-.bubbles {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.bubbles .bubble {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 200, 150, 0.2);
-  animation: bubbleMove 15s linear infinite;
-}
-
-/* Randomize sizes and positions */
-.bubbles .bubble:nth-child(1) { width: 200px; height: 200px; top: 10%; left: 15%; animation-delay: 0s; }
-.bubbles .bubble:nth-child(2) { width: 250px; height: 250px; top: 50%; left: 70%; animation-delay: 5s; }
-.bubbles .bubble:nth-child(3) { width: 180px; height: 180px; top: 30%; left: 40%; animation-delay: 2s; }
-.bubbles .bubble:nth-child(4) { width: 220px; height: 220px; top: 70%; left: 20%; animation-delay: 3s; }
-.bubbles .bubble:nth-child(5) { width: 150px; height: 150px; top: 20%; left: 80%; animation-delay: 7s; }
-
-/* Bubble animation */
-@keyframes bubbleMove {
-  0% { transform: translateY(100vh) scale(1); opacity: 0.5; }
-  50% { transform: translateY(50vh) scale(1.2); opacity: 0.7; }
-  100% { transform: translateY(-100vh) scale(1); opacity: 0; }
-}
-
-/* ATP Section Letters */
-.atp {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #d4f7e3;  /* swapped to light green */
-  color: #004d40;             /* dark green text */
-}
-.atp h1 {
-  color: #00695c;  /* matching headings from Vision/Mission */
-}
-.highlight-letter,
-.atp-letter {
-  color: #00695c !important;
-}
-
-.atp h1 {
-  font-size: 5rem;
-  color: #00c896;
-  font-weight: bold;
-  letter-spacing: 20px;
-}
-
-.atp-letter {
-  color: #00c896; /* same color as ATP heading */
-  font-weight: bold;
-}
-
-
-/* Highlight letters */
-.highlight-letter {
-  color: #00c896; /* same green as ATP heading */
-  font-weight: bold;
-}
-
-/* ---------- Vision & Mission, What We Do, What Sets Us Apart ---------- */
-.vision-mission,
-.content-section {
+/* ================= SECTIONS ================= */
+section {
   padding: 50px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #004d40, #00332a) !important;
-  color: #e0f2f1 !important;
-}
-.vision-mission h2,
-.content-section h2 {
-  color: #00c896 !important;
-}
-.vision-mission p,
-.content-section p {
-  color: #e0f2f1 !important;
 }
 
-
-
-/* Modal styles */
-
-.close {
-  color: #004d40;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ---------- Treatments ---------- */
+/* ================= TREATMENTS ================= */
 .treatments {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #d4f7e3;
-  color: #004d40;
+  background: #d4f7e3;
 }
 
-.treatments h2 {
-  color: #00695c;
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
 }
 
-/* ---------- Treatments Responsive ---------- */
-@media (max-width: 768px) {
-  .treatment-grid {
-    grid-template-columns: 1fr; /* 1 card per row */
-    gap: 20px;
-  }
-
-  .treatment-card {
-    padding: 20px;
-  }
+.treatment-card {
+  background: linear-gradient(135deg, #005c4b, #00796b);
+  color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  transition: transform 0.3s;
 }
 
-@media (max-width: 768px) {
-  .treatment-card {
-    min-height: 180px;
-  }
-}
- 
 .treatment-card:hover {
   transform: scale(1.05);
   background: #00c896;
   color: #001a14;
 }
 
-/* ---------- Experts ---------- */
-.experts {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #d4f7e3; /* same as Treatments */
-  color: #004d40;
-}
-
-.experts h2 {
-  color: #00695c;
-}
-
-.expert-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-.expert-card {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* same as Treatment cards */
-  color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-  max-width: 300px;
-  flex: 1 1 250px;
-  transition: transform 0.3s ease;
-}
-
-.expert-card:hover {
-  transform: scale(1.05);
-  background: #00c896;
-  color: #001a14;
-}
-
-.expert-card h3 {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* ---------- Founder Section ---------- */
-/* ---------- Founder Section ---------- */
-.founder {
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #004d40, #003f35); /* dark green gradient */
-  text-align: center;
-  color: #e0f2f1; /* white/light text for dark background */
-}
-
-.founder h2 {
-  font-size: 1.8rem; /* smaller heading */
-  margin-bottom: 30px;
-  color: #00c896; /* lighter green for contrast */
-}
-
-.founder-card {
-  width: 100%;
-  max-width: 600px;  /* limit width */
-  margin: 0 auto;
-  border-radius: 12px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.founder-card img {
-  width: 100%;
-  height: auto;       /* maintain aspect ratio */
-  object-fit: cover;  
-  display: block;
-  border-radius: 12px;
-}
-
-.founder-info {
-  margin-top: 15px;  /* space below image */
-  text-align: center;
-}
-
-.founder-info h3 {
-  margin: 0 0 5px 0;
-  font-size: 1.2rem; /* smaller text */
-  color: #e0f2f1;    /* light text for dark background */
-}
-
-.founder-info p {
-  margin: 0;
-  font-size: 0.9rem; /* smaller paragraph text */
-  line-height: 1.3;
-  color: #d4f7e3; /* softer green for contrast */
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .founder-card {
-    max-width: 100%;
-  }
-  .founder-info h3 {
-    font-size: 1rem;
-  }
-  .founder-info p {
-    font-size: 0.8rem;
-  }
-}
-
-/* ---------- About ---------- */
-.about {
-  padding: 50px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #004d40, #003f35); /* same as Founder */
-  color: #e0f2f1;
-}
-
-.about h2 {
-  color: #00c896;
-}
-
-/* ---------- Contact ---------- */
-.contact {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #d4f7e3;  /* light green background */
-  color: #004d40;             /* dark text for readability */
-}
-
-.contact h2 {
-  color: #00695c; /* heading color same as Treatments */
-}
-
-.contact .socials a {
-  color: #00695c; /* links in dark green */
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.contact .socials a:hover {
-  text-decoration: underline;
-}
-
-
-/* ---------- Animation ---------- */
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* ---------- Modal Styles ---------- */
-
-
-/* ---------- Reveal Animation ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* ----------gallery---------- */
-
-.gallery-section {
-  padding: 50px 20px;
-  text-align: center;
-  background-color: #e0f7ef;
-  color: #004d40;
-}
-
-.gallery-section h2 {
-  margin-bottom: 20px;
-  color: #00695c;
-}
-
-/* Container */
-.gallery {
-  width: 80%;
-  max-width: 800px;
-  margin: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-/* Single image that fades */
-#galleryImage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-}
-
-/* Hide description by default */
-/* Container for horizontal sliding */
-/* Services marquee container */
+/* ================= SERVICES ================= */
 .services-marquee {
   overflow: hidden;
   width: 100%;
-  padding: 30px 0;
-  position: relative;
+  padding: 20px 0;
 }
 
-/* Track for scrolling services */
-/* ---------- Mobile: Faster Services Sliding ---------- */
-@media (max-width: 768px) {
-  .services-track {
-    animation-duration: 20s; /* faster on mobile */
-  }
-
-  .service {
-    width: 220px; /* slightly smaller cards */
-  }
-}
-/* Marquee animation */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* we will dynamically update this in JS */
+.services-track {
+  display: flex;
+  gap: 16px;
+  animation: marquee 25s linear infinite;
 }
 
+.service {
+  width: 220px;
+  flex-shrink: 0;
+}
 
 .service-img {
-  width: 100%;
-  height: 190px;
-  border-radius: 16px;
+  height: 150px;
+  border-radius: 14px;
   overflow: hidden;
 }
 
@@ -493,69 +102,99 @@ h1, h2, h3 {
 }
 
 .service-title {
-  margin-top: 10px;
-  font-size: 16px;
-  color: #004d40;
+  font-size: 15px;
+  margin-top: 8px;
 }
 
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  z-index: 999;
-  justify-content: center;
-  align-items: center;
+/* Smooth marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.modal-content {
-  background: #fff;
+/* ================= GALLERY ================= */
+.gallery {
   width: 90%;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.modal-content img {
+#galleryImage {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
-.close {
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-}
-/* Logo styling */
-.logo {
-  position: absolute;
-  top: 20px;  /* distance from top */
-  left: 20px; /* distance from left */
-  z-index: 10; /* above other elements */
+/* ================= EXPERTS ================= */
+.expert-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.logo img {
-  width: 120px;  /* adjust size */
-  height: auto;
+.expert-card {
+  width: 280px;
+  background: linear-gradient(135deg, #005c4b, #00796b);
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
 }
 
+/* ================= MOBILE FIXES ================= */
 @media (max-width: 768px) {
+
   body {
-    overflow-x: hidden;
+    font-size: 14px;
   }
 
-  section {
-    padding: 20px;
+  /* HERO */
+  .hero {
+    min-height: 55vh;
+    padding: 60px 15px;
   }
-}
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    gap: 20px;
+
+  .hero-title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .hero .tagline {
+    font-size: 1rem;
+  }
+
+  /* ✅ TREATMENTS: 3 IN ONE ROW ON PHONE */
+  .treatment-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .treatment-card {
+    padding: 12px;
+    font-size: 0.75rem;
+  }
+
+  /* ✅ SERVICES: SMALLER + FASTER + SMOOTHER */
+  .services-track {
+    animation-duration: 15s;
+  }
+
+  .service {
+    width: 160px;
+  }
+
+  .service-img {
+    height: 110px;
+  }
+
+  .service-title {
+    font-size: 13px;
+  }
+
+  /* GALLERY */
+  #galleryImage {
+    max-height: 220px;
+    object-fit: cover;
   }
 }
