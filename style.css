@@ -226,3 +226,4 @@ h1, h2, h3 {
 .what-sets-us-apart p {
   color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
+.what-sets-us-apart { outline: 4px solid blue !important; }
