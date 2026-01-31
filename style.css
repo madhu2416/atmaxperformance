@@ -226,7 +226,6 @@ h1, h2, h3 {
 .what-sets-us-apart p {
   color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
-.what-sets-us-apart { outline: 4px solid blue !important; }
 
 /* ---------- Mission & Vision (MATCH FOUNDER DARK GREEN + WHITE TEXT) ---------- */
 .vision-mission  {
@@ -241,4 +240,21 @@ h1, h2, h3 {
 .vision-mission  li,
 .vision-mission  span {
   color: #ffffff;  /* FORCE WHITE TEXT */
+}
+
+
+/* ---------- APT Section (MATCH TREATMENTS BACKGROUND & TEXT) ---------- */
+.atp-section {
+  background-color: #d4f7e3;  /* SAME AS TREATMENTS */
+  color: #004d40;             /* SAME AS TREATMENTS TEXT */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.atp-section h2,
+.atp-section h3,
+.atp-section p,
+.atp-section li,
+.atp-section span {
+  color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
