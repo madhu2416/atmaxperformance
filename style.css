@@ -259,3 +259,20 @@ h1, h2, h3 {
 .atp-section span {
   color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
+
+
+/* ---------- Get in Touch Section (MATCH WHAT SETS US APART) ---------- */
+.get-in-touch {
+  background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40;             /* SAME TEXT COLOR */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.get-in-touch h2,
+.get-in-touch h3,
+.get-in-touch p,
+.get-in-touch li,
+.get-in-touch span {
+  color: #004d40;             /* FORCE SAME TEXT COLOR */
+}
