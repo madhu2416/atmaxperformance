@@ -55,7 +55,7 @@ h1, h2, h3 {
   z-index: 2;
 }
 
-/* ---------- Services Section (DESIGN UNCHANGED) ---------- */
+/* ---------- Services Section (UNCHANGED) ---------- */
 .services-marquee {
   overflow: hidden;
   width: 100%;
@@ -96,13 +96,12 @@ h1, h2, h3 {
   color: #004d40;
 }
 
-/* Desktop marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* ---------- Treatments (DESIGN UNCHANGED) ---------- */
+/* ---------- Treatments (DO NOT CHANGE) ---------- */
 .treatments {
   padding: 50px 20px;
   text-align: center;
@@ -130,49 +129,52 @@ h1, h2, h3 {
   color: #001a14;
 }
 
-/* =====================================================
-   ✅ MOBILE FIXES ONLY (NO DESIGN CHANGES)
-   ===================================================== */
+/* ---------- Experts (MATCH TREATMENTS DESIGN) ---------- */
+.experts {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #d4f7e3; /* SAME AS TREATMENTS */
+  color: #004d40;           /* SAME AS TREATMENTS */
+}
 
+.expert-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.expert-card {
+  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS TREATMENT CARD */
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expert-card h3 {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.expert-card:hover {
+  transform: scale(1.05);
+  background: #00c896;
+  color: #001a14;
+}
+
+/* ---------- Mobile Fix (Experts same as Treatments layout) ---------- */
 @media (max-width: 768px) {
-
-  body {
-    overflow-x: hidden;
-  }
-
-  .hero {
-    padding: 90px 15px;
-    min-height: 100vh;
-  }
-
-  .hero h1.hero-title {
-    font-size: 2.5rem;
-    letter-spacing: 5px;
-  }
-
-  .hero .tagline {
-    font-size: 1.1rem;
-  }
-
-  .services-track {
-    animation-duration: 14s;
-    gap: 14px;
-  }
-
-  .service {
-    width: 180px;
-  }
-
-  .service-img {
-    height: 130px;
-  }
-
-  .treatment-grid {
+  .expert-list {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 
-  .treatment-card {
+  .expert-card {
     padding: 12px;
     font-size: 13px;
   }
@@ -181,7 +183,6 @@ h1, h2, h3 {
 /* ---------- Footer / Other Sections (UNCHANGED) ---------- */
 .about,
 .contact,
-.experts,
 .founder {
   padding: 50px 20px;
 }
