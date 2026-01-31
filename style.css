@@ -213,3 +213,17 @@ h1, h2, h3 {
   font-weight: bold;
   cursor: pointer;
 }
+/* ---------- What Sets Us Apart (MATCH TREATMENTS BACKGROUND & TEXT) ---------- */
+.what-sets-us-apart {
+  background-color: #d4f7e3;  /* SAME AS TREATMENTS BACKGROUND */
+  color: #004d40;             /* SAME AS TREATMENTS TEXT COLOR */
+  padding: 50px 20px;
+}
+
+.what-sets-us-apart h2,
+.what-sets-us-apart h3,
+.what-sets-us-apart p,
+.what-sets-us-apart li,
+.what-sets-us-apart span {
+  color: #004d40;             /* FORCE SAME TEXT COLOR AS TREATMENTS */
+}
