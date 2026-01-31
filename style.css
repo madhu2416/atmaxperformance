@@ -279,44 +279,57 @@ h1, h2, h3 {
 
 /* ---------- Header Logo ---------- */
 /* ---------- Site Header ---------- */
-.site-header {
-  width: 100%;
+/* ---------- Hero Section ---------- */
+.hero {
+  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS Vision & Mission */
+  color: #ffffff; /* White text */
+  padding: 80px 20px;
+  min-height: 80vh;
   display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  position: relative; /* not fixed yet, optional */
-  z-index: 1000;
-  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* align left so logo and text start from left */
+  position: relative;
 }
 
 /* Logo */
-.site-header .logo img {
-  height: 50px; /* desktop */
+.hero-logo img {
+  height: 50px;      /* Desktop logo size */
   width: auto;
   display: block;
-  margin-right: 20px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
-/* Hero text next to logo */
-.site-header .hero-text {
-  flex: 1;
+/* Hero Text */
+.hero-text {
+  margin-left: 0; /* ensure text starts from left, can adjust if needed */
+}
+
+.hero-text h1,
+.hero-text p {
+  color: #ffffff; /* White text */
 }
 
 /* Mobile tweaks */
 @media (max-width: 768px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 12px;
+  .hero {
+    padding: 60px 15px;
+    min-height: 60vh;
   }
 
-  .site-header .logo img {
-    height: 40px; /* smaller logo for phones */
-    margin-bottom: 10px;
+  .hero-logo img {
+    height: 40px;
+    top: 15px;
+    left: 15px;
   }
 
-  .site-header .hero-text {
-    width: 100%;
+  .hero-text h1 {
+    font-size: 2rem; /* smaller on mobile */
+  }
+
+  .hero-text p {
+    font-size: 1rem;
   }
 }
-
