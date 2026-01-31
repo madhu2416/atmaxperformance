@@ -244,9 +244,10 @@ h1, h2, h3 {
 
 
 /* ---------- APT Section (MATCH TREATMENTS BACKGROUND & TEXT) ---------- */
+/* ---------- APT Section (MATCH WHAT SETS US APART) ---------- */
 .atp-section {
-  background-color: #d4f7e3;  /* SAME AS TREATMENTS */
-  color: #004d40;             /* SAME AS TREATMENTS TEXT */
+  background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40;             /* SAME TEXT COLOR AS What Sets Us Apart */
   padding: 50px 20px;
   text-align: center;
 }
