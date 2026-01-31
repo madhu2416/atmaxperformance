@@ -278,31 +278,45 @@ h1, h2, h3 {
 }
 
 /* ---------- Header Logo ---------- */
+/* ---------- Site Header ---------- */
 .site-header {
   width: 100%;
-  padding: 10px 20px;
-  position: fixed;   /* Stays on top */
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: transparent; /* Change if you want a header bg */
   display: flex;
   align-items: center;
+  padding: 10px 20px;
+  position: relative; /* not fixed yet, optional */
+  z-index: 1000;
+  background-color: transparent;
 }
 
+/* Logo */
 .site-header .logo img {
-  height: 50px;        /* Small height for phone & desktop */
+  height: 50px; /* desktop */
   width: auto;
   display: block;
+  margin-right: 20px;
 }
 
-/* Mobile tweak */
+/* Hero text next to logo */
+.site-header .hero-text {
+  flex: 1;
+}
+
+/* Mobile tweaks */
 @media (max-width: 768px) {
   .site-header {
+    flex-direction: column;
+    align-items: flex-start;
     padding: 8px 12px;
   }
 
   .site-header .logo img {
-    height: 40px;       /* smaller logo for phones */
+    height: 40px; /* smaller logo for phones */
+    margin-bottom: 10px;
+  }
+
+  .site-header .hero-text {
+    width: 100%;
   }
 }
+
