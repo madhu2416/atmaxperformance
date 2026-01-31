@@ -129,7 +129,7 @@ h1, h2, h3 {
   color: #001a14;
 }
 
-/* ---------- Experts (MATCH TREATMENTS DESIGN) ---------- */
+/* ---------- Experts (VERTICAL ONE-BY-ONE, SAME DESIGN AS TREATMENTS) ---------- */
 .experts {
   padding: 50px 20px;
   text-align: center;
@@ -138,45 +138,45 @@ h1, h2, h3 {
 }
 
 .expert-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;  /* one by one vertically */
   gap: 20px;
-  margin-top: 20px;
+  max-width: 900px;        /* keeps nice width */
+  margin: 20px auto 0;    /* center the list */
 }
 
 .expert-card {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS TREATMENT CARD */
+  background: linear-gradient(135deg, #005c4b, #00796b);
   color: #fff;
   padding: 20px;
   border-radius: 12px;
   transition: transform 0.3s ease;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .expert-card h3 {
-  font-size: 15px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .expert-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   background: #00c896;
   color: #001a14;
 }
 
-/* ---------- Mobile Fix (Experts same as Treatments layout) ---------- */
+/* ---------- Mobile tweak for Experts ---------- */
 @media (max-width: 768px) {
   .expert-list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
+    padding: 0 5px;
   }
 
   .expert-card {
-    padding: 12px;
-    font-size: 13px;
+    padding: 14px;
+  }
+
+  .expert-card h3 {
+    font-size: 14px;
   }
 }
 
@@ -212,7 +212,4 @@ h1, h2, h3 {
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-}
-.experts {
-  outline: 5px solid red !important;
 }
