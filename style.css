@@ -227,3 +227,18 @@ h1, h2, h3 {
   color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
 .what-sets-us-apart { outline: 4px solid blue !important; }
+
+/* ---------- Mission & Vision (MATCH FOUNDER DARK GREEN + WHITE TEXT) ---------- */
+.vision-mission  {
+  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS FOUNDER */
+  color: #ffffff;  /* WHITE TEXT */
+  padding: 50px 20px;
+}
+
+.vision-mission  h2,
+.vision-mission  h3,
+.vision-mission  p,
+.vision-mission  li,
+.vision-mission  span {
+  color: #ffffff;  /* FORCE WHITE TEXT */
+}
