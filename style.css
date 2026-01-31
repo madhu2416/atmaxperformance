@@ -276,3 +276,33 @@ h1, h2, h3 {
 .get-in-touch span {
   color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
+
+/* ---------- Header Logo ---------- */
+.site-header {
+  width: 100%;
+  padding: 10px 20px;
+  position: fixed;   /* Stays on top */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent; /* Change if you want a header bg */
+  display: flex;
+  align-items: center;
+}
+
+.site-header .logo img {
+  height: 50px;        /* Small height for phone & desktop */
+  width: auto;
+  display: block;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 8px 12px;
+  }
+
+  .site-header .logo img {
+    height: 40px;       /* smaller logo for phones */
+  }
+}
