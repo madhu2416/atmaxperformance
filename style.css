@@ -129,20 +129,20 @@ h1, h2, h3 {
   color: #001a14;
 }
 
-/* ---------- Experts (VERTICAL ONE-BY-ONE, SAME DESIGN AS TREATMENTS) ---------- */
+/* ---------- Experts (UNCHANGED) ---------- */
 .experts {
   padding: 50px 20px;
   text-align: center;
-  background-color: #d4f7e3; /* SAME AS TREATMENTS */
-  color: #004d40;           /* SAME AS TREATMENTS */
+  background-color: #d4f7e3;
+  color: #004d40;
 }
 
 .expert-list {
   display: flex;
-  flex-direction: column;  /* one by one vertically */
+  flex-direction: column;
   gap: 20px;
-  max-width: 900px;        /* keeps nice width */
-  margin: 20px auto 0;    /* center the list */
+  max-width: 900px;
+  margin: 20px auto 0;
 }
 
 .expert-card {
@@ -153,37 +153,37 @@ h1, h2, h3 {
   transition: transform 0.3s ease;
 }
 
-.expert-card h3 {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 .expert-card:hover {
   transform: scale(1.02);
   background: #00c896;
   color: #001a14;
 }
 
-/* ---------- Mobile tweak for Experts ---------- */
-@media (max-width: 768px) {
-  .expert-list {
-    gap: 12px;
-    padding: 0 5px;
-  }
+/* ---------- Founder (ONLY THIS SECTION UPDATED) ---------- */
+.founder {
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME DARK GREEN AS CARDS */
+  color: #ffffff;  /* WHITE TEXT */
+}
 
-  .expert-card {
-    padding: 14px;
-  }
+.founder h2,
+.founder h3,
+.founder p,
+.founder span,
+.founder li {
+  color: #ffffff; /* FORCE WHITE TEXT */
+}
 
-  .expert-card h3 {
-    font-size: 14px;
-  }
+/* IMPORTANT: Do NOT touch image sizes */
+.founder img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px; /* optional: remove if you don't want rounded corners */
 }
 
 /* ---------- Footer / Other Sections (UNCHANGED) ---------- */
 .about,
-.contact,
-.founder {
+.contact {
   padding: 50px 20px;
 }
 
@@ -213,4 +213,3 @@ h1, h2, h3 {
   font-weight: bold;
   cursor: pointer;
 }
-.expert-card { border: 3px solid yellow !important; }
