@@ -1,10 +1,25 @@
 /* ---------- General Styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #0d1f1a;
   line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 h1, h2, h3 {
@@ -116,31 +131,42 @@ h1, h2, h3 {
 }
 
 /* =====================================================
-   ✅ MOBILE FIXES ONLY (SAFE ZONE)
+   ✅ MOBILE FIXES ONLY (NO DESIGN CHANGES)
    ===================================================== */
 
-/* ---------- Mobile: Services Glide Faster & Smooth ---------- */
 @media (max-width: 768px) {
-  .services-track {
-    animation-duration: 14s;   /* faster glide */
-    gap: 14px;
-  }
-
-  .service {
-    width: 180px;             /* smaller cards for phone */
-  }
-
-  .service-img {
-    height: 130px;            /* smaller images */
-  }
 
   body {
     overflow-x: hidden;
   }
-}
 
-/* ---------- Mobile: Treatments 3 in a Row ---------- */
-@media (max-width: 768px) {
+  .hero {
+    padding: 90px 15px;
+    min-height: 100vh;
+  }
+
+  .hero h1.hero-title {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+  }
+
+  .hero .tagline {
+    font-size: 1.1rem;
+  }
+
+  .services-track {
+    animation-duration: 14s;
+    gap: 14px;
+  }
+
+  .service {
+    width: 180px;
+  }
+
+  .service-img {
+    height: 130px;
+  }
+
   .treatment-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
