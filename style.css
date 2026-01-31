@@ -280,56 +280,60 @@ h1, h2, h3 {
 /* ---------- Header Logo ---------- */
 /* ---------- Site Header ---------- */
 /* ---------- Hero Section ---------- */
+/* Force hero text to stay in a single line */
+.hero-text.single-line,
+.hero-text.single-line span,
+.hero-text .single-line {
+  white-space: nowrap;       /* Prevent wrapping */
+  display: inline-block;
+}
+
+/* Adjust hero section */
 .hero {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS Vision & Mission */
-  color: #ffffff; /* White text */
+  background: linear-gradient(135deg, #005c4b, #00796b); /* dark green */
+  color: #ffffff;
   padding: 80px 20px;
   min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* align left so logo and text start from left */
   position: relative;
 }
 
-/* Logo */
+/* Logo at top-left */
 .hero-logo img {
-  height: 50px;      /* Desktop logo size */
+  height: 50px;
   width: auto;
-  display: block;
   position: absolute;
   top: 20px;
   left: 20px;
 }
 
-/* Hero Text */
+/* Hero text below logo */
 .hero-text {
-  margin-left: 0; /* ensure text starts from left, can adjust if needed */
+  margin-left: 0;
+  margin-top: 80px;  /* space from logo */
+  font-size: 2rem;   /* adjust as needed */
 }
 
-.hero-text h1,
-.hero-text p {
-  color: #ffffff; /* White text */
+/* Tagline directly under hero-title */
+.hero-text .tagline {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  white-space: nowrap;
 }
 
-/* Mobile tweaks */
+/* Mobile adjustments */
 @media (max-width: 768px) {
-  .hero {
-    padding: 60px 15px;
-    min-height: 60vh;
-  }
-
   .hero-logo img {
     height: 40px;
     top: 15px;
     left: 15px;
   }
 
-  .hero-text h1 {
-    font-size: 2rem; /* smaller on mobile */
+  .hero-text {
+    font-size: 1.5rem;
+    margin-top: 60px;
   }
 
-  .hero-text p {
+  .hero-text .tagline {
     font-size: 1rem;
   }
 }
