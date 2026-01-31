@@ -214,16 +214,15 @@ h1, h2, h3 {
   cursor: pointer;
 }
 /* ---------- What Sets Us Apart (MATCH TREATMENTS BACKGROUND & TEXT) ---------- */
+/* ---------- What Sets Us Apart (MATCH TREATMENTS) ---------- */
 .what-sets-us-apart {
   background-color: #d4f7e3;  /* SAME AS TREATMENTS BACKGROUND */
-  color: #004d40;             /* SAME AS TREATMENTS TEXT COLOR */
+  color: #004d40;             /* SAME AS TREATMENTS TEXT */
   padding: 50px 20px;
+  text-align: center;
 }
 
 .what-sets-us-apart h2,
-.what-sets-us-apart h3,
-.what-sets-us-apart p,
-.what-sets-us-apart li,
-.what-sets-us-apart span {
-  color: #004d40;             /* FORCE SAME TEXT COLOR AS TREATMENTS */
+.what-sets-us-apart p {
+  color: #004d40;             /* FORCE SAME TEXT COLOR */
 }
