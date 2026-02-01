@@ -371,3 +371,22 @@ h1, h2, h3 {
     font-size: 1.05rem;  /* smallest safe size to fit all letters */
   }
 }
+
+/* ===== FORCE HERO TITLE TO FIT ON PHONES (OVERRIDE EVERYTHING) ===== */
+@media (max-width: 768px) {
+  h1.hero-title.no-gap.single-line {
+    white-space: nowrap !important;
+    font-size: 1.2rem !important;  /* small enough to fit full name */
+    letter-spacing: 0 !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    font-weight: 800 !important;
+  }
+
+  h1.hero-title.no-gap.single-line .bubble-letter {
+    all: unset !important;
+    display: inline !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+  }
+}
