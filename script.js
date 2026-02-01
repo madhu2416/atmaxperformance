@@ -2,19 +2,19 @@ const track = document.getElementById("autoCarouselTrack");
 const cards = document.querySelectorAll(".auto-card");
 let index = 0;
 
+// Auto Slide
 setInterval(() => {
   index++;
-  if(index >= cards.length) index = 0;
+  if (index >= cards.length) index = 0;
   const width = cards[0].offsetWidth + 20;
   track.style.transform = `translateX(-${index * width}px)`;
 }, 3000);
 
-// Show All Services
-document.getElementById("showAllBtn").addEventListener("click", function () {
+// Show More Services
+document.getElementById("showAllBtn").addEventListener("click", () => {
   document.getElementById("allServicesGrid").style.display = "grid";
-  this.style.display = "none"; // hide button after click
+  document.getElementById("showAllBtn").style.display = "none";
 });
-
 
 // Modal
 const modal = document.getElementById("serviceModal");
@@ -31,4 +31,3 @@ document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
 });
 
 closeModal.onclick = () => modal.style.display = "none";
-

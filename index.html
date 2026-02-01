@@ -78,67 +78,68 @@
 <section class="services-section reveal">
   <h2 class="section-title">Our Services</h2>
 
-  <!-- Top 5 Auto Carousel -->
+  <!-- Auto Carousel (Top 5 Services) -->
   <div class="auto-carousel-wrapper">
     <div class="auto-carousel-track" id="autoCarouselTrack">
 
-      <div class="auto-card" data-title="ORTHO REHAB" data-desc="Ortho rehab description here">
+      <div class="auto-card" data-title="ORTHO REHAB" data-desc="Heal from injury, recover from surgery, and reclaim your active lifestyle.">
         <img src="assets/service1.jpg" />
         <span>ORTHO REHAB</span>
       </div>
 
-      <div class="auto-card" data-title="NEURO REHAB" data-desc="Neuro rehab description here">
+      <div class="auto-card" data-title="NEURO REHAB" data-desc="Specialized neurological rehabilitation for stroke and brain injury.">
         <img src="assets/service2.jpg" />
         <span>NEURO REHAB</span>
       </div>
 
-      <div class="auto-card" data-title="PEDIATRIC REHAB" data-desc="Pediatric rehab description here">
+      <div class="auto-card" data-title="PEDIATRIC REHAB" data-desc="Play-based therapy to support your child's growth.">
         <img src="assets/service3.jpg" />
         <span>PEDIATRIC REHAB</span>
       </div>
 
-      <div class="auto-card" data-title="SPORTS REHAB" data-desc="Sports rehab description here">
+      <div class="auto-card" data-title="SPORTS REHAB" data-desc="Return stronger to peak sports performance.">
         <img src="assets/service4.jpg" />
         <span>SPORTS REHAB</span>
       </div>
 
-      <div class="auto-card" data-title="PRENATAL REHAB" data-desc="Prenatal rehab description here">
+      <div class="auto-card" data-title="PRENATAL REHAB" data-desc="Safe prenatal therapy for comfort and strength.">
         <img src="assets/service5.jpg" />
         <span>PRENATAL REHAB</span>
       </div>
 
     </div>
   </div>
-<!-- All Services Grid (HIDDEN INITIALLY) -->
-<div class="all-services-grid" id="allServicesGrid">
 
-  <div class="grid-card" data-title="FUNCTIONAL FITNESS" data-desc="Functional fitness description">
-    <img src="assets/service6.jpg">
-    <span>FUNCTIONAL FITNESS</span>
+  <!-- Show More Button -->
+  <div class="show-btn-wrapper">
+    <button id="showAllBtn">Show More Services</button>
   </div>
 
-  <div class="grid-card" data-title="ERGONOMIC CARE" data-desc="Ergonomic care description">
-    <img src="assets/service7.jpg">
-    <span>ERGONOMIC CARE</span>
+  <!-- Hidden Remaining Services -->
+  <div class="all-services-grid" id="allServicesGrid">
+
+    <div class="grid-card" data-title="FUNCTIONAL FITNESS" data-desc="Improve mobility, strength and daily function.">
+      <img src="assets/service6.jpg">
+      <span>FUNCTIONAL FITNESS</span>
+    </div>
+
+    <div class="grid-card" data-title="ERGONOMIC CARE" data-desc="Reduce pain with ergonomic workplace setup.">
+      <img src="assets/service7.jpg">
+      <span>ERGONOMIC CARE</span>
+    </div>
+
+    <div class="grid-card" data-title="GUT HEALTH" data-desc="Improve digestion and gut health naturally.">
+      <img src="assets/service9.jpg">
+      <span>GUT HEALTH</span>
+    </div>
+
+    <div class="grid-card" data-title="SPORTS NUTRITION" data-desc="Fuel performance with sports nutrition.">
+      <img src="assets/service13.jpg">
+      <span>SPORTS NUTRITION</span>
+    </div>
+
   </div>
-
-  <div class="grid-card" data-title="POSTURE CORRECTION" data-desc="Posture correction description">
-    <img src="assets/service8.jpg">
-    <span>POSTURE CORRECTION</span>
-  </div>
-
-  <div class="grid-card" data-title="GUT HEALTH" data-desc="Gut health description">
-    <img src="assets/service9.jpg">
-    <span>GUT HEALTH</span>
-  </div>
-
-  <div class="grid-card" data-title="SPORTS NUTRITION" data-desc="Sports nutrition description">
-    <img src="assets/service10.jpg">
-    <span>SPORTS NUTRITION</span>
-  </div>
-
-</div>
-
+</section>
 
 <!-- Modal -->
 <div class="modal" id="serviceModal">
@@ -148,6 +149,7 @@
     <p id="modalDesc"></p>
   </div>
 </div>
+
 
 <!-- Treatment -->
   <section class="treatments  reveal">
