@@ -545,5 +545,5 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid green !important;
+  outline: 5px solid rgb(223, 35, 148) !important;
 }
