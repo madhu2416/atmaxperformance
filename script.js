@@ -2,26 +2,23 @@ let carousel = document.getElementById('carousel');
 let cards = document.querySelectorAll('.carousel-card');
 let index = 0;
 
-// Auto-slide
 function slideCarousel() {
   index++;
   if(index >= cards.length) index = 0;
-  carousel.style.transform = `translateX(-${index * 240}px)`; // 240 = card width + margin
+  carousel.style.transform = `translateX(-${index * 220}px)`; // 220 = card width + margin
 }
-let carouselInterval = setInterval(slideCarousel, 3000); // every 3s
+let carouselInterval = setInterval(slideCarousel, 3000);
 
-// Arrows
 document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
   index = (index - 1 + cards.length) % cards.length;
-  carousel.style.transform = `translateX(-${index * 240}px)`;
+  carousel.style.transform = `translateX(-${index * 220}px)`;
   resetInterval();
 });
 document.querySelector('.carousel-arrow.right').addEventListener('click', () => {
   index = (index + 1) % cards.length;
-  carousel.style.transform = `translateX(-${index * 240}px)`;
+  carousel.style.transform = `translateX(-${index * 220}px)`;
   resetInterval();
 });
-
 function resetInterval() {
   clearInterval(carouselInterval);
   carouselInterval = setInterval(slideCarousel, 3000);
@@ -41,7 +38,6 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const closeModal = document.querySelector(".close");
 
-// Open modal
 document.querySelectorAll('.carousel-card, .service-card').forEach(card => {
   card.addEventListener('click', () => {
     modal.style.display = "flex";
@@ -51,6 +47,5 @@ document.querySelectorAll('.carousel-card, .service-card').forEach(card => {
   });
 });
 
-// Close modal
 closeModal.addEventListener('click', () => modal.style.display="none");
 window.addEventListener('click', e => { if(e.target==modal) modal.style.display="none"; });

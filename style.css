@@ -54,12 +54,13 @@ h1, h2, h3 {
   margin-top: 20px;
   z-index: 2;
 }
-/* Carousel */
+//* Carousel */
 .carousel-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .carousel-container {
@@ -68,11 +69,11 @@ h1, h2, h3 {
 }
 
 .carousel-card {
-  min-width: 220px;
-  max-width: 220px;
+  min-width: 200px;
+  max-width: 200px;
   margin: 0 10px;
   position: relative;
-  padding-bottom: 100%; /* Square */
+  padding-bottom: 100%; /* square */
 }
 
 .carousel-card img {
@@ -94,11 +95,8 @@ h1, h2, h3 {
   padding:5px 0;
 }
 
-/* Carousel arrows */
+/* Carousel arrows left/right */
 .carousel-arrow {
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
   background: rgba(0,0,0,0.4);
   color:#fff;
   border:none;
@@ -109,8 +107,8 @@ h1, h2, h3 {
   z-index:10;
 }
 
-.carousel-arrow.left { left:10px; }
-.carousel-arrow.right { right:10px; }
+.carousel-arrow.left { margin-right:10px; }
+.carousel-arrow.right { margin-left:10px; }
 
 /* Show All Button */
 .show-all-btn {
@@ -188,7 +186,7 @@ h1, h2, h3 {
 /* Mobile */
 @media(max-width:768px){
   .all-services-grid { grid-template-columns: repeat(2, 1fr); gap:15px; }
-  .carousel-card { min-width: 150px; max-width:150px; padding-bottom:100%; }
+  .carousel-card { min-width: 140px; max-width:140px; padding-bottom:100%; }
   .carousel-arrow { font-size:1.2rem; padding:8px; }
   .show-all-btn { font-size:1rem; padding:10px 20px; }
 }
