@@ -74,113 +74,79 @@
 
 
 
-<section class="services-section" style="background-color:#004d40; padding:50px 20px; color:#ffffff;">
-  <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
+<!-- Services Section -->
+<section class="services-section reveal">
+  <h2 class="section-title">Our Services</h2>
 
-  <!-- Carousel for Top 5 Services -->
-  <div class="carousel-wrapper">
-    <!-- Left Arrow -->
-    <div class="carousel-arrow left">&#10094;</div>
+  <!-- Top 5 Auto Carousel -->
+  <div class="auto-carousel-wrapper">
+    <div class="auto-carousel-track" id="autoCarouselTrack">
 
-    <!-- Carousel Container -->
-    <div class="carousel-container">
-      <!-- Service 1 -->
-      <div class="carousel-card">
-        <img src="assets/service1.jpg" alt="ORTHO REHAB">
-        <div class="service-name">ORTHO REHAB</div>
+      <div class="auto-card" data-title="ORTHO REHAB" data-desc="Ortho rehab description here">
+        <img src="assets/service1.jpg" />
+        <span>ORTHO REHAB</span>
       </div>
-      <!-- Service 2 -->
-      <div class="carousel-card">
-        <img src="assets/service2.jpg" alt="NEURO REHAB">
-        <div class="service-name">NEURO REHAB</div>
+
+      <div class="auto-card" data-title="NEURO REHAB" data-desc="Neuro rehab description here">
+        <img src="assets/service2.jpg" />
+        <span>NEURO REHAB</span>
       </div>
-      <!-- Service 3 -->
-      <div class="carousel-card">
-        <img src="assets/service3.jpg" alt="PEDIATRIC REHAB">
-        <div class="service-name">PEDIATRIC REHAB</div>
+
+      <div class="auto-card" data-title="PEDIATRIC REHAB" data-desc="Pediatric rehab description here">
+        <img src="assets/service3.jpg" />
+        <span>PEDIATRIC REHAB</span>
       </div>
-      <!-- Service 4 -->
-      <div class="carousel-card">
-        <img src="assets/service4.jpg" alt="SPORTS REHAB">
-        <div class="service-name">SPORTS REHAB</div>
+
+      <div class="auto-card" data-title="SPORTS REHAB" data-desc="Sports rehab description here">
+        <img src="assets/service4.jpg" />
+        <span>SPORTS REHAB</span>
       </div>
-      <!-- Service 5 -->
-      <div class="carousel-card">
-        <img src="assets/service5.jpg" alt="PRENATAL-ANTENATAL REHAB">
-        <div class="service-name">PRENATAL-ANTENATAL REHAB</div>
+
+      <div class="auto-card" data-title="PRENATAL REHAB" data-desc="Prenatal rehab description here">
+        <img src="assets/service5.jpg" />
+        <span>PRENATAL REHAB</span>
       </div>
+
     </div>
-
-    <!-- Right Arrow -->
-    <div class="carousel-arrow right">&#10095;</div>
   </div>
 
-  <!-- Show All Services Button -->
-  <div style="text-align:center; margin-top:20px;">
-    <button id="showAllServices" style="padding:12px 25px; font-weight:bold; background-color:#00c896; color:#004d40; border:none; border-radius:8px; cursor:pointer;">
-      Show All Services
-    </button>
+  <!-- Show All Button -->
+  <div class="show-btn-wrapper">
+    <button id="showAllBtn">Show All Services</button>
   </div>
 
-  <!-- All Services Grid (Hidden Initially) -->
-  <div class="all-services-grid" style="display:none; margin-top:40px;">
-    <!-- Service 6 -->
-    <div class="grid-card">
-      <img src="assets/service6.jpg" alt="FUNCTIONAL FITNESS">
-      <div class="service-name">FUNCTIONAL FITNESS</div>
+  <!-- All Services Grid -->
+  <div class="all-services-grid" id="allServicesGrid">
+    <div class="grid-card" data-title="FUNCTIONAL FITNESS" data-desc="Functional fitness description">
+      <img src="assets/service6.jpg">
+      <span>FUNCTIONAL FITNESS</span>
     </div>
-    <!-- Service 7 -->
-    <div class="grid-card">
-      <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
-      <div class="service-name">ERGONOMIC CARE</div>
+
+    <div class="grid-card" data-title="ERGONOMIC CARE" data-desc="Ergonomic care description">
+      <img src="assets/service7.jpg">
+      <span>ERGONOMIC CARE</span>
     </div>
-    <!-- Service 8 -->
-    <div class="grid-card">
-      <img src="assets/service8.jpg" alt="WEIGHT LOSS AND WEIGHT GAIN">
-      <div class="service-name">WEIGHT LOSS AND WEIGHT GAIN</div>
+
+    <div class="grid-card" data-title="GUT HEALTH" data-desc="Gut health description">
+      <img src="assets/service9.jpg">
+      <span>GUT HEALTH</span>
     </div>
-    <!-- Service 9 -->
-    <div class="grid-card">
-      <img src="assets/service9.jpg" alt="GUT HEALTH">
-      <div class="service-name">GUT HEALTH</div>
-    </div>
-    <!-- Service 10 -->
-    <div class="grid-card">
-      <img src="assets/service10.jpg" alt="NUTRITION FOR LIFESTYLE">
-      <div class="service-name">NUTRITION FOR LIFESTYLE</div>
-    </div>
-    <!-- Service 11 -->
-    <div class="grid-card">
-      <img src="assets/service11.jpg" alt="TELE CONSULTATION">
-      <div class="service-name">TELE CONSULTATION</div>
-    </div>
-    <!-- Service 12 -->
-    <div class="grid-card">
-      <img src="assets/service12.jpg" alt="STRETCH LAB">
-      <div class="service-name">STRETCH LAB</div>
-    </div>
-    <!-- Service 13 -->
-    <div class="grid-card">
-      <img src="assets/service13.jpg" alt="SPORTS NUTRITION">
-      <div class="service-name">SPORTS NUTRITION</div>
-    </div>
-    <!-- Service 14 -->
-    <div class="grid-card">
-      <img src="assets/service14.jpg" alt="PRE AND POST SURGICAL REHAB">
-      <div class="service-name">PRE AND POST SURGICAL REHAB</div>
-    </div>
-    <!-- Service 15 -->
-    <div class="grid-card">
-      <img src="assets/service15.jpg" alt="GERIATRIC REHAB">
-      <div class="service-name">GERIATRIC REHAB</div>
-    </div>
-    <!-- Service 16 -->
-    <div class="grid-card">
-      <img src="assets/service16.jpg" alt="HOME CARE PHYSIOTHERAPY">
-      <div class="service-name">HOME CARE PHYSIOTHERAPY</div>
+
+    <div class="grid-card" data-title="SPORTS NUTRITION" data-desc="Sports nutrition description">
+      <img src="assets/service13.jpg">
+      <span>SPORTS NUTRITION</span>
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal" id="serviceModal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+  </div>
+</div>
 
 <!-- Treatment -->
   <section class="treatments  reveal">
