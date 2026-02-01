@@ -19,10 +19,11 @@ setInterval(() => showSlide(index + 1), 4000);
 
 // Show All Services
 document.getElementById("showAllBtn").addEventListener("click", function(){
-  document.getElementById("allServices").style.display = "grid";
-  document.querySelector(".carousel-wrapper").style.display = "none";
-  this.style.display = "none";
+  document.getElementById("allServices").style.display = "grid";   // show grid
+  document.querySelector(".carousel-wrapper").style.display = "none"; // hide carousel
+  this.style.display = "none";  // hide button
 });
+
 
 // Modal functionality stays the same for .service-card clicks
 

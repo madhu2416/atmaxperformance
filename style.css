@@ -54,6 +54,74 @@ h1, h2, h3 {
   margin-top: 20px;
   z-index: 2;
 }
+
+/* Show All Services Button */
+.show-all-btn {
+  background-color: #005c4b;   /* Same dark green as treatments */
+  color: #fff;
+  padding: 12px 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.show-all-btn:hover {
+  background-color: #00796b;
+}
+
+/* All Services Grid */
+.all-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 50px auto;
+}
+
+.all-services-grid .service-card {
+  padding-bottom: 100%; /* Square */
+  position: relative;
+}
+
+/* Image & overlay */
+.all-services-grid .service-card img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.all-services-grid .service-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 76, 64, 0.7);
+  padding: 10px 5px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Mobile responsive */
+@media(max-width:768px) {
+  .all-services-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+    gap: 15px;
+  }
+  .all-services-grid .service-card {
+    padding-bottom: 100%; /* Keep square */
+  }
+  .show-all-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
 /* Carousel wrapper */
 .carousel-wrapper {
   position: relative;
@@ -67,7 +135,7 @@ h1, h2, h3 {
 /* Carousel flex container */
 .carousel {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 20s ease-in-out;
 }
 
 /* Each service card */
