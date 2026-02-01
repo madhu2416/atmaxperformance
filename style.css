@@ -392,7 +392,7 @@ h1, h2, h3 {
 }
 
 .hero {
-  outline: 5px solid blue !important;
+  outline: 5px solid yellow !important;
 }
 
 /* ===== Reduce Hero Height (Vertical Space) ===== */
@@ -407,4 +407,55 @@ h1, h2, h3 {
     min-height: 45vh;     /* compact hero for phones */
     padding: 40px 15px;
   }
+}
+
+
+/* Subtle glow animation for hero title */
+.hero-title {
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 200, 150, 0.4);
+  animation: heroGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+  from {
+    text-shadow: 0 0 8px rgba(0, 200, 150, 0.3);
+  }
+  to {
+    text-shadow: 0 0 16px rgba(0, 200, 150, 0.6);
+  }
+}
+
+.hero-cta {
+  margin-top: 20px;
+  display: inline-block;
+  background: #00c896;
+  color: #003f35;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 200, 150, 0.3);
+}
+
+.hero-cta:hover,
+.hero-cta:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 200, 150, 0.45);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(0,200,150,0.12), transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(0,200,150,0.12), transparent 40%);
+  animation: floatBg 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes floatBg {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-20px); }
 }
