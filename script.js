@@ -1,27 +1,38 @@
-// ======= Top 5 Carousel =======
-const carousel = document.querySelector('.top-services-carousel');
+const carousel = document.querySelector('.carousel');
 const leftArrow = document.querySelector('.arrow-left');
 const rightArrow = document.querySelector('.arrow-right');
+const serviceCards = document.querySelectorAll('.carousel .service-card');
 
-let scrollAmount = 0;
-const cardWidth = carousel.querySelector('.service-card').offsetWidth + 20; // includes gap
+let currentIndex = 0;
 
+// Auto-slide every 4s
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % serviceCards.length;
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}, 4000);
+
+// Arrow clicks
 leftArrow.addEventListener('click', () => {
-  carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  currentIndex = (currentIndex - 1 + serviceCards.length) % serviceCards.length;
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 });
 
 rightArrow.addEventListener('click', () => {
-  carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  currentIndex = (currentIndex + 1) % serviceCards.length;
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 });
 
-// ======== Show All Services Button ========
+// Show All Services
 const showAllBtn = document.querySelector('.view-all-services');
-const extraServicesContainer = document.querySelector('.services-extra');
+const extraServices = document.querySelector('.services-extra');
 
 showAllBtn.addEventListener('click', () => {
-  extraServicesContainer.style.display = 'flex';
+  extraServices.style.display = 'flex';
   showAllBtn.style.display = 'none';
 });
+
+// Modal functionality stays the same for .service-card clicks
+
 
 // ======= MODAL CODE STAYS SAME =======
 // Your existing modal JS for clicking .service-card and opening modal remains unchanged
