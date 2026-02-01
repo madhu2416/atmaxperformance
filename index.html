@@ -73,13 +73,12 @@
 </section>
 
 
-
 <!-- Services Section -->
 <section class="services-section reveal">
   <h2 class="section-title">Our Services</h2>
 
-  <!-- Auto Carousel (Top 5 Services) -->
-  <div class="auto-carousel-wrapper">
+  <!-- Top 5 Auto Carousel -->
+  <div class="auto-carousel-wrapper" id="topCarousel">
     <div class="auto-carousel-track" id="autoCarouselTrack">
 
       <div class="auto-card" data-title="ORTHO REHAB" data-desc="Heal from injury, recover from surgery, and reclaim your active lifestyle.">
@@ -111,8 +110,13 @@
   </div>
 
   <!-- Show More Button -->
-  <div class="show-btn-wrapper">
+  <div class="show-btn-wrapper" id="showBtnWrap">
     <button id="showAllBtn">Show More Services</button>
+  </div>
+
+  <!-- Back Button -->
+  <div class="back-btn-wrapper" id="backBtnWrap" style="display:none;">
+    <button id="backToTopBtn">← Back to Top Services</button>
   </div>
 
   <!-- Hidden Remaining Services -->

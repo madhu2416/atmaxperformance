@@ -56,7 +56,7 @@ h1, h2, h3 {
 }
 //* Carousel */
 .services-section {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS VISION & MISSION */
+  background: linear-gradient(135deg, #005c4b, #00796b);
   padding: 60px 20px;
   color: white;
   text-align: center;
@@ -94,7 +94,7 @@ h1, h2, h3 {
 
 .auto-card span,
 .grid-card span {
-  color: #ffffff; /* WHITE TEXT */
+  color: #ffffff;
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -105,25 +105,27 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-/* Show More Button */
-.show-btn-wrapper {
+/* Buttons */
+.show-btn-wrapper,
+.back-btn-wrapper {
   margin: 25px 0;
-  text-align: center;
 }
 
-#showAllBtn {
-  padding: 14px 28px;
+#showAllBtn,
+#backToTopBtn {
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 20px;
   font-weight: bold;
   background: #00c896;
   color: #004d40;
   cursor: pointer;
+  font-size: 14px;
 }
 
-/* Grid - IMPORTANT FIX */
+/* Grid */
 .all-services-grid {
-  display: none;   /* Hidden initially */
+  display: none;
   margin-top: 30px;
   grid-template-columns: repeat(2, minmax(140px, 1fr));
   gap: 15px;
@@ -174,6 +176,7 @@ h1, h2, h3 {
     height: 170px;
   }
 }
+
 
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
 .treatments {
