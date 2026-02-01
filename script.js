@@ -1,20 +1,31 @@
-// ====================== SERVICES INTERACTION ======================
+// ======= Top 5 Carousel =======
+const carousel = document.querySelector('.top-services-carousel');
+const leftArrow = document.querySelector('.arrow-left');
+const rightArrow = document.querySelector('.arrow-right');
 
-// Top 5 service cards
-const topServiceCards = document.querySelectorAll('.top-services .service-card');
+let scrollAmount = 0;
+const cardWidth = carousel.querySelector('.service-card').offsetWidth + 20; // includes gap
 
-// Extra services (hidden initially)
-const extraServiceCards = document.querySelectorAll('.services-extra .service-card');
+leftArrow.addEventListener('click', () => {
+  carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+});
 
-// "Show All Services" button
+rightArrow.addEventListener('click', () => {
+  carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+});
+
+// ======== Show All Services Button ========
 const showAllBtn = document.querySelector('.view-all-services');
+const extraServicesContainer = document.querySelector('.services-extra');
 
-// Modal elements (assuming your existing modal code uses these IDs)
-const modal = document.getElementById('serviceModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalDescription = document.getElementById('modalDescription');
-const modalImage = document.getElementById('modalImage');
-const closeBtn = document.querySelector('.close');
+showAllBtn.addEventListener('click', () => {
+  extraServicesContainer.style.display = 'flex';
+  showAllBtn.style.display = 'none';
+});
+
+// ======= MODAL CODE STAYS SAME =======
+// Your existing modal JS for clicking .service-card and opening modal remains unchanged
+
 
 // ======== OPEN MODAL FUNCTION ========
 function openModal(card) {

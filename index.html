@@ -74,248 +74,61 @@
 
 
 
-  <!-- Services -->
-  <!-- ---------- SERVICE MODAL ---------- -->
-<div id="serviceModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img id="modalImage" style="width:100%; border-radius:10px;">
-    <h2 id="modalTitle"></h2>
-    <p id="modalDescription"></p>
-  </div>
-</div>
-<section class="services-section">
-
+  <section class="services-section">
   <h2>Our Services</h2>
 
-  <!-- Top 5 Services -->
-  <div class="top-services">
-    <div class="service-card" data-service="ORTHO REHAB" data-img="assets/service1.jpg" data-description="Full description here...">
-      <img src="assets/service1.jpg" alt="ORTHO REHAB">
-      <div class="service-name">ORTHO REHAB</div>
+  <!-- Top 5 Services Carousel -->
+  <div class="carousel-container">
+    <div class="arrow arrow-left">&#10094;</div>
+    <div class="top-services-carousel">
+      <div class="service-card" data-service="ORTHO REHAB" data-img="assets/service1.jpg" data-description="Full description for ORTHO REHAB...">
+        <img src="assets/service1.jpg" alt="ORTHO REHAB">
+        <div class="service-name">ORTHO REHAB</div>
+      </div>
+      <div class="service-card" data-service="NEURO REHAB" data-img="assets/service2.jpg" data-description="Full description for NEURO REHAB...">
+        <img src="assets/service2.jpg" alt="NEURO REHAB">
+        <div class="service-name">NEURO REHAB</div>
+      </div>
+      <div class="service-card" data-service="PEDIATRIC REHAB" data-img="assets/service3.jpg" data-description="Full description for PEDIATRIC REHAB...">
+        <img src="assets/service3.jpg" alt="PEDIATRIC REHAB">
+        <div class="service-name">PEDIATRIC REHAB</div>
+      </div>
+      <div class="service-card" data-service="SPORTS REHAB" data-img="assets/service4.jpg" data-description="Full description for SPORTS REHAB...">
+        <img src="assets/service4.jpg" alt="SPORTS REHAB">
+        <div class="service-name">SPORTS REHAB</div>
+      </div>
+      <div class="service-card" data-service="ERGONOMIC CARE" data-img="assets/service7.jpg" data-description="Full description for ERGONOMIC CARE...">
+        <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
+        <div class="service-name">ERGONOMIC CARE</div>
+      </div>
     </div>
-    <div class="service-card" data-service="NEURO REHAB" data-img="assets/service2.jpg" data-description="Full description here...">
-      <img src="assets/service2.jpg" alt="NEURO REHAB">
-      <div class="service-name">NEURO REHAB</div>
-    </div>
-    <div class="service-card" data-service="PRENATAL-ANTENATAL" data-img="assets/service5.jpg" data-description="Full description here...">
-      <img src="assets/service5.jpg" alt="PRENATAL-ANTENATAL">
-      <div class="service-name">PRENATAL-ANTENATAL</div>
-    </div>
-    <div class="service-card" data-service="SPORTS REHAB" data-img="assets/service4.jpg" data-description="Full description here...">
-      <img src="assets/service4.jpg" alt="SPORTS REHAB">
-      <div class="service-name">SPORTS REHAB</div>
-    </div>
-    <div class="service-card" data-service="ERGONOMIC CARE" data-img="assets/service7.jpg" data-description="Full description here...">
-      <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
-      <div class="service-name">ERGONOMIC CARE</div>
-    </div>
+    <div class="arrow arrow-right">&#10095;</div>
   </div>
 
-  <!-- Show All Button -->
+  <!-- Show All Services Button -->
   <div class="view-all-services">Show All Services</div>
 
-  <!-- Extra Services (Hidden Initially) -->
+  <!-- Extra Services (hidden initially) -->
   <div class="services-extra">
-          <!-- Service 1 -->
-      <div class="service" 
-           data-service="ORTHO REHAB"
-           data-description="heal from injury, recover from surgery, and reclaim your active lifestyle. 
-At our clinic, we understand that recovering from an injury or surgery is more than a physical process—it’s a personal journey. Our expert team provides compassionate, one on-one orthopaedic rehabilitation tailored specifically to your needs and goals. Through personalized exercise regimens and hands-on therapy, we focus on reducing your pain, restoring your strength, and rebuilding your mobility. We’re here to support and guide you every step of the way, helping you regain not just function, but also the confidence to return to the active life you love. Your journey to moving freely and living fully starts with us."
-           data-img="assets/service1.jpg">
-        <div class="service-img">
-          <img src="assets/service1.jpg" alt="ORTHO REHAB">
-        </div>
-        <h3 class="service-title">ORTHO REHAB</h3>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="service" 
-           data-service="NEURO REHAB"
-           data-description=" Empowering you to achieve your highest potential for recovery. 
-Specialized neurological rehabilitation for stroke, brain injury, guillain barre syndrome, spinal cord injury, Parkinson’s disease and other diseases.  We assist individuals in rebuilding pathways, restoring function, and regaining independence.  Reclaim your strength, movement, and confidence for everyday activities.  Retrain the brain and body following a neurological event or diagnosis.  Our professional therapists restore skills using evidence-based strategies.  A journey to better independence and quality of life begins here."
-           data-img="assets/service2.jpg">
-        <div class="service-img">
-          <img src="assets/service2.jpg" alt="NEURO REHAB">
-        </div>
-        <h3 class="service-title">NEURO REHAB</h3>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="service" 
-           data-service="PEDIATRIC REHAB"
-           data-description=" Guiding your child to achieve their unique goals and shine. 
-Utilizing individualized therapy to support the growth of kids of all abilities.  We develop strength, mobility, and confidence via play-based exercises.  Enabling your kid to realize their full potential.  Professional paediatric rehabilitation for disabilities, injuries, and developmental delays.  In order to accomplish milestones and promote independence, we collaborate with families.  Helping your child on their path to a more promising and capable future."
-           data-img="assets/service3.jpg">
-        <div class="service-img">
-          <img src="assets/service3.jpg" alt="PEDIATRIC REHAB">
-        </div>
-        <h3 class="service-title">PEDIATRIC REHAB</h3>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="service" 
-           data-service="SPORTS REHAB"
-           data-description="Rehab your way back to 100% and perform at your best. 
-Get back into the game stronger, faster, and more resilient.  Our sports-specific therapy addresses current injuries and avoids future ones.  From sprains to post-surgery, we’ll help you regain your competitive advantage.  Expert rehabilitation for sports injuries and recovery.  We don’t just alleviate pain; we also improve strength, mobility, and confidence.  Your focused plan for safely returning to top performance."
-           data-img="assets/service4.jpg">
-        <div class="service-img">
-          <img src="assets/service4.jpg" alt="SPORTS REHAB">
-        </div>
-        <h3 class="service-title">SPORTS REHAB</h3>
-      </div>
-
-      <!-- Service 5 -->
-      <div class="service" 
-           data-service="PRENATAL- ANTENATAL REHAB"
-           data-description=" Nurturing strength for motherhood’s journey.
-Encourage your body’s progress through pregnancy and postpartum healing.  Specialized treatment for diastasis recti, pelvic floor strength, and core repair.  Empowering you to gain strength, reduce discomfort, and thrive in parenthood.  Expert therapy for pregnant wellbeing and postnatal recovery.  Address back discomfort and pelvic instability, and get your body ready for birth and beyond.  Regain comfort, functionality, and confidence in your evolving body. Your path to recovery and renewed vitality begins with supportive care."
-           data-img="assets/service5.jpg">
-        <div class="service-img">
-          <img src="assets/service5.jpg" alt="PRENATAL- ANTENATAL REHAB">
-        </div>
-        <h3 class="service-title">PRENATAL- ANTENATAL REHAB</h3>
-      </div>
-
-      <!-- Service 6 -->
-      <div class="service" 
-           data-service="FUNCTIONAL FITNESS"
-           data-description=" journey to sustainable strength and vitality starts here. 
-Improve your mobility, feel stronger, and lay the groundwork for long-term fitness.  Our customized approach emphasizes functional strength and injury prevention.  Achieve a healthier, more active lifestyle at your own speed.  Achieve your exercise objectives via smart, effective, and safe programming.  We’ll guide you whether you’re just getting started or looking to break through a plateau.  Develop the power, energy, and confidence needed to succeed in everyday life."
-           data-img="assets/service6.jpg">
-        <div class="service-img">
-          <img src="assets/service6.jpg" alt="FUNCTIONAL FITNESS">
-        </div>
-        <h3 class="service-title">FUNCTIONAL FITNESS</h3>
-      </div>
-
-      <!-- Service 7 -->
-      <div class="service" 
-           data-service="ERGONOMIC CARE (ERGO FIT)"
-           data-description="Invest in your health—reduce fatigue and stay pain-free all day. 
-Optimize your environment to decrease pain and increase productivity.  Our ergonomic evaluations and solutions address neck, back, and wrist discomfort.  Work smarter, feel better, and avoid injuries with customized setups. We address posture, repetitive strain, and discomfort at your workstation.  Make your workspace supportive of your body and beneficial to your overall well-being. Receive individualized advice for your home or business setting."
-           data-img="assets/service7.jpg">
-        <div class="service-img">
-          <img src="assets/service7.jpg" alt="ERGONOMIC CARE (ERGO FIT)">
-        </div>
-        <h3 class="service-title">ERGONOMIC CARE (ERGO FIT)</h3>
-      </div>
-
-      <!-- Service 8 -->
-      <div class="service" 
-           data-service="WEIGHT LOSS AND WEIGHT GAIN"
-           data-description="path to a stronger, healthier you begins with the right fuel. 
-A personalized, long-term nutrition plan can help you achieve your weight objectives to  promote healthy weight reduction or increase based on your specific metabolism.    We prioritize proper nutrition, the development of healthy habits, and long-term outcomes.  Move away from fat diets and toward evidence-based weight management techniques. Providing you with the knowledge and assistance you need to achieve your goals with confidence.  Receive one-on-one coaching, personalized meal recommendations, and concrete tactics."
-           data-img="assets/service8.jpg">
-        <div class="service-img">
-          <img src="assets/service8.jpg" alt="WEIGHT LOSS AND WEIGHT GAIN">
-        </div>
-        <h3 class="service-title">WEIGHT LOSS AND WEIGHT GAIN</h3>
-      </div>
-
-      <!-- Service 9 -->
-      <div class="service" 
-           data-service="GUT HEALTH"
-           data-description=" Reclaim comfort, vitality, and confidence in your body every day. 
-Nourish your gut for better overall health and well-being.  Our customized regimens address bloating, discomfort, and digestive imbalances.  Improve your digestion, energy, and overall health from the inside out.  Go beyond symptom management to address the underlying source of your gastrointestinal issues.  We employ evidence-based diet to rebalance and enhance your microbiota.  Experience long-term relief while laying the groundwork for good health.  Your quest to improved digestion and a happier gut begins here."
-           data-img="assets/service9.jpg">
-        <div class="service-img">
-          <img src="assets/service9.jpg" alt="GUT HEALTH">
-        </div>
-        <h3 class="service-title">GUT HEALTH</h3>
-      </div>
-
-      <!-- Service 10 -->
-      <div class="service" 
-           data-service="NUTRITION FOR LIFESTYLE"
-           data-description="Empower your body to heal, thrive, and improve your quality of life 
-Use evidence-based diet to manage PCOD and chronic disease through targeted, healing nutrition..  We provide customized techniques to treat diabetes, hypertension, and autoimmune diseases.  Take control of your health with sustainable, disease-fighting eating options.  Navigate chronic illness with confidence thanks to specialized nutritional advice.  Our strategies are intended to alleviate symptoms, manage medications, and increase vitality."
-           data-img="assets/service10.jpg">
-        <div class="service-img">
-          <img src="assets/service10.jpg" alt="NUTRITION FOR LIFESTYLE">
-        </div>
-        <h3 class="service-title">NUTRITION FOR LIFESTYLE</h3>
-      </div>
-
-      <!-- Service 11 -->
-      <div class="service" 
-           data-service="TELE CONSULTATION"
-           data-description="Professional support, clear guidance, and progress tracking—all online. 
-Highly skilled health care guidance from the convenience of your own home.  Continue your recovery seamlessly, regardless of where you are.  Do not let distance or time limits impede your rehabilitation.  Our private video consultations offer individualized assessments and treatment recommendations.  Effective care, delivered directly to you via modern telehealth.  When you are unable to visit the clinic, your healing path continues.  Have one-on-one virtual sessions with a qualified healthcare professionals."
-           data-img="assets/service11.jpg">
-        <div class="service-img">
-          <img src="assets/service11.jpg" alt="TELE CONSULTATION">
-        </div>
-        <h3 class="service-title">TELE CONSULTATION</h3>
-      </div>
-
-      <!-- Service 12 -->
-      <div class="service" 
-           data-service="STRETCH LAB"
-           data-description="Reclaim your body’s natural mobility and unlock your potential for movement.
-
-Reduce tension, increase flexibility, and regain your natural range of motion. Our assisted stretching techniques address deep muscular limitations and stiffness. **Get long-lasting pain relief and move freely. Targeted stretch therapy can boost performance and speed up recovery. Our expert-guided procedures improve mobility and lower the chance of injury. Our therapist-assisted sessions go beyond basic stretching to effectively address chronic pain, poor posture, and restricted movement. They also transform how your body feels, moves, and operates in everyday life."
-           data-img="assets/service12.jpg">
-        <div class="service-img">
-          <img src="assets/service12.jpg" alt="STRETCH LAB">
-        </div>
-        <h3 class="service-title">STRETCH LAB</h3>
-      </div>
-
-      <!-- Service 13 -->
-      <div class="service" 
-           data-service="SPORTS NUTRITION"
-           data-description="Power your body to win, recover, and repeat. 
-Boost your performance, improve your recuperation, and reach your athletic goals.  Our individualized dietary regimens are intended to enhance energy and results.  Train smarter, recover faster, and perform at your best.  Unleash your full potential with evidence-based sports nutrition solutions.  We fine-tune your diet for pre-workout fueling and post-workout recuperation.  Gain a competitive advantage with tailored, intelligent nutrition.  Improve your training with nutrition designed for athletes."
-           data-img="assets/service13.jpg">
-        <div class="service-img">
-          <img src="assets/service13.jpg" alt="SPORTS NUTRITION">
-        </div>
-        <h3 class="service-title">SPORTS NUTRITION</h3>
-      </div>
-
-      <!-- Service 14 -->
-      <div class="service" 
-           data-service="PRE AND POST SURGICAL REHAB"
-           data-description="specialized therapy  for a successful surgery and a strong, safe return to activity. 
-Prepare your body for surgery so that you can recover more quickly and smoothly.  Our guided post-operative rehabilitation bounces back your strength and restores function.  Enhance your surgical results and resume your life with confidence.  Don’t just have surgery; also provide excellent pre- and post-operative care.  We offer the experienced support you need to manage your recovery path.  Minimize pain, problems, and obtain the best possible result."
-           data-img="assets/service14.jpg">
-        <div class="service-img">
-          <img src="assets/service14.jpg" alt="PRE AND POST SURGICAL REHAB">
-        </div>
-        <h3 class="service-title">PRE AND POST SURGICAL REHAB</h3>
-      </div>
-
-      <!-- Service 15 -->
-      <div class="service" 
-           data-service="GERIATRIC REHAB"
-           data-description="Expert therapy to help you navigate the challenges of aging 
-Restore your strength, balance, and confidence so that you can continue living independently.  Our gentle, efficient therapy relieves arthritis pain and aids in the rehabilitation from falls.  Reclaim your freedom and safely engage in the things you enjoy.  Dedicated treatment for the specific requirements of older persons.  Our designed fall prevention programs lower risk while building resilience. We concentrate on minimizing discomfort, increasing mobility, and avoiding injuries.  Empowering you to enjoy life fully and age with strength and dignity."
-           data-img="assets/service15.jpg">
-        <div class="service-img">
-          <img src="assets/service15.jpg" alt="GERIATRIC REHAB">
-        </div>
-        <h3 class="service-title">GERIATRIC REHAB</h3>
-      </div>
-
-      <!-- Service 16 -->
-      <div class="service" 
-           data-service="HOME CARE PHYSIOTHERAPY"
-           data-description=" journey to recovery, skip the travel and receive high-quality care
-Expert physiotherapy is provided to your door for maximum convenience and comfort.  To speed up your recuperation, receive one-on-one, customized therapies in the comfort of your home.  Ideal for those recovering from surgery, experiencing mobility challenges, or having difficulty traveling.  Bringing professional rehab to you for a smooth healing experience.  Our therapists offer personalized treatment plans in the convenience of your own home.  You may regain your strength, mobility, and independence without leaving your home."
-           data-img="assets/service16.jpg">
-        <div class="service-img">
-          <img src="assets/service16.jpg" alt="HOME CARE PHYSIOTHERAPY">
-        </div>
-        <h3 class="service-title">HOME CARE PHYSIOTHERAPY</h3>
-      </div>
-
+    <div class="service-card" data-service="WEIGHT LOSS AND WEIGHT GAIN" data-img="assets/service8.jpg" data-description="Full description here...">
+      <img src="assets/service8.jpg" alt="WEIGHT LOSS AND WEIGHT GAIN">
+      <div class="service-name">WEIGHT LOSS AND WEIGHT GAIN</div>
     </div>
+    <div class="service-card" data-service="GUT HEALTH" data-img="assets/service9.jpg" data-description="Full description here...">
+      <img src="assets/service9.jpg" alt="GUT HEALTH">
+      <div class="service-name">GUT HEALTH</div>
+    </div>
+    <div class="service-card" data-service="NUTRITION FOR LIFESTYLE" data-img="assets/service10.jpg" data-description="Full description here...">
+      <img src="assets/service10.jpg" alt="NUTRITION FOR LIFESTYLE">
+      <div class="service-name">NUTRITION FOR LIFESTYLE</div>
+    </div>
+    <div class="service-card" data-service="TELE CONSULTATION" data-img="assets/service11.jpg" data-description="Full description here...">
+      <img src="assets/service11.jpg" alt="TELE CONSULTATION">
+      <div class="service-name">TELE CONSULTATION</div>
+    </div>
+    <!-- Add remaining services here -->
   </div>
-
- 
 </section>
-
 
 <!-- Treatment -->
   <section class="treatments  reveal">
