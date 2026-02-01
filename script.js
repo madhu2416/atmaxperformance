@@ -1,43 +1,43 @@
-// Carousel Auto Slide + Infinite Loop
-const track = document.getElementById("carouselTrack");
+// --- Carousel Infinite Slide ---
+const carouselTrack = document.getElementById("top5CarouselTrack");
 const carouselCards = document.querySelectorAll(".carousel-card");
 let carouselIndex = 0;
 
-function moveCarousel() {
+function slideCarousel() {
   carouselIndex++;
-  if(carouselIndex >= carouselCards.length) carouselIndex = 0;
-  const width = carouselCards[0].offsetWidth + 15; // card width + gap
-  track.style.transform = `translateX(-${carouselIndex * width}px)`;
+  if (carouselIndex >= carouselCards.length) carouselIndex = 0;
+  const width = carouselCards[0].offsetWidth + 20;
+  carouselTrack.style.transform = `translateX(-${carouselIndex * width}px)`;
 }
 
-// Auto Slide every 3s
-let carouselInterval = setInterval(moveCarousel, 3000);
+let carouselInterval = setInterval(slideCarousel, 3000);
 
-// Show More Button
+// --- Show More Button ---
 const showBtn = document.getElementById("showAllBtn");
 const hiddenGrid = document.getElementById("hiddenServicesGrid");
-const backBtnWrapper = document.getElementById("backBtnWrapper");
+const top5Wrapper = document.getElementById("top5CarouselWrapper");
+const backBtn = document.getElementById("backToCarousel");
 
 showBtn.addEventListener("click", () => {
   hiddenGrid.style.display = "grid";
+  top5Wrapper.style.display = "none";
   showBtn.style.display = "none";
-  // Hide top 5 carousel
-  document.querySelector(".carousel-wrapper").style.display = "none";
-  // Show back button
-  backBtnWrapper.style.display = "block";
-  clearInterval(carouselInterval); // stop auto-slide
+  backBtn.style.display = "inline-block";
+  clearInterval(carouselInterval); // stop carousel
 });
 
-// Back Button
-document.getElementById("backToCarouselBtn").addEventListener("click", () => {
+// --- Back Button ---
+backBtn.addEventListener("click", () => {
   hiddenGrid.style.display = "none";
-  backBtnWrapper.style.display = "none";
-  document.querySelector(".carousel-wrapper").style.display = "block";
+  top5Wrapper.style.display = "block";
   showBtn.style.display = "inline-block";
-  carouselInterval = setInterval(moveCarousel, 3000); // restart carousel
+  backBtn.style.display = "none";
+  carouselIndex = 0;
+  carouselTrack.style.transform = `translateX(0px)`;
+  carouselInterval = setInterval(slideCarousel, 3000); // restart carousel
 });
 
-// Modal
+// --- Modal ---
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
