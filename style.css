@@ -391,9 +391,6 @@ h1, h2, h3 {
   }
 }
 
-.hero {
-  outline: 5px solid yellow !important;
-}
 
 /* ===== Reduce Hero Height (Vertical Space) ===== */
 .hero {
@@ -423,4 +420,33 @@ h1, h2, h3 {
 @keyframes floatBg {
   from { transform: translateY(0); }
   to   { transform: translateY(-20px); }
+}
+
+/* ===== Bold Brand Name on Hero ===== */
+.hero-title {
+  font-weight: 900;   /* Extra bold */
+  letter-spacing: 1px;
+}
+
+/* Make each bubble letter bold */
+.hero-title .bubble-letter {
+  font-weight: 900;
+}
+
+/* Mobile: normal bold letters (no bubbles), still bold */
+@media (max-width: 768px) {
+  h1.hero-title.no-gap.single-line {
+    font-weight: 900 !important;
+  }
+
+  h1.hero-title.no-gap.single-line .bubble-letter {
+    all: unset !important;
+    display: inline !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+  }
+}
+
+.hero {
+  outline: 5px solid red !important;
 }
