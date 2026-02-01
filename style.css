@@ -337,30 +337,37 @@ h1, h2, h3 {
     font-size: 1rem;
   }
 }
-/* Force single line */
-.single-line {
+/* Always keep hero title in one line */
+.hero-title.single-line {
   white-space: nowrap;
-}
-
-/* Desktop Hero Title */
-.hero-title {
-  font-size: 3rem;
   font-weight: 800;
 }
 
-/* Mobile Fix: Make it fit in one line */
+/* Desktop size */
+.hero-title {
+  font-size: 3rem;
+}
+
+/* Phone: shrink-to-fit so the whole name fits in one line */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 1.5rem;     /* Smaller so it fits */
-    font-weight: 800;     /* Bold */
-    white-space: nowrap;  /* One line */
+  .hero-title.single-line {
+    font-size: clamp(1.1rem, 6vw, 1.6rem); /* auto scales to fit screen */
+    letter-spacing: 0;                    /* tighter spacing for phones */
+    white-space: nowrap;                  /* force one line */
   }
 
-  /* Disable bubble style on mobile */
+  /* Remove bubble styling on phones, keep bold normal letters */
   .hero-title .bubble-letter {
-    all: unset;          /* remove bubble styles */
-    font-weight: 800;   /* bold text */
-    color: #ffffff;     /* white */
+    all: unset;
     display: inline;
+    font-weight: 800;
+    color: #ffffff; /* white */
+  }
+}
+
+/* Very small phones (extra safety) */
+@media (max-width: 360px) {
+  .hero-title.single-line {
+    font-size: 1.05rem;  /* smallest safe size to fit all letters */
   }
 }
