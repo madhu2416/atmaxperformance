@@ -424,7 +424,7 @@ h1, h2, h3 {
 
 /* ===== Bold Brand Name on Hero ===== */
 .hero-title {
-  font-weight: 900;   /* Extra bold */
+  font-weight: 1000;   /* Extra bold */
   letter-spacing: 1px;
 }
 
