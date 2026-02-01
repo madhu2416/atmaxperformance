@@ -72,40 +72,83 @@
   <p>We listen, understand, and work alongside you every step of the way. Our focus is on accurate diagnosis, crafting a truly personalized exercise program, and guiding you with care and compassion. Beyond treatment, our aim is to restore your confidence, strength, and independence—helping you return to a life that feels as close to normal as possible.</p>
 </section>
 
-<section class="services-section">
+<!-- Services Section -->
+<section class="services-section" style="background: linear-gradient(135deg, #005c4b, #00796b); color: #fff; padding:50px 20px;">
+  
+  <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
 
-  <!-- Top 5 Services Carousel -->
+  <!-- Top 5 Carousel -->
   <div class="carousel-wrapper">
-    <span class="arrow arrow-left">&#10094;</span>
-    <div class="carousel" id="carousel">
-      <!-- Show All Services Button -->
-<div style="text-align: center; margin: 30px 0;">
-  <button id="showAllBtn" class="show-all-btn">Show All Services</button>
-</div>
+    <div class="carousel-container" id="carousel">
+      <!-- Each service card -->
+      <div class="carousel-card" data-service="ORTHO REHAB" data-description="heal from injury, recover from surgery...">
+        <img src="assets/service1.jpg" alt="ORTHO REHAB">
+        <div class="service-name">ORTHO REHAB</div>
+      </div>
 
-<!-- All Services Grid (hidden initially) -->
-<div class="all-services-grid" id="allServices" style="display:none;">
-  <!-- Example services, repeat for all remaining services -->
-  <div class="service-card">
-    <img src="assets/service6.jpg" alt="FUNCTIONAL FITNESS">
-    <div class="service-name">FUNCTIONAL FITNESS</div>
+      <div class="carousel-card" data-service="NEURO REHAB" data-description="Specialized neurological rehabilitation...">
+        <img src="assets/service2.jpg" alt="NEURO REHAB">
+        <div class="service-name">NEURO REHAB</div>
+      </div>
+
+      <div class="carousel-card" data-service="PEDIATRIC REHAB" data-description="Guiding your child to achieve their unique goals...">
+        <img src="assets/service3.jpg" alt="PEDIATRIC REHAB">
+        <div class="service-name">PEDIATRIC REHAB</div>
+      </div>
+
+      <div class="carousel-card" data-service="SPORTS REHAB" data-description="Rehab your way back to 100%...">
+        <img src="assets/service4.jpg" alt="SPORTS REHAB">
+        <div class="service-name">SPORTS REHAB</div>
+      </div>
+
+      <div class="carousel-card" data-service="PRENATAL-ANTENATAL" data-description="Nurturing strength for motherhood’s journey...">
+        <img src="assets/service5.jpg" alt="PRENATAL-ANTENATAL">
+        <div class="service-name">PRENATAL-ANTENATAL</div>
+      </div>
+    </div>
+
+    <!-- Carousel Arrows -->
+    <button class="carousel-arrow left">&lt;</button>
+    <button class="carousel-arrow right">&gt;</button>
   </div>
-  <div class="service-card">
-    <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
-    <div class="service-name">ERGONOMIC CARE</div>
+
+  <!-- Show All Services Button -->
+  <div style="text-align:center; margin:30px 0;">
+    <button id="showAllBtn" class="show-all-btn">Show All Services</button>
   </div>
-  <div class="service-card">
-    <img src="assets/service8.jpg" alt="WEIGHT LOSS AND WEIGHT GAIN">
-    <div class="service-name">WEIGHT LOSS AND WEIGHT GAIN</div>
+
+  <!-- All Services Grid -->
+  <div class="all-services-grid" id="allServices" style="display:none;">
+    <!-- Remaining services -->
+    <div class="service-card" data-service="FUNCTIONAL FITNESS" data-description="Journey to sustainable strength and vitality...">
+      <img src="assets/service6.jpg" alt="FUNCTIONAL FITNESS">
+      <div class="service-name">FUNCTIONAL FITNESS</div>
+    </div>
+    <div class="service-card" data-service="ERGONOMIC CARE" data-description="Invest in your health—reduce fatigue...">
+      <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
+      <div class="service-name">ERGONOMIC CARE</div>
+    </div>
+    <div class="service-card" data-service="WEIGHT LOSS" data-description="Path to a stronger, healthier you...">
+      <img src="assets/service8.jpg" alt="WEIGHT LOSS">
+      <div class="service-name">WEIGHT LOSS</div>
+    </div>
+    <div class="service-card" data-service="GUT HEALTH" data-description="Reclaim comfort, vitality, and confidence...">
+      <img src="assets/service9.jpg" alt="GUT HEALTH">
+      <div class="service-name">GUT HEALTH</div>
+    </div>
+    <!-- Continue for remaining services -->
   </div>
-  <div class="service-card">
-    <img src="assets/service9.jpg" alt="GUT HEALTH">
-    <div class="service-name">GUT HEALTH</div>
-  </div>
-  <!-- Continue for remaining services -->
-</div>
 </section>
 
+<!-- Modal -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalImage" style="width:100%; border-radius:10px;">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+  </div>
+</div>
 
 <!-- Treatment -->
   <section class="treatments  reveal">

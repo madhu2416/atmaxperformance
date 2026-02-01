@@ -1,70 +1,56 @@
-const carousel = document.getElementById("carousel");
-const cards = carousel.querySelectorAll(".service-card");
-const leftArrow = document.querySelector(".arrow-left");
-const rightArrow = document.querySelector(".arrow-right");
+let carousel = document.getElementById('carousel');
+let cards = document.querySelectorAll('.carousel-card');
 let index = 0;
 
-function showSlide(i){
-  if(i < 0) index = cards.length - 1;
-  else if(i >= cards.length) index = 0;
-  else index = i;
-  carousel.style.transform = `translateX(-${index * 100}%)`;
+// Auto-slide
+function slideCarousel() {
+  index++;
+  if(index >= cards.length) index = 0;
+  carousel.style.transform = `translateX(-${index * 240}px)`; // 240 = card width + margin
 }
+let carouselInterval = setInterval(slideCarousel, 3000); // every 3s
 
-leftArrow.addEventListener("click", () => showSlide(index - 1));
-rightArrow.addEventListener("click", () => showSlide(index + 1));
+// Arrows
+document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
+  index = (index - 1 + cards.length) % cards.length;
+  carousel.style.transform = `translateX(-${index * 240}px)`;
+  resetInterval();
+});
+document.querySelector('.carousel-arrow.right').addEventListener('click', () => {
+  index = (index + 1) % cards.length;
+  carousel.style.transform = `translateX(-${index * 240}px)`;
+  resetInterval();
+});
 
-// Auto-slide (optional)
-setInterval(() => showSlide(index + 1), 4000);
+function resetInterval() {
+  clearInterval(carouselInterval);
+  carouselInterval = setInterval(slideCarousel, 3000);
+}
 
 // Show All Services
 document.getElementById("showAllBtn").addEventListener("click", function(){
-  document.getElementById("allServices").style.display = "grid";   // show grid
-  document.querySelector(".carousel-wrapper").style.display = "none"; // hide carousel
-  this.style.display = "none";  // hide button
+  document.getElementById("allServices").style.display = "grid";
+  document.querySelector(".carousel-wrapper").style.display = "none";
+  this.style.display = "none";
 });
 
+// Modal
+const modal = document.getElementById("serviceModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const closeModal = document.querySelector(".close");
 
-// Modal functionality stays the same for .service-card clicks
-
-
-// ======= MODAL CODE STAYS SAME =======
-// Your existing modal JS for clicking .service-card and opening modal remains unchanged
-
-
-// ======== OPEN MODAL FUNCTION ========
-function openModal(card) {
-  modal.style.display = 'flex';
-  modalTitle.innerText = card.dataset.service;
-  modalDescription.innerText = card.dataset.description;
-  modalImage.src = card.dataset.img;
-}
-
-// ======== CLICK EVENTS FOR TOP 5 SERVICES ========
-topServiceCards.forEach(card => {
-  card.addEventListener('click', () => openModal(card));
+// Open modal
+document.querySelectorAll('.carousel-card, .service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    modal.style.display = "flex";
+    modalImage.src = card.querySelector('img').src;
+    modalTitle.textContent = card.dataset.service;
+    modalDescription.textContent = card.dataset.description;
+  });
 });
 
-// ======== CLICK EVENTS FOR EXTRA SERVICES ========
-extraServiceCards.forEach(card => {
-  card.addEventListener('click', () => openModal(card));
-});
-
-// ======== CLOSE MODAL EVENTS ========
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-window.addEventListener('click', (e) => {
-  if (e.target === modal) modal.style.display = 'none';
-});
-
-// ======== SHOW ALL SERVICES BUTTON FUNCTIONALITY ========
-showAllBtn.addEventListener('click', () => {
-  const extraServicesContainer = document.querySelector('.services-extra');
-  extraServicesContainer.style.display = 'flex';
-  extraServicesContainer.style.flexWrap = 'wrap';
-  extraServicesContainer.style.justifyContent = 'center';
-  showAllBtn.style.display = 'none'; // hide the button after click
-});
-
+// Close modal
+closeModal.addEventListener('click', () => modal.style.display="none");
+window.addEventListener('click', e => { if(e.target==modal) modal.style.display="none"; });
