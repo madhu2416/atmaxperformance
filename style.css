@@ -390,3 +390,7 @@ h1, h2, h3 {
     color: #ffffff !important;
   }
 }
+
+.hero {
+  outline: 5px solid red !important;
+}
