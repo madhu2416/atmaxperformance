@@ -76,16 +76,9 @@ h1, h2, h3 {
 
 .auto-card,
 .grid-card {
-  min-width: 220px;
-  height: 220px;
-  margin: 0 10px;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-  background: linear-gradient(135deg, #005c4b, #00796b);
-  color: #fff;
+  background: linear-gradient(135deg, #00796b, #00a98f);
+  border: none;
+  box-shadow: 0 6px 16px rgba(0, 168, 143, 0.25); /* soft green glow, no dark outline */
 }
 
 .auto-card:hover,
