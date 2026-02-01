@@ -74,3 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   }
 });
+
+const viewBtn = document.querySelector('.view-all-services');
+const extraServices = document.querySelector('.services-extra');
+
+viewBtn.addEventListener('click', () => {
+  extraServices.style.display = 'flex';
+  extraServices.style.flexWrap = 'wrap';
+  extraServices.style.justifyContent = 'center';
+  viewBtn.style.display = 'none';
+});

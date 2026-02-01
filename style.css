@@ -55,50 +55,72 @@ h1, h2, h3 {
   z-index: 2;
 }
 
-/* ---------- Services Section (UNCHANGED) ---------- */
-.services-marquee {
-  overflow: hidden;
-  width: 100%;
-  padding: 30px 0;
-  position: relative;
-}
-
-.services-track {
-  display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-
-.service {
-  flex: 0 0 auto;
-  width: 260px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.service-img {
-  width: 100%;
-  height: 190px;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.service-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.service-title {
-  margin-top: 10px;
-  font-size: 16px;
+/* Services Section - Problem Based + Progressive Reveal */
+.services-problem {
+  padding: 50px 20px;
+  background-color: #d4f7e3; /* same as Treatments */
   color: #004d40;
+  text-align: center;
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.services-problem h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* Problem Cards - Top 5 */
+.problem-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.problem-card {
+  background: linear-gradient(135deg, #005c4b, #00796b); /* same as treatment blocks */
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+  transform: scale(1.05);
+  background: #00c896;
+  color: #001a14;
+}
+
+/* View All Button */
+.view-all-services {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #005c4b;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-all-services:hover {
+  background: #00c896;
+  color: #001a14;
+}
+
+/* Hidden services initially */
+.services-extra {
+  display: none;
+  margin-top: 30px;
+}
+
+/* Grid for extra services */
+.services-extra .service {
+  width: 260px;
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
 }
 
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
@@ -107,9 +129,6 @@ h1, h2, h3 {
   text-align: center;
   background-color: #d4f7e3;
   color: #004d40;
-}
-.treatment {
-  outline: 5px solid black !important;
 }
 
 .treatment-grid {
@@ -461,7 +480,8 @@ h1, h2, h3 {
 /* Mobile: slightly bigger but still fits in one line */
 @media (max-width: 768px) {
   h1.hero-title.no-gap.single-line {
-    font-size: clamp(1.3rem, 6.5vw, 1.8rem) !important;
+   font-size: clamp(1.5rem, 7.5vw, 2.1rem) !important;
+
     white-space: nowrap;
   }
 }
