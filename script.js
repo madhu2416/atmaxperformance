@@ -10,10 +10,11 @@ setInterval(() => {
 }, 3000);
 
 // Show All Services
-document.getElementById("showAllBtn").onclick = () => {
+document.getElementById("showAllBtn").addEventListener("click", function () {
   document.getElementById("allServicesGrid").style.display = "grid";
-  document.getElementById("showAllBtn").style.display = "none";
-};
+  this.style.display = "none"; // hide button after click
+});
+
 
 // Modal
 const modal = document.getElementById("serviceModal");
