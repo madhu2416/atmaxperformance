@@ -11,31 +11,32 @@ function slideCarousel() {
 }
 
 let carouselInterval = setInterval(slideCarousel, 3000);
-
-// --- Show More Button ---
 const showBtn = document.getElementById("showAllBtn");
 const hiddenGrid = document.getElementById("hiddenServicesGrid");
 const top5Wrapper = document.getElementById("top5CarouselWrapper");
 const backBtn = document.getElementById("backToCarousel");
 
+hiddenGrid.style.display = "none"; // enforce hidden at start
+backBtn.style.display = "none"; // back button hidden initially
+
 showBtn.addEventListener("click", () => {
-  hiddenGrid.style.display = "grid";
-  top5Wrapper.style.display = "none";
-  showBtn.style.display = "none";
-  backBtn.style.display = "inline-block";
+  hiddenGrid.style.display = "grid"; // show hidden services
+  top5Wrapper.style.display = "none"; // hide top 5 carousel
+  showBtn.style.display = "none"; // hide show more button
+  backBtn.style.display = "inline-block"; // show back button
   clearInterval(carouselInterval); // stop carousel
 });
 
-// --- Back Button ---
 backBtn.addEventListener("click", () => {
-  hiddenGrid.style.display = "none";
-  top5Wrapper.style.display = "block";
-  showBtn.style.display = "inline-block";
-  backBtn.style.display = "none";
+  hiddenGrid.style.display = "none"; // hide hidden services
+  top5Wrapper.style.display = "block"; // show top 5 carousel
+  showBtn.style.display = "inline-block"; // show show more button
+  backBtn.style.display = "none"; // hide back button
   carouselIndex = 0;
   carouselTrack.style.transform = `translateX(0px)`;
   carouselInterval = setInterval(slideCarousel, 3000); // restart carousel
 });
+
 
 // --- Modal ---
 const modal = document.getElementById("serviceModal");
