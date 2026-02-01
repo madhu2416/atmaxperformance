@@ -55,61 +55,62 @@ h1, h2, h3 {
   z-index: 2;
 }
 //* Carousel */
-
+/* ---------- Services Section ---------- */
 .services-section {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS VISION & MISSION */
-  color: #ffffff;  /* WHITE TEXT */
-}
-.section-title {
-  margin-bottom: 30px;
+  background: linear-gradient(135deg, #005c4b, #00796b); /* Same as Vision/Mission */
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
 }
 
 .auto-carousel-wrapper {
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .auto-carousel-track {
   display: flex;
-  transition: transform 0.6s ease;
-  gap: 10px; /* small space between auto cards */
+  gap: 10px; /* small space between cards */
+  transition: transform 0.5s ease;
+  cursor: grab;
 }
 
-.auto-card,
-.grid-card {
-  background: linear-gradient(135deg, #00796b, #00a98f);
-  border: none;
-  padding: 5px;
-  box-shadow: 0 6px 16px rgba(0, 168, 143, 0.25);
-  overflow: hidden;
+.auto-carousel-track:active {
+  cursor: grabbing;
+}
+
+.auto-card {
+  flex: 0 0 auto;
+  width: 200px;  /* fits nicely on phone & desktop */
+  height: 200px;
+  border-radius: 12px;
+  background-color: #00c896; /* light green background for the whole card */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-  color: #fff;
+  overflow: hidden;
+  color: #fff; /* service name text color */
+  font-weight: bold;
+  user-select: none;
 }
 
-.auto-card:hover,
-.grid-card:hover {
-  transform: scale(1.02);
-  background: #00c896;
-  color: #001a14;
-}
-
-.auto-card img,
-.grid-card img {
+/* Service image inside card */
+.auto-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.auto-card span,
-.grid-card span {
+/* Service name overlay */
+.auto-card span {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.55);
-  padding: 6px 12px;
+  background: rgba(0,0,0,0.3); /* semi-transparent overlay for readability */
+  padding: 4px 8px;
   border-radius: 6px;
   font-weight: bold;
   color: #fff;
