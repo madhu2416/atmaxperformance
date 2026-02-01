@@ -187,40 +187,51 @@ h1, h2, h3 {
   color: #004d40;
 }
 
+/* Grid Layout - 3 Columns Everywhere */
 .treatment-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* ✅ 3 per row on desktop */
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row on all devices */
+  gap: 15px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 8px;
   box-sizing: border-box;
 }
-@media (max-width: 992px) {
-  .treatment-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
+/* Mobile tweak to make 3 columns fit properly */
 @media (max-width: 576px) {
   .treatment-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr); /* FORCE 3 columns on phone */
+    gap: 10px;
+  }
+
+  .treatment-card {
+    padding: 12px;
+    font-size: 12px;  /* smaller text so 3 fit well */
+    border-radius: 10px;
   }
 }
 
 .treatment-card {
   background: linear-gradient(135deg, #005c4b, #00796b);
   color: #fff;
-  padding: 20px;
+  padding: 18px;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  min-height: 90px;  /* helps small screens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+/* Hover */
 .treatment-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
   background: #00c896;
   color: #001a14;
 }
+
 
 /* ---------- Experts (UNCHANGED) ---------- */
 .experts {
