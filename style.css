@@ -392,5 +392,19 @@ h1, h2, h3 {
 }
 
 .hero {
-  outline: 5px solid red !important;
+  outline: 5px solid blue !important;
+}
+
+/* ===== Reduce Hero Height (Vertical Space) ===== */
+.hero {
+  min-height: 60vh;        /* was 80vh or more */
+  padding: 50px 20px;     /* reduce top/bottom padding */
+}
+
+/* Mobile: make it even shorter */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 45vh;     /* compact hero for phones */
+    padding: 40px 15px;
+  }
 }
