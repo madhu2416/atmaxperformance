@@ -10,7 +10,7 @@ setInterval(() => {
   track.style.transform = `translateX(-${index * width}px)`;
 }, 3000);
 
-// Show More Services
+// Show More Services (FIXED)
 document.getElementById("showAllBtn").addEventListener("click", () => {
   document.getElementById("allServicesGrid").style.display = "grid";
   document.getElementById("showAllBtn").style.display = "none";

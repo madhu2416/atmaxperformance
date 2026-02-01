@@ -56,7 +56,7 @@ h1, h2, h3 {
 }
 //* Carousel */
 .services-section {
-  background: linear-gradient(135deg, #003c34, #004d40);
+  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS VISION & MISSION */
   padding: 60px 20px;
   color: white;
   text-align: center;
@@ -92,12 +92,14 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-.auto-card span {
+.auto-card span,
+.grid-card span {
+  color: #ffffff; /* WHITE TEXT */
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.55);
   padding: 6px 12px;
   border-radius: 6px;
   font-weight: bold;
@@ -119,11 +121,10 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-/* Grid */
+/* Grid - IMPORTANT FIX */
 .all-services-grid {
-  display: none;
+  display: none;   /* Hidden initially */
   margin-top: 30px;
-  display: grid;
   grid-template-columns: repeat(2, minmax(140px, 1fr));
   gap: 15px;
 }
@@ -139,17 +140,6 @@ h1, h2, h3 {
   height: 100%;
   object-fit: cover;
   border-radius: 12px;
-}
-
-.grid-card span {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.6);
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-weight: bold;
 }
 
 /* Modal */
