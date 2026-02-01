@@ -434,19 +434,21 @@ h1, h2, h3 {
 }
 
 /* Mobile: normal bold letters (no bubbles), still bold */
+/* ===== Increase Hero Title Size ===== */
+.hero-title {
+  font-size: 3.4rem;   /* was smaller – bigger for desktop */
+  font-weight: 900;
+}
+
+/* Mobile: slightly bigger but still fits in one line */
 @media (max-width: 768px) {
   h1.hero-title.no-gap.single-line {
-    font-weight: 900 !important;
-  }
-
-  h1.hero-title.no-gap.single-line .bubble-letter {
-    all: unset !important;
-    display: inline !important;
-    font-weight: 900 !important;
-    color: #ffffff !important;
+    font-size: clamp(1.3rem, 6.5vw, 1.8rem) !important;
+    white-space: nowrap;
   }
 }
 
+
 .hero {
-  outline: 5px solid red !important;
+  outline: 5px solid black !important;
 }
