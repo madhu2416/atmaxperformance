@@ -62,7 +62,10 @@ h1, h2, h3 {
   border-radius: 12px;
   text-align: center;
 }
-
+.services-section {
+  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS VISION & MISSION */
+  color: #ffffff;  /* WHITE TEXT */
+}
 .section-title {
   margin-bottom: 30px;
 }
