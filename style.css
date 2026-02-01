@@ -55,13 +55,7 @@ h1, h2, h3 {
   z-index: 2;
 }
 //* Carousel */
-.services-section {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS FOUNDER */
-  color: #ffffff;  /* WHITE TEXT */
-  padding: 50px 20px;
-  border-radius: 12px;
-  text-align: center;
-}
+
 .services-section {
   background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS VISION & MISSION */
   color: #ffffff;  /* WHITE TEXT */
