@@ -79,7 +79,7 @@ h1, h2, h3 {
 .grid-card {
   background: linear-gradient(135deg, #00796b, #00a98f);
   border: none;
-  padding: 5px
+  padding: 5px;
   box-shadow: 0 6px 16px rgba(0, 168, 143, 0.25);
   overflow: hidden;
   position: relative;
