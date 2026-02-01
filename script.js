@@ -1,34 +1,27 @@
-const carousel = document.querySelector('.carousel');
-const leftArrow = document.querySelector('.arrow-left');
-const rightArrow = document.querySelector('.arrow-right');
-const serviceCards = document.querySelectorAll('.carousel .service-card');
+const carousel = document.getElementById("carousel");
+const cards = carousel.querySelectorAll(".service-card");
+const leftArrow = document.querySelector(".arrow-left");
+const rightArrow = document.querySelector(".arrow-right");
+let index = 0;
 
-let currentIndex = 0;
+function showSlide(i){
+  if(i < 0) index = cards.length - 1;
+  else if(i >= cards.length) index = 0;
+  else index = i;
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+}
 
-// Auto-slide every 4s
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % serviceCards.length;
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-}, 4000);
+leftArrow.addEventListener("click", () => showSlide(index - 1));
+rightArrow.addEventListener("click", () => showSlide(index + 1));
 
-// Arrow clicks
-leftArrow.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + serviceCards.length) % serviceCards.length;
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
-
-rightArrow.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % serviceCards.length;
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
+// Auto-slide (optional)
+setInterval(() => showSlide(index + 1), 4000);
 
 // Show All Services
-const showAllBtn = document.querySelector('.view-all-services');
-const extraServices = document.querySelector('.services-extra');
-
-showAllBtn.addEventListener('click', () => {
-  extraServices.style.display = 'flex';
-  showAllBtn.style.display = 'none';
+document.getElementById("showAllBtn").addEventListener("click", function(){
+  document.getElementById("allServices").style.display = "grid";
+  document.querySelector(".carousel-wrapper").style.display = "none";
+  this.style.display = "none";
 });
 
 // Modal functionality stays the same for .service-card clicks

@@ -72,63 +72,55 @@
   <p>We listen, understand, and work alongside you every step of the way. Our focus is on accurate diagnosis, crafting a truly personalized exercise program, and guiding you with care and compassion. Beyond treatment, our aim is to restore your confidence, strength, and independence—helping you return to a life that feels as close to normal as possible.</p>
 </section>
 
-
 <section class="services-section">
-  <h2>Our Services</h2>
 
   <!-- Top 5 Services Carousel -->
   <div class="carousel-wrapper">
-    <div class="carousel">
-      <div class="service-card" data-service="ORTHO REHAB" data-img="assets/service1.jpg" data-description="Full description for ORTHO REHAB...">
+    <span class="arrow arrow-left">&#10094;</span>
+    <div class="carousel" id="carousel">
+      <!-- Repeat for top 5 services -->
+      <div class="service-card">
         <img src="assets/service1.jpg" alt="ORTHO REHAB">
         <div class="service-name">ORTHO REHAB</div>
       </div>
-      <div class="service-card" data-service="NEURO REHAB" data-img="assets/service2.jpg" data-description="Full description for NEURO REHAB...">
+      <div class="service-card">
         <img src="assets/service2.jpg" alt="NEURO REHAB">
         <div class="service-name">NEURO REHAB</div>
       </div>
-      <div class="service-card" data-service="PEDIATRIC REHAB" data-img="assets/service3.jpg" data-description="Full description for PEDIATRIC REHAB...">
+      <div class="service-card">
         <img src="assets/service3.jpg" alt="PEDIATRIC REHAB">
         <div class="service-name">PEDIATRIC REHAB</div>
       </div>
-      <div class="service-card" data-service="SPORTS REHAB" data-img="assets/service4.jpg" data-description="Full description for SPORTS REHAB...">
+      <div class="service-card">
         <img src="assets/service4.jpg" alt="SPORTS REHAB">
         <div class="service-name">SPORTS REHAB</div>
       </div>
-      <div class="service-card" data-service="ERGONOMIC CARE" data-img="assets/service7.jpg" data-description="Full description for ERGONOMIC CARE...">
-        <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
-        <div class="service-name">ERGONOMIC CARE</div>
+      <div class="service-card">
+        <img src="assets/service5.jpg" alt="PRENATAL- ANTENATAL REHAB">
+        <div class="service-name">PRENATAL- ANTENATAL REHAB</div>
       </div>
     </div>
-
-    <div class="arrow arrow-left">&#10094;</div>
-    <div class="arrow arrow-right">&#10095;</div>
+    <span class="arrow arrow-right">&#10095;</span>
   </div>
 
-  <!-- Show All Services Button -->
-  <div class="view-all-services">Show All Services</div>
+  <button id="showAllBtn">Show All Services</button>
 
-  <!-- Extra Services Grid -->
-  <div class="services-extra">
-    <div class="service-card" data-service="WEIGHT LOSS AND WEIGHT GAIN" data-img="assets/service8.jpg" data-description="Full description here...">
-      <img src="assets/service8.jpg" alt="WEIGHT LOSS AND WEIGHT GAIN">
-      <div class="service-name">WEIGHT LOSS AND WEIGHT GAIN</div>
+  <!-- All Services Grid (hidden initially) -->
+  <div class="all-services-grid" id="allServices" style="display:none;">
+    <!-- Repeat for all services -->
+    <div class="service-card">
+      <img src="assets/service6.jpg" alt="FUNCTIONAL FITNESS">
+      <div class="service-name">FUNCTIONAL FITNESS</div>
     </div>
-    <div class="service-card" data-service="GUT HEALTH" data-img="assets/service9.jpg" data-description="Full description here...">
-      <img src="assets/service9.jpg" alt="GUT HEALTH">
-      <div class="service-name">GUT HEALTH</div>
-    </div>
-    <div class="service-card" data-service="NUTRITION FOR LIFESTYLE" data-img="assets/service10.jpg" data-description="Full description here...">
-      <img src="assets/service10.jpg" alt="NUTRITION FOR LIFESTYLE">
-      <div class="service-name">NUTRITION FOR LIFESTYLE</div>
-    </div>
-    <div class="service-card" data-service="TELE CONSULTATION" data-img="assets/service11.jpg" data-description="Full description here...">
-      <img src="assets/service11.jpg" alt="TELE CONSULTATION">
-      <div class="service-name">TELE CONSULTATION</div>
+    <div class="service-card">
+      <img src="assets/service7.jpg" alt="ERGONOMIC CARE">
+      <div class="service-name">ERGONOMIC CARE</div>
     </div>
     <!-- Add remaining services here -->
   </div>
+
 </section>
+
 
 <!-- Treatment -->
   <section class="treatments  reveal">
