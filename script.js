@@ -2,27 +2,26 @@ let carousel = document.getElementById('carousel');
 let cards = document.querySelectorAll('.carousel-card');
 let index = 0;
 
-function slideCarousel() {
-  index++;
-  if(index >= cards.length) index = 0;
-  carousel.style.transform = `translateX(-${index * 220}px)`; // 220 = card width + margin
+// Carousel navigation
+function updateCarousel() {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
 }
-let carouselInterval = setInterval(slideCarousel, 3000);
 
 document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
   index = (index - 1 + cards.length) % cards.length;
-  carousel.style.transform = `translateX(-${index * 220}px)`;
-  resetInterval();
+  updateCarousel();
 });
+
 document.querySelector('.carousel-arrow.right').addEventListener('click', () => {
   index = (index + 1) % cards.length;
-  carousel.style.transform = `translateX(-${index * 220}px)`;
-  resetInterval();
+  updateCarousel();
 });
-function resetInterval() {
-  clearInterval(carouselInterval);
-  carouselInterval = setInterval(slideCarousel, 3000);
-}
+
+// Auto slide
+let autoSlide = setInterval(() => {
+  index = (index + 1) % cards.length;
+  updateCarousel();
+}, 3000);
 
 // Show All Services
 document.getElementById("showAllBtn").addEventListener("click", function(){
