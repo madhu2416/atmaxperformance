@@ -78,7 +78,13 @@ h1, h2, h3 {
 .grid-card {
   background: linear-gradient(135deg, #00796b, #00a98f);
   border: none;
-  box-shadow: 0 6px 16px rgba(0, 168, 143, 0.25); /* soft green glow, no dark outline */
+  box-shadow: 0 6px 16px rgba(0, 168, 143, 0.25);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  background: linear-gradient(135deg, #005c4b, #00796b);
+  color: #fff;
 }
 
 .auto-card:hover,
@@ -545,5 +551,5 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid rgb(223, 35, 148) !important;
+  outline: 5px solid green !important;
 }
