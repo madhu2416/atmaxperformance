@@ -8,34 +8,43 @@ const backBtnWrap = document.getElementById("backBtnWrap");
 let index = 0;
 let sliderInterval;
 
-// Start slider
 function startSlider() {
+  const cardWidth = cards[0].offsetWidth + 20;
+
   sliderInterval = setInterval(() => {
     index++;
-    if (index >= cards.length) index = 0;
-    const width = cards[0].offsetWidth + 20;
-    track.style.transform = `translateX(-${index * width}px)`;
-  }, 3000);
+    track.style.transition = "transform 0.6s ease";
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+    // Reset seamlessly when reaching clones
+    if (index === 5) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = 0;
+        track.style.transform = `translateX(0px)`;
+      }, 600);
+    }
+  }, 2500);
 }
 
 startSlider();
 
 // Show More
 document.getElementById("showAllBtn").addEventListener("click", () => {
-  topCarousel.style.display = "none";     // hide top 5
+  topCarousel.style.display = "none";
   showBtnWrap.style.display = "none";
-  allGrid.style.display = "grid";         // show grid
-  backBtnWrap.style.display = "block";    // show back arrow
-  clearInterval(sliderInterval);          // stop sliding
+  allGrid.style.display = "grid";
+  backBtnWrap.style.display = "block";
+  clearInterval(sliderInterval);
 });
 
-// Back to Top
+// Back
 document.getElementById("backToTopBtn").addEventListener("click", () => {
-  topCarousel.style.display = "block";    // show top 5
+  topCarousel.style.display = "block";
   showBtnWrap.style.display = "block";
-  allGrid.style.display = "none";         // hide grid
-  backBtnWrap.style.display = "none";     // hide back arrow
-  startSlider();                          // resume sliding
+  allGrid.style.display = "none";
+  backBtnWrap.style.display = "none";
+  startSlider();
 });
 
 // Modal
