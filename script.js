@@ -62,3 +62,5 @@ document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
 });
 
 closeModal.onclick = () => modal.style.display = "none";
+
+popupDesc.innerHTML = card.dataset.desc;     // ✅ CORRECT (renders HTML)

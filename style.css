@@ -555,5 +555,23 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid blue !important;
+  outline: 5px solid green !important;
+}
+
+.service-desc-scroll {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.service-desc-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .service-desc-scroll {
+    max-height: 50vh;
+  }
 }
