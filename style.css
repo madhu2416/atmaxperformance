@@ -599,3 +599,15 @@ h1, h2, h3 {
   text-decoration: underline;
   font-weight: 500;
 }
+
+.youtube-link,
+.instagram-link {
+  margin-top: 8px;
+}
+
+.youtube-link a,
+.instagram-link a {
+  color:  #004d40;
+  text-decoration: underline;
+  font-weight: 500;
+}
