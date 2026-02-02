@@ -45,7 +45,6 @@ document.getElementById("backToTopBtn").addEventListener("click", () => {
   backBtnWrap.style.display = "none";
   startSlider();
 });
-
 // Modal
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
@@ -57,9 +56,19 @@ document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
     modal.style.display = "flex";
     modalTitle.innerText = card.dataset.title;
 
-    // ✅ FIX: render HTML so scroll works
+    // Render HTML
     modalDesc.innerHTML = card.dataset.desc;
+
+    // 🔥 FIX: force reflow so iPhone scroll works every time
+    modalDesc.style.display = "none";
+    modalDesc.offsetHeight; // trigger reflow
+    modalDesc.style.display = "block";
   });
 });
 
-closeModal.onclick = () => modal.style.display = "none";
+closeModal.onclick = () => {
+  modal.style.display = "none";
+
+  // 🔥 FIX: reset content so next open scroll works
+  modalDesc.innerHTML = "";
+};

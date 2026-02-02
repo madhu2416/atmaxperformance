@@ -562,8 +562,8 @@ h1, h2, h3 {
 .service-popup,
 .modal-content,
 #serviceModal .modal-content {
-  background: linear-gradient(135deg, #005c4b, #00796b) !important;
-  color: #ffffff !important;
+  background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40;   
 }
 
 /* Scroll ONLY the description text */
