@@ -555,13 +555,13 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid red !important;
+  outline: 5px solid black !important;
 }
-
 /* Popup background continuity (same as Founder section) */
 .popup-container,
 .service-popup,
-.modal-content {
+.modal-content,
+#serviceModal .modal-content {
   background: linear-gradient(135deg, #005c4b, #00796b) !important;
   color: #ffffff !important;
 }
@@ -571,6 +571,7 @@ h1, h2, h3 {
   max-height: 55vh;
   overflow-y: auto;
   padding-right: 6px;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Mobile friendly height */
@@ -578,4 +579,13 @@ h1, h2, h3 {
   .desc-scroll {
     max-height: 50vh;
   }
+}
+
+/* IMPORTANT: allow scrolling inside modal */
+#serviceModal {
+  overflow: visible;
+}
+
+#serviceModal .modal-content {
+  overflow: visible;
 }

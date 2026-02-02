@@ -16,7 +16,6 @@ function startSlider() {
     track.style.transition = "transform 0.6s ease";
     track.style.transform = `translateX(-${index * cardWidth}px)`;
 
-    // Reset seamlessly when reaching clones
     if (index === 5) {
       setTimeout(() => {
         track.style.transition = "none";
@@ -57,10 +56,10 @@ document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
   card.addEventListener("click", () => {
     modal.style.display = "flex";
     modalTitle.innerText = card.dataset.title;
-    modalDesc.innerText = card.dataset.desc;
+
+    // ✅ FIX: render HTML so scroll works
+    modalDesc.innerHTML = card.dataset.desc;
   });
 });
 
 closeModal.onclick = () => modal.style.display = "none";
-
-
