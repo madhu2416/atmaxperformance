@@ -555,6 +555,27 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid blue !important;
+  outline: 5px solid red !important;
 }
 
+/* Popup background continuity (same as Founder section) */
+.popup-container,
+.service-popup,
+.modal-content {
+  background: linear-gradient(135deg, #005c4b, #00796b) !important;
+  color: #ffffff !important;
+}
+
+/* Scroll ONLY the description text */
+.desc-scroll {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Mobile friendly height */
+@media (max-width: 768px) {
+  .desc-scroll {
+    max-height: 50vh;
+  }
+}
