@@ -46,29 +46,37 @@ document.getElementById("backToTopBtn").addEventListener("click", () => {
   startSlider();
 });
 // Modal
+// Modal
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
 const closeModal = document.getElementById("closeModal");
 
+function openModal(card) {
+  modal.style.display = "flex";
+  modalTitle.innerText = card.dataset.title;
+
+  // Render HTML
+  modalDesc.innerHTML = card.dataset.desc;
+
+  // 🔥 iOS FIX: reset scroll position every time
+  const scrollBox = modalDesc.querySelector(".desc-scroll");
+  if (scrollBox) {
+    scrollBox.scrollTop = 0;
+  }
+
+  // 🔥 Force iOS to re-calc touch scrolling
+  modalDesc.style.webkitOverflowScrolling = "auto";
+  setTimeout(() => {
+    modalDesc.style.webkitOverflowScrolling = "touch";
+  }, 0);
+}
+
 document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
-  card.addEventListener("click", () => {
-    modal.style.display = "flex";
-    modalTitle.innerText = card.dataset.title;
-
-    // Render HTML
-    modalDesc.innerHTML = card.dataset.desc;
-
-    // 🔥 FIX: force reflow so iPhone scroll works every time
-    modalDesc.style.display = "none";
-    modalDesc.offsetHeight; // trigger reflow
-    modalDesc.style.display = "block";
-  });
+  card.addEventListener("click", () => openModal(card));
 });
 
 closeModal.onclick = () => {
   modal.style.display = "none";
-
-  // 🔥 FIX: reset content so next open scroll works
   modalDesc.innerHTML = "";
 };
