@@ -619,3 +619,23 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
+/* Ensure modal itself doesn't block touch scroll */
+#serviceModal {
+  position: fixed;
+  inset: 0;
+  overflow: hidden; /* prevent body scroll */
+}
+
+/* Modal content wrapper should NOT block inner scroll */
+#serviceModal .modal-content {
+  max-height: 85vh;
+  overflow: hidden; 
+}
+
+/* Scroll ONLY the description text */
+.desc-scroll {
+  max-height: 55vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+  touch-action: pan-y; /* allow vertical scroll */
+}

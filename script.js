@@ -45,35 +45,33 @@ document.getElementById("backToTopBtn").addEventListener("click", () => {
   backBtnWrap.style.display = "none";
   startSlider();
 });
-// Modal
-// Modal
+/// Modal
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
 const closeModal = document.getElementById("closeModal");
 
-function openModal(card) {
+function openServiceModal(card) {
   modal.style.display = "flex";
   modalTitle.innerText = card.dataset.title;
 
   // Render HTML
   modalDesc.innerHTML = card.dataset.desc;
 
-  // 🔥 iOS FIX: reset scroll position every time
+  // 🔥 Reset scroll every time (fixes mobile bug)
   const scrollBox = modalDesc.querySelector(".desc-scroll");
   if (scrollBox) {
     scrollBox.scrollTop = 0;
-  }
 
-  // 🔥 Force iOS to re-calc touch scrolling
-  modalDesc.style.webkitOverflowScrolling = "auto";
-  setTimeout(() => {
-    modalDesc.style.webkitOverflowScrolling = "touch";
-  }, 0);
+    // Force reflow to re-enable touch scrolling on mobile
+    scrollBox.style.overflow = "hidden";
+    scrollBox.offsetHeight; // trigger reflow
+    scrollBox.style.overflow = "auto";
+  }
 }
 
 document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
-  card.addEventListener("click", () => openModal(card));
+  card.addEventListener("click", () => openServiceModal(card));
 });
 
 closeModal.onclick = () => {
