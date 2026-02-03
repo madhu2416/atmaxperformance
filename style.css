@@ -555,7 +555,7 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid blue !important;
+  outline: 5px solid yellow !important;
 }
 /* Popup background continuity (same as Founder section) */
 .popup-container,
@@ -638,4 +638,23 @@ h1, h2, h3 {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
   touch-action: pan-y; /* allow vertical scroll */
+}
+
+#serviceModal {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+#serviceModal .modal-content {
+  max-height: 85vh;
+  overflow: hidden;
+}
+
+/* Scroll ONLY description */
+.desc-scroll {
+  max-height: 55vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }

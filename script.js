@@ -55,15 +55,15 @@ function openServiceModal(card) {
   modal.style.display = "flex";
   modalTitle.innerText = card.dataset.title;
 
-  // Render HTML
+  // Render HTML safely
   modalDesc.innerHTML = card.dataset.desc;
 
-  // 🔥 Reset scroll every time (fixes mobile bug)
+  // Reset scroll every time (mobile fix)
   const scrollBox = modalDesc.querySelector(".desc-scroll");
   if (scrollBox) {
     scrollBox.scrollTop = 0;
 
-    // Force reflow to re-enable touch scrolling on mobile
+    // Force mobile browsers to re-enable touch scrolling
     scrollBox.style.overflow = "hidden";
     scrollBox.offsetHeight; // trigger reflow
     scrollBox.style.overflow = "auto";
