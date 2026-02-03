@@ -147,7 +147,23 @@ h1, h2, h3 {
   aspect-ratio: 1/1;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
 
+.modal-content {
+  background: white;
+  padding: 25px;
+  max-width: 500px;
+  border-radius: 12px;
+  color: black;
+}
 
 .close {
   float: right;
@@ -276,6 +292,24 @@ h1, h2, h3 {
 }
 
 /* ---------- Modal (UNCHANGED) ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
 
 .close {
   float: right;
@@ -521,11 +555,40 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid black !important;
+  outline: 5px solid red !important;
 }
 /* Popup background continuity (same as Founder section) */
+.popup-container,
+.service-popup,
+.modal-content,
+#serviceModal .modal-content {
+  background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40;   
+}
 
+/* Scroll ONLY the description text */
+.desc-scroll {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 6px;
+  -webkit-overflow-scrolling: touch;
+}
 
+/* Mobile friendly height */
+@media (max-width: 768px) {
+  .desc-scroll {
+    max-height: 50vh;
+  }
+}
+
+/* IMPORTANT: allow scrolling inside modal */
+#serviceModal {
+  overflow: visible;
+}
+
+#serviceModal .modal-content {
+  overflow: visible;
+}
 
 .youtube-link {
   margin-top: 12px;
