@@ -53,17 +53,34 @@ function openServiceModal(card) {
   modal.style.display = "flex";
   modalTitle.innerText = card.dataset.title;
   modalDesc.innerHTML = card.dataset.desc;
+const modal = document.getElementById("serviceModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const closeModal = document.getElementById("closeModal");
 
-  // Fix scroll bug: force reflow every time
+function openServiceModal(card) {
+  modal.style.display = "flex";
+  document.body.classList.add("modal-open");
+
+  modalTitle.innerText = card.dataset.title;
+
+  // FORCE RE-CREATE SCROLL CONTAINER (fixes 2nd time scroll bug)
+  modalDesc.innerHTML = `
+    <div class="desc-scroll">
+      ${card.dataset.desc}
+    </div>
+  `;
+
+  // HARD RESET TOUCH SCROLL (mobile fix)
   setTimeout(() => {
     const scrollBox = modalDesc.querySelector(".desc-scroll");
     if (scrollBox) {
       scrollBox.scrollTop = 0;
-      scrollBox.style.pointerEvents = "auto";
-      scrollBox.style.overflowY = "auto";
+      scrollBox.style.overflowY = "scroll";
       scrollBox.style.webkitOverflowScrolling = "touch";
+      scrollBox.style.touchAction = "pan-y";
     }
-  }, 50);
+  }, 80);
 }
 
 document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
@@ -73,4 +90,5 @@ document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
 closeModal.onclick = () => {
   modal.style.display = "none";
   modalDesc.innerHTML = "";
+  document.body.classList.remove("modal-open");
 };

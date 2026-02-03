@@ -555,7 +555,7 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid black !important;
+  outline: 5px solid red !important;
 }
 /* Popup background continuity (same as Founder section) */
 .popup-container,
@@ -618,28 +618,30 @@ h1, h2, h3 {
   z-index: 5;
   cursor: pointer;
 }
-/* Modal wrapper */
+/* Prevent background scroll */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modal */
 #serviceModal {
   position: fixed;
   inset: 0;
-  overflow: hidden;  /* prevent body scroll */
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
 }
 
-/* Modal content */
+/* Modal box */
 #serviceModal .modal-content {
   max-height: 85vh;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* Scroll ONLY description */
+/* Scroll area ONLY */
 .desc-scroll {
   max-height: 55vh;
-  overflow-y: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
-}
-
-/* Important: Allow touch to pass */
-.modal {
-  pointer-events: auto;
+  overscroll-behavior: contain;
 }
