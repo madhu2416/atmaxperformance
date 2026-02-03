@@ -1,5 +1,6 @@
 const track = document.getElementById("autoCarouselTrack");
-const cards = document.querySelectorAll(".auto-card");
+const allCards = document.querySelectorAll(".auto-card"); // all auto cards
+const cards = Array.from(allCards).slice(0, 5); // ONLY FIRST 5 LOOP
 const topCarousel = document.getElementById("topCarousel");
 const allGrid = document.getElementById("allServicesGrid");
 const showBtnWrap = document.getElementById("showBtnWrap");
@@ -10,15 +11,10 @@ let sliderInterval;
 
 function startSlider() {
   const cardWidth = cards[0].offsetWidth + 20;
-
   clearInterval(sliderInterval);
 
   sliderInterval = setInterval(() => {
-    index++;
-
-    if (index >= cards.length) {
-      index = 0;
-    }
+    index = (index + 1) % cards.length;
 
     track.style.transition = "transform 0.6s ease";
     track.style.transform = `translateX(-${index * cardWidth}px)`;
@@ -27,7 +23,8 @@ function startSlider() {
 
 startSlider();
 
-// Show More
+// ================= SHOW MORE / BACK =================
+
 document.getElementById("showAllBtn").addEventListener("click", () => {
   topCarousel.style.display = "none";
   showBtnWrap.style.display = "none";
@@ -36,7 +33,6 @@ document.getElementById("showAllBtn").addEventListener("click", () => {
   clearInterval(sliderInterval);
 });
 
-// Back
 document.getElementById("backToTopBtn").addEventListener("click", () => {
   topCarousel.style.display = "block";
   showBtnWrap.style.display = "block";
@@ -44,6 +40,9 @@ document.getElementById("backToTopBtn").addEventListener("click", () => {
   backBtnWrap.style.display = "none";
   startSlider();
 });
+
+// ================= MODAL FIX =================
+
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
@@ -51,21 +50,27 @@ const closeModal = document.getElementById("closeModal");
 
 function openServiceModal(card) {
   modal.style.display = "flex";
+  document.body.classList.add("modal-open");
+
   modalTitle.innerText = card.dataset.title;
-  modalDesc.innerHTML = card.dataset.desc;
 
+  // FORCE desc-scroll wrapper every time (this was your bug)
+  modalDesc.innerHTML = `
+    <div class="desc-scroll">
+      ${card.dataset.desc}
+    </div>
+  `;
 
-  
-  // Fix scroll bug: force reflow every time
+  // Hard reset scroll (Android/iOS fix)
   setTimeout(() => {
     const scrollBox = modalDesc.querySelector(".desc-scroll");
     if (scrollBox) {
       scrollBox.scrollTop = 0;
-      scrollBox.style.pointerEvents = "auto";
-      scrollBox.style.overflowY = "auto";
+      scrollBox.style.overflowY = "scroll";
       scrollBox.style.webkitOverflowScrolling = "touch";
+      scrollBox.style.touchAction = "pan-y";
     }
-  }, 50);
+  }, 60);
 }
 
 document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
@@ -75,4 +80,31 @@ document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
 closeModal.onclick = () => {
   modal.style.display = "none";
   modalDesc.innerHTML = "";
+  document.body.classList.remove("modal-open");
+};
+
+function openServiceModal(card) {
+  modal.style.display = "flex";
+  document.body.classList.add("modal-open");
+
+  modalTitle.innerText = card.dataset.title;
+  modalDesc.innerHTML = card.dataset.desc;
+
+  requestAnimationFrame(() => {
+    const scrollBox = modalDesc.querySelector(".desc-scroll");
+    if (scrollBox) {
+      scrollBox.scrollTop = 0;
+
+      // Force mobile to rebind touch scroll every time
+      scrollBox.style.webkitOverflowScrolling = "auto";
+      scrollBox.offsetHeight;
+      scrollBox.style.webkitOverflowScrolling = "touch";
+    }
+  });
+}
+
+closeModal.onclick = () => {
+  modal.style.display = "none";
+  modalDesc.innerHTML = "";
+  document.body.classList.remove("modal-open");
 };
