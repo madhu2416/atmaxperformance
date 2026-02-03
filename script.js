@@ -11,18 +11,17 @@ let sliderInterval;
 function startSlider() {
   const cardWidth = cards[0].offsetWidth + 20;
 
+  clearInterval(sliderInterval);
+
   sliderInterval = setInterval(() => {
     index++;
+
+    if (index >= cards.length) {
+      index = 0;
+    }
+
     track.style.transition = "transform 0.6s ease";
     track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-    if (index === 5) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = `translateX(0px)`;
-      }, 600);
-    }
   }, 2500);
 }
 
@@ -45,7 +44,6 @@ document.getElementById("backToTopBtn").addEventListener("click", () => {
   backBtnWrap.style.display = "none";
   startSlider();
 });
-/// Modal
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
@@ -54,20 +52,18 @@ const closeModal = document.getElementById("closeModal");
 function openServiceModal(card) {
   modal.style.display = "flex";
   modalTitle.innerText = card.dataset.title;
-
-  // Render HTML safely
   modalDesc.innerHTML = card.dataset.desc;
 
-  // Reset scroll every time (mobile fix)
-  const scrollBox = modalDesc.querySelector(".desc-scroll");
-  if (scrollBox) {
-    scrollBox.scrollTop = 0;
-
-    // Force mobile browsers to re-enable touch scrolling
-    scrollBox.style.overflow = "hidden";
-    scrollBox.offsetHeight; // trigger reflow
-    scrollBox.style.overflow = "auto";
-  }
+  // Fix scroll bug: force reflow every time
+  setTimeout(() => {
+    const scrollBox = modalDesc.querySelector(".desc-scroll");
+    if (scrollBox) {
+      scrollBox.scrollTop = 0;
+      scrollBox.style.pointerEvents = "auto";
+      scrollBox.style.overflowY = "auto";
+      scrollBox.style.webkitOverflowScrolling = "touch";
+    }
+  }, 50);
 }
 
 document.querySelectorAll(".auto-card, .grid-card").forEach(card => {

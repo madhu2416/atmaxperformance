@@ -618,37 +618,17 @@ h1, h2, h3 {
   z-index: 5;
   cursor: pointer;
 }
-
-/* Ensure modal itself doesn't block touch scroll */
+/* Modal wrapper */
 #serviceModal {
   position: fixed;
   inset: 0;
-  overflow: hidden; /* prevent body scroll */
+  overflow: hidden;  /* prevent body scroll */
 }
 
-/* Modal content wrapper should NOT block inner scroll */
+/* Modal content */
 #serviceModal .modal-content {
   max-height: 85vh;
   overflow: hidden; 
-}
-
-/* Scroll ONLY the description text */
-.desc-scroll {
-  max-height: 55vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
-  touch-action: pan-y; /* allow vertical scroll */
-}
-
-#serviceModal {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-}
-
-#serviceModal .modal-content {
-  max-height: 85vh;
-  overflow: hidden;
 }
 
 /* Scroll ONLY description */
@@ -657,4 +637,9 @@ h1, h2, h3 {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
+}
+
+/* Important: Allow touch to pass */
+.modal {
+  pointer-events: auto;
 }
