@@ -656,6 +656,8 @@ body.modal-open {
   overscroll-behavior: contain;
   padding-right: 6px;
 }
+
+
 .gallery {
   max-width: 900px;
   margin: 0 auto;
@@ -666,6 +668,8 @@ body.modal-open {
 #galleryImage {
   width: 100%;
   height: auto;
-  transition: opacity 0.6s ease-in-out;
   opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+  display: block;
 }
+

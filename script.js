@@ -110,6 +110,7 @@ closeModal.onclick = () => {
 };
 
 // ===== Gallery Auto Slider =====
+// ===== Gallery Auto Slider (Smooth fade for every image) =====
 const galleryImages = [
   "assets/gallery1.jpeg",
   "assets/gallery2.jpg.jpeg",
@@ -129,16 +130,28 @@ const galleryImages = [
   "assets/gallery17.jpg.png"
 ];
 
-let galleryIndex = 0;
 const galleryImgEl = document.getElementById("galleryImage");
+let galleryIndex = 0;
 
-setInterval(() => {
-  galleryImgEl.style.opacity = 0; // fade out
+// Preload images so fade works every time
+galleryImages.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+function changeGalleryImage() {
+  galleryImgEl.classList.remove("fade-in");
+  galleryImgEl.style.opacity = 0;
 
   setTimeout(() => {
     galleryIndex = (galleryIndex + 1) % galleryImages.length;
     galleryImgEl.src = galleryImages[galleryIndex];
-    galleryImgEl.style.opacity = 1; // fade in
-  }, 400);
 
-}, 2000); // change every 2 seconds
+    // Wait until image is loaded before fading in
+    galleryImgEl.onload = () => {
+      galleryImgEl.style.opacity = 1;
+    };
+  }, 600);
+}
+
+setInterval(changeGalleryImage, 2000);
