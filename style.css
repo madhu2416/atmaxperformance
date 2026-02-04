@@ -555,7 +555,7 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid red !important;
+  outline: 5px solid yellow !important;
 }
 /* Popup background continuity (same as Founder section) */
 .popup-container,
@@ -656,3 +656,5 @@ body.modal-open {
   overscroll-behavior: contain;
   padding-right: 6px;
 }
+
+
