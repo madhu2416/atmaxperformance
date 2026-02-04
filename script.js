@@ -108,3 +108,37 @@ closeModal.onclick = () => {
   modalDesc.innerHTML = "";
   document.body.classList.remove("modal-open");
 };
+
+
+const galleryImages = [
+  "assets/gallery1.jpg",
+  "assets/gallery2.jpg",
+  "assets/gallery3.jpg",
+  "assets/gallery4.jpg",
+  "assets/gallery5.jpg",
+  "assets/gallery6.jpg",
+  "assets/gallery7.jpg",
+  "assets/gallery8.jpg",
+  "assets/gallery9.jpg",
+  "assets/gallery10.jpg",
+  "assets/gallery11.jpg",
+  "assets/gallery12.jpg",
+  "assets/gallery13.jpg",
+  "assets/gallery14.jpg",
+  "assets/gallery15.jpg",
+  "assets/gallery16.jpg",
+  "assets/gallery17.jpg"
+];
+
+let currentGalleryIndex = 0;
+const galleryImgEl = document.getElementById("galleryImage");
+
+setInterval(() => {
+  galleryImgEl.classList.add("fade-out");
+
+  setTimeout(() => {
+    currentGalleryIndex = (currentGalleryIndex + 1) % galleryImages.length;
+    galleryImgEl.src = galleryImages[currentGalleryIndex];
+    galleryImgEl.classList.remove("fade-out");
+  }, 400); // match fade timing
+}, 2000);
