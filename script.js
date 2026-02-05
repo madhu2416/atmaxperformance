@@ -12,15 +12,6 @@ function startAutoSlide() {
 startAutoSlide();
 
 
-    setTimeout(() => {
-      track.style.transition = "transform 2s linear";
-      index = 1;
-      track.style.transform = `translateX(-${cardWidth}px)`;
-    }, 50);
-  } else {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
-}
 
 window.addEventListener("load", () => {
   setupSlider();
