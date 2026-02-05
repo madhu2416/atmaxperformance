@@ -208,8 +208,8 @@ h1, h2, h3 {
 /* Show More + Back buttons */
 .show-more-btn,
 .back-btn {
-  background: #004d40;
-  color: #fff;
+  background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40;;
   border: none;
   padding: 10px 18px;
   border-radius: 8px;
@@ -221,6 +221,14 @@ h1, h2, h3 {
 .show-more-btn {
   display: block;
   margin: 16px auto 0;
+    background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40;
+    border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 1;
 }
 
 /* Hidden grid before Show More */
