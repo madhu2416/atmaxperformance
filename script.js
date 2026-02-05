@@ -35,18 +35,17 @@ startAutoSlide();
 
 
 
-function showAllServices() {
-  document.getElementById("allServices").style.display = "block";   // show grid
+/* SHOW MORE */
+document.querySelector(".show-more-btn").onclick = () => {
   document.querySelector(".slider-section").style.display = "none";
-  document.querySelector(".show-more-btn").style.display = "none";
-}
+  document.querySelector(".services-grid-wrapper").style.display = "block";
+};
 
-function goBack() {
-  document.getElementById("allServices").style.display = "none";    // hide grid again
+/* BACK */
+document.querySelector(".back-btn").onclick = () => {
+  document.querySelector(".services-grid-wrapper").style.display = "none";
   document.querySelector(".slider-section").style.display = "block";
-  document.querySelector(".show-more-btn").style.display = "block";
-}
-
+};
 
 /* MODAL (keep yours – this is safe) */
 const modal = document.querySelector(".service-modal");
