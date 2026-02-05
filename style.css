@@ -111,14 +111,6 @@ h1, h2, h3 {
   border: none;
   background: transparent;
 }
-
-.show-more-btn {
-  padding: 10px 20px;
-  margin: 20px auto;
-  display: block;
-  cursor: pointer;
-}
-
 .all-services {
   margin-top: 20px;
 }
@@ -156,12 +148,32 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.back-btn {
-  margin-bottom: 15px;
-  cursor: pointer;
-  background: none;
+/* Solid opaque buttons */
+#showAllBtn,
+#backToTopBtn {
+  background-color: #004d40;   /* keep your theme */
+  color: #ffffff;
   border: none;
-  font-size: 16px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  opacity: 1;                 /* fully opaque */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#showAllBtn:hover,
+#backToTopBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+#showAllBtn:active,
+#backToTopBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .modal {
