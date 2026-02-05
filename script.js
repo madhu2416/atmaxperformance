@@ -1,37 +1,38 @@
 const track = document.querySelector(".services-track");
-const cards = document.querySelectorAll(".service-card");
+let cards = document.querySelectorAll(".auto-card");
 
-let index = 0;
-let cardWidth = 0;
-
-function setupSlider() {
-  cardWidth = cards[0].offsetWidth + 12; // gap included
-}
-
-function autoSlide() {
-  index++;
-
-  if (index >= 5) {
-    track.style.transition = "none";
-    index = 0;
-    track.style.transform = `translateX(0px)`;
-
-    setTimeout(() => {
-      track.style.transition = "transform 2s linear";
-      index = 1;
-      track.style.transform = `translateX(-${cardWidth}px)`;
-    }, 50);
-  } else {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
-}
-
-window.addEventListener("load", () => {
-  setupSlider();
-  setInterval(autoSlide, 1200);
+// Clone first 5 for smooth infinite loop
+cards.forEach(card => {
+  const clone = card.cloneNode(true);
+  track.appendChild(clone);
 });
 
-window.addEventListener("resize", setupSlider);
+let index = 0;
+let sliderTimer = null;
+
+function startAutoSlide() {
+  if (sliderTimer) clearInterval(sliderTimer);
+
+  const cardWidth = cards[0].offsetWidth + 12;
+
+  sliderTimer = setInterval(() => {
+    index++;
+    track.style.transition = "transform 0.4s linear";
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+    // When reaching clones → reset without blink
+    if (index >= cards.length) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = 0;
+        track.style.transform = "translateX(0)";
+      }, 420);
+    }
+  }, 1200); // fast smooth speed
+}
+
+startAutoSlide();
+
 
 /* SHOW MORE */
 document.querySelector(".show-more-btn").onclick = () => {
