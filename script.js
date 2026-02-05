@@ -1,37 +1,37 @@
 const track = document.querySelector(".services-track");
-let cards = document.querySelectorAll(".service-card");
-
-// 👉 We only want the FIRST 5 for the slider
-const visibleCount = 5;
-let sliderCards = Array.from(cards).slice(0, visibleCount);
-
-// Clone them for seamless infinite loop
-sliderCards.forEach(card => {
-  const clone = card.cloneNode(true);
-  track.appendChild(clone);
-});
+const cards = document.querySelectorAll(".service-card");
 
 let index = 0;
+let cardWidth = 0;
+
+function setupSlider() {
+  cardWidth = cards[0].offsetWidth + 12; // gap included
+}
 
 function autoSlide() {
-  const cardWidth = sliderCards[0].offsetWidth + 12; // gap = 12
   index++;
 
-  track.style.transition = "transform 0.5s ease";
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
+  if (index >= 5) {
+    track.style.transition = "none";
+    index = 0;
+    track.style.transform = `translateX(0px)`;
 
-  // When reaching the clone set, jump back silently
-  if (index === sliderCards.length) {
     setTimeout(() => {
-      track.style.transition = "none";
-      index = 0;
-      track.style.transform = `translateX(0px)`;
-    }, 520);
+      track.style.transition = "transform 2s linear";
+      index = 1;
+      track.style.transform = `translateX(-${cardWidth}px)`;
+    }, 50);
+  } else {
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
 }
 
-// Auto scroll every 2.5s
-setInterval(autoSlide, 2500);
+window.addEventListener("load", () => {
+  setupSlider();
+  setInterval(autoSlide, 2500);
+});
+
+window.addEventListener("resize", setupSlider);
 
 /* SHOW MORE */
 document.querySelector(".show-more-btn").onclick = () => {
@@ -45,7 +45,7 @@ document.querySelector(".back-btn").onclick = () => {
   document.querySelector(".slider-section").style.display = "block";
 };
 
-/* MODAL */
+/* MODAL (keep yours – this is safe) */
 const modal = document.querySelector(".service-modal");
 const modalTitle = modal.querySelector("h4");
 const modalLine = modal.querySelector("h3");
