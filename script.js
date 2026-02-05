@@ -34,27 +34,7 @@ function startAutoSlide() {
 startAutoSlide();
 
 
-  if (index >= 5) {
-    track.style.transition = "none";
-    index = 0;
-    track.style.transform = `translateX(0px)`;
 
-    setTimeout(() => {
-      track.style.transition = "transform 2s linear";
-      index = 1;
-      track.style.transform = `translateX(-${cardWidth}px)`;
-    }, 50);
-  } else {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
-}
-
-window.addEventListener("load", () => {
-  setupSlider();
-  setInterval(autoSlide, 1200);
-});
-
-window.addEventListener("resize", setupSlider);
 
 /* SHOW MORE */
 document.querySelector(".show-more-btn").onclick = () => {
