@@ -63,6 +63,15 @@ document.querySelectorAll(".service-card").forEach(card => {
 modal.onclick = e => {
   if (e.target === modal) modal.style.display = "none";
 };
+function moveSlider(dir) {
+  const cardWidth = document.querySelector(".services-track .auto-card").offsetWidth + 12;
+  index += dir;
+
+  if (index < 0) index = cards.length - 1;
+  if (index >= cards.length) index = 0;
+
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
+}
 
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====

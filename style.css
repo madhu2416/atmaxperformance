@@ -67,12 +67,60 @@ h1, h2, h3 {
   box-sizing: border-box;
 }
 
+/* ========== MAKE SLIDER CARDS SAME AS SHOW MORE GRID ========== */
+
+/* Wrapper */
+.services-window {
+  overflow: hidden;
+  width: 100%;
+  padding: 0 12px;
+}
+
+/* Track */
 .services-track {
   display: flex;
   gap: 12px;
-  transition: transform 2s linear; /* smooth auto loop */
+  transition: transform 0.4s ease;
   will-change: transform;
 }
+
+/* 🔥 Slider card = SAME sizing logic as grid card */
+.services-slider .auto-card,
+.services-track .auto-card {
+  position: relative;
+  width: calc(50vw - 24px);   /* 2 square cards visible on mobile */
+  max-width: 160px;          /* medium size on bigger screens */
+  aspect-ratio: 1 / 1;       /* perfect square */
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #000;
+}
+
+/* Image fill */
+.services-slider .auto-card img,
+.services-track .auto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Name overlay */
+.services-slider .service-name,
+.services-track .service-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+}
+
 
 .service-card {
   position: relative;
