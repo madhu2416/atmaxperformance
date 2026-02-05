@@ -1,59 +1,108 @@
 const track = document.getElementById("servicesTrack");
-const cards = document.querySelectorAll("#servicesTrack .auto-card");
 let index = 0;
 
 function updateSlider() {
-  const cardWidth = cards[0].offsetWidth + 20;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
+  track.style.transform = `translateX(-${index * 220}px)`;
 }
 
 function nextService() {
   index++;
-  if (index >= cards.length) index = 0;
+  if (index > 4) index = 0;
   updateSlider();
 }
 
 function prevService() {
   index--;
-  if (index < 0) index = cards.length - 1;
+  if (index < 0) index = 4;
   updateSlider();
 }
 
-setInterval(nextService, 2000);
+// Auto Slide
+setInterval(() => {
+  nextService();
+}, 2500);
 
-// SHOW MORE
+// Show More
 function showAllServices() {
   document.getElementById("servicesSlider").style.display = "none";
   document.querySelector(".show-more-btn").style.display = "none";
   document.getElementById("allServices").classList.remove("hidden");
 }
 
+// Back Button
 function goBack() {
   document.getElementById("servicesSlider").style.display = "flex";
   document.querySelector(".show-more-btn").style.display = "block";
   document.getElementById("allServices").classList.add("hidden");
 }
 
-// MODAL
+// ================= MODAL FIX =================
+
 const modal = document.getElementById("serviceModal");
 const modalTitle = document.getElementById("modalTitle");
-const modalTagline = document.getElementById("modalTagline");
 const modalDesc = document.getElementById("modalDesc");
 const closeModal = document.getElementById("closeModal");
 
-document.querySelectorAll(".auto-card").forEach(card => {
-  card.addEventListener("click", () => {
-    modal.style.display = "flex";
-    modalTitle.innerText = card.dataset.title;
-    modalTagline.innerText = card.dataset.tagline;
-    modalDesc.innerText = card.dataset.desc;
-    document.querySelector(".desc-scroll").scrollTop = 0;
-  });
+function openServiceModal(card) {
+  modal.style.display = "flex";
+  document.body.classList.add("modal-open");
+
+  modalTitle.innerText = card.dataset.title;
+
+  // FORCE desc-scroll wrapper every time (this was your bug)
+  modalDesc.innerHTML = `
+    <div class="desc-scroll">
+      ${card.dataset.desc}
+    </div>
+  `;
+
+  // Hard reset scroll (Android/iOS fix)
+  setTimeout(() => {
+    const scrollBox = modalDesc.querySelector(".desc-scroll");
+    if (scrollBox) {
+      scrollBox.scrollTop = 0;
+      scrollBox.style.overflowY = "scroll";
+      scrollBox.style.webkitOverflowScrolling = "touch";
+      scrollBox.style.touchAction = "pan-y";
+    }
+  }, 60);
+}
+
+document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
+  card.addEventListener("click", () => openServiceModal(card));
 });
 
-closeModal.onclick = () => modal.style.display = "none";
-modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+closeModal.onclick = () => {
+  modal.style.display = "none";
+  modalDesc.innerHTML = "";
+  document.body.classList.remove("modal-open");
+};
 
+function openServiceModal(card) {
+  modal.style.display = "flex";
+  document.body.classList.add("modal-open");
+
+  modalTitle.innerText = card.dataset.title;
+  modalDesc.innerHTML = card.dataset.desc;
+
+  requestAnimationFrame(() => {
+    const scrollBox = modalDesc.querySelector(".desc-scroll");
+    if (scrollBox) {
+      scrollBox.scrollTop = 0;
+
+      // Force mobile to rebind touch scroll every time
+      scrollBox.style.webkitOverflowScrolling = "auto";
+      scrollBox.offsetHeight;
+      scrollBox.style.webkitOverflowScrolling = "touch";
+    }
+  });
+}
+
+closeModal.onclick = () => {
+  modal.style.display = "none";
+  modalDesc.innerHTML = "";
+  document.body.classList.remove("modal-open");
+};
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
 const galleryImages = [
