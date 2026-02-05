@@ -1,20 +1,16 @@
-const track = document.querySelector(".services-track");
-const cards = document.querySelectorAll(".service-card");
+let sliderTimer = null;
 
-let index = 0;
-let cardWidth = 0;
+function startAutoSlide() {
+  if (sliderTimer) clearInterval(sliderTimer);  // 🔥 kill old timer if any
 
-function setupSlider() {
-  cardWidth = cards[0].offsetWidth + 12; // gap included
+  sliderTimer = setInterval(() => {
+    moveSlider(1);
+  }, 1200);   // keep your fast speed here
 }
 
-function autoSlide() {
-  index++;
+// Start once
+startAutoSlide();
 
-  if (index >= 5) {
-    track.style.transition = "none";
-    index = 0;
-    track.style.transform = `translateX(0px)`;
 
     setTimeout(() => {
       track.style.transition = "transform 2s linear";
