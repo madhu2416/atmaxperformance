@@ -1,73 +1,68 @@
 const track = document.querySelector(".services-track");
-let cards = document.querySelectorAll(".auto-card"); // first 5 only
-let currentIndex = 0;
+let cards = document.querySelectorAll(".service-card");
 
-// Duplicate first 5 cards for seamless loop
-cards.forEach(card => {
+// 👉 We only want the FIRST 5 for the slider
+const visibleCount = 5;
+let sliderCards = Array.from(cards).slice(0, visibleCount);
+
+// Clone them for seamless infinite loop
+sliderCards.forEach(card => {
   const clone = card.cloneNode(true);
   track.appendChild(clone);
 });
 
-// Re-select after cloning
-cards = document.querySelectorAll(".auto-card");
-
-const cardGap = 16;
+let index = 0;
 
 function autoSlide() {
-  const cardWidth = cards[0].offsetWidth + cardGap;
-  currentIndex++;
+  const cardWidth = sliderCards[0].offsetWidth + 12; // gap = 12
+  index++;
 
   track.style.transition = "transform 0.5s ease";
-  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
 
-  // Seamless reset (no blink)
-  if (currentIndex === 5) {
+  // When reaching the clone set, jump back silently
+  if (index === sliderCards.length) {
     setTimeout(() => {
       track.style.transition = "none";
+      index = 0;
       track.style.transform = `translateX(0px)`;
-      currentIndex = 0;
-    }, 500);
+    }, 520);
   }
 }
 
-// Auto slide every 2s
-setInterval(autoSlide, 2000);
+// Auto scroll every 2.5s
+setInterval(autoSlide, 2500);
 
 /* SHOW MORE */
-function showAllServices() {
-  document.getElementById("servicesSlider").style.display = "none";
-  document.querySelector(".show-more-btn").style.display = "none";
-  document.getElementById("allServices").style.display = "block";
-}
+document.querySelector(".show-more-btn").onclick = () => {
+  document.querySelector(".slider-section").style.display = "none";
+  document.querySelector(".services-grid-wrapper").style.display = "block";
+};
 
 /* BACK */
-function goBack() {
-  document.getElementById("allServices").style.display = "none";
-  document.getElementById("servicesSlider").style.display = "flex";
-  document.querySelector(".show-more-btn").style.display = "block";
-}
+document.querySelector(".back-btn").onclick = () => {
+  document.querySelector(".services-grid-wrapper").style.display = "none";
+  document.querySelector(".slider-section").style.display = "block";
+};
 
 /* MODAL */
-const modal = document.getElementById("serviceModal");
+const modal = document.querySelector(".service-modal");
 const modalTitle = modal.querySelector("h4");
 const modalLine = modal.querySelector("h3");
 const modalDesc = modal.querySelector("h2");
 
-// Attach click to ALL service cards (slider + grid)
-document.querySelectorAll(".auto-card").forEach(card => {
-  card.addEventListener("click", () => {
+document.querySelectorAll(".service-card").forEach(card => {
+  card.onclick = () => {
     modalTitle.innerText = card.dataset.title;
-    modalLine.innerText = card.dataset.tagline;
+    modalLine.innerText = card.dataset.line;
     modalDesc.innerText = card.dataset.desc;
     modal.style.display = "flex";
-    modalDesc.scrollTop = 0;
-  });
+  };
 });
 
-// Close modal on outside click
-modal.addEventListener("click", (e) => {
+modal.onclick = e => {
   if (e.target === modal) modal.style.display = "none";
-});
+};
 
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
