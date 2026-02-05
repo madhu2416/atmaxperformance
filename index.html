@@ -140,7 +140,64 @@
 
     <div class="services-grid">
       <!-- Repeat for 16 services -->
-    
+ <section class="services-section">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="services-slider" id="servicesSlider">
+    <button class="arrow left" onclick="prevService()">❮</button>
+
+    <div class="services-window">
+      <div class="services-track" id="servicesTrack">
+
+        <!-- 5 SERVICES ONLY FOR SLIDER -->
+        <div class="auto-card" data-title="ORTHO REHAB"
+          data-tagline="Heal from injury, recover from surgery, and reclaim your active lifestyle."
+          data-desc="At our clinic, we understand that recovering from an injury or surgery is more than a physical process—it’s a personal journey...">
+          <img src="assets/service1.jpg">
+          <span class="service-name">ORTHO REHAB</span>
+        </div>
+
+        <div class="auto-card" data-title="NEURO REHAB"
+          data-tagline="Empowering you to achieve your highest potential for recovery."
+          data-desc="Specialized neurological rehabilitation for stroke, brain injury, and Parkinson’s disease...">
+          <img src="assets/service2.jpg">
+          <span class="service-name">NEURO REHAB</span>
+        </div>
+
+        <div class="auto-card" data-title="PEDIATRIC REHAB"
+          data-tagline="Guiding your child to achieve their unique goals and shine."
+          data-desc="Utilizing individualized therapy to support the growth of kids of all abilities...">
+          <img src="assets/service3.jpg">
+          <span class="service-name">PEDIATRIC REHAB</span>
+        </div>
+
+        <div class="auto-card" data-title="PRENATAL REHAB"
+          data-tagline="Nurturing strength for motherhood’s journey."
+          data-desc="Encourage your body’s progress through pregnancy and postpartum healing...">
+          <img src="assets/service4.jpg">
+          <span class="service-name">PRENATAL REHAB</span>
+        </div>
+
+        <div class="auto-card" data-title="SPORTS REHAB"
+          data-tagline="Rehab your way back to 100%."
+          data-desc="Get back into the game stronger, faster, and more resilient...">
+          <img src="assets/service5.jpg">
+          <span class="service-name">SPORTS REHAB</span>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="arrow right" onclick="nextService()">❯</button>
+  </div>
+
+  <button class="show-more-btn" onclick="showAllServices()">Show More</button>
+
+  <div class="all-services hidden" id="allServices">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <div class="services-grid">
+   
 <div 
   class="auto-card" 
   data-title="ORTHO REHAB"
@@ -310,22 +367,22 @@
   data-desc="Highly skilled health care guidance from the convenience of your own home. Continue your recovery seamlessly, regardless of where you are. Do not let distance or time limits impede your rehabilitation. Our private video consultations offer individualized assessments and treatment recommendations. Effective care, delivered directly to you via modern telehealth. When you are unable to visit the clinic, your healing path continues. Have one-on-one virtual sessions with a qualified healthcare professionals. "
 >
 <img src="assets/service16.jpg">
-  <span class="service-name">TELECONSULTATION</span>
-
+  <span class="service-name">TELECONSULTATION</span>    </div>
+  </div>
 </section>
 
+<!-- MODAL -->
 <div class="modal" id="serviceModal">
   <div class="modal-content">
     <span class="close" id="closeModal">&times;</span>
-
     <h4 id="modalTitle"></h4>
     <h3 id="modalTagline"></h3>
-
     <div class="desc-scroll">
       <h2 id="modalDesc"></h2>
     </div>
   </div>
 </div>
+
 
 
 

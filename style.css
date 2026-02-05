@@ -54,65 +54,60 @@ h1, h2, h3 {
   margin-top: 20px;
   z-index: 2;
 }
-
-.services-slider {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.services-window {
+  width: 240px;
   overflow: hidden;
-  margin: 20px 0;
 }
 
 .services-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
 }
 
-.service-card {
-  min-width: 200px;
-  height: 200px;
+.auto-card {
+  min-width: 220px;
+  height: 220px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
   margin: 0 10px;
+  cursor: pointer;
 }
 
-.service-card img {
+.auto-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.service-card span {
+.service-name {
   position: absolute;
-  top: 0;
+  bottom: 0;
   width: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.8);
   color: white;
   padding: 8px;
   text-align: center;
+  font-weight: 600;
 }
 
 .arrow {
-  font-size: 24px;
+  font-size: 26px;
   cursor: pointer;
   border: none;
   background: transparent;
+  color: #fff;
 }
 
-.show-more-btn {
+.show-more-btn, .back-btn {
+  background: #004d40;
+  color: #fff;
   padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
   margin: 20px auto;
   display: block;
-  cursor: pointer;
-}
-
-.all-services {
-  margin-top: 20px;
-}
-
-.hidden {
-  display: none;
 }
 
 .services-grid {
@@ -120,39 +115,6 @@ h1, h2, h3 {
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 }
-
-.service-box {
-  position: relative;
-  aspect-ratio: 1 / 1;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.service-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.service-box span {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 6px;
-  text-align: center;
-}
-
-.back-btn {
-  margin-bottom: 15px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 16px;
-}
-
-
 
 .modal {
   display: none;
@@ -164,23 +126,18 @@ h1, h2, h3 {
   align-items: center;
 }
 
-.modal-content h4 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 6px;
+.modal-content {
+  background: #004d40;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
 }
 
-.modal-content h3 {
-  font-size: 16px;
-  font-weight: 500;
-  opacity: 0.9;
-  margin-bottom: 12px;
-}
-
-.modal-content h2 {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.7;
+.desc-scroll {
+  max-height: 250px;
+  overflow-y: auto;
 }
 
 .close {
@@ -189,13 +146,10 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-@media(max-width:768px){
-  .auto-card,
-  .grid-card {
-    min-width: 170px;
-    height: 170px;
-  }
+.hidden {
+  display: none;
 }
+
 
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
 .treatments {
@@ -549,7 +503,7 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid blue !important;
+  outline: 5px solid red !important;
 }
 /* Popup background continuity (same as Founder section) */
 .popup-container,
