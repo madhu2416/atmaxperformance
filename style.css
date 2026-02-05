@@ -662,6 +662,8 @@ body.modal-open {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
+   background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS FOUNDER */
+  color: #ffffff; 
 }
 
 #galleryImage {
