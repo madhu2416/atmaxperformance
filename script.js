@@ -1,108 +1,51 @@
-const track = document.getElementById("servicesTrack");
+
+let track = document.querySelector(".services-track");
+let cards = document.querySelectorAll(".service-card");
 let index = 0;
 
-function updateSlider() {
-  track.style.transform = `translateX(-${index * 220}px)`;
+function moveSlider(dir) {
+  const cardWidth = cards[0].offsetWidth + 16;
+  index += dir;
+
+  if (index < 0) index = cards.length - 1;
+  if (index >= cards.length) index = 0;
+
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
-function nextService() {
-  index++;
-  if (index > 4) index = 0;
-  updateSlider();
-}
+setInterval(() => moveSlider(1), 2500);
 
-function prevService() {
-  index--;
-  if (index < 0) index = 4;
-  updateSlider();
-}
+/* SHOW MORE */
+document.querySelector(".show-more-btn").onclick = () => {
+  document.querySelector(".slider-section").style.display = "none";
+  document.querySelector(".services-grid-wrapper").style.display = "block";
+};
 
-// Auto Slide
-setInterval(() => {
-  nextService();
-}, 2500);
+/* BACK */
+document.querySelector(".back-btn").onclick = () => {
+  document.querySelector(".services-grid-wrapper").style.display = "none";
+  document.querySelector(".slider-section").style.display = "block";
+};
 
-// Show More
-function showAllServices() {
-  document.getElementById("servicesSlider").style.display = "none";
-  document.querySelector(".show-more-btn").style.display = "none";
-  document.getElementById("allServices").classList.remove("hidden");
-}
+/* MODAL */
+const modal = document.querySelector(".service-modal");
+const modalTitle = modal.querySelector("h4");
+const modalLine = modal.querySelector("h3");
+const modalDesc = modal.querySelector("h2");
 
-// Back Button
-function goBack() {
-  document.getElementById("servicesSlider").style.display = "flex";
-  document.querySelector(".show-more-btn").style.display = "block";
-  document.getElementById("allServices").classList.add("hidden");
-}
-
-// ================= MODAL FIX =================
-
-const modal = document.getElementById("serviceModal");
-const modalTitle = document.getElementById("modalTitle");
-const modalDesc = document.getElementById("modalDesc");
-const closeModal = document.getElementById("closeModal");
-
-function openServiceModal(card) {
-  modal.style.display = "flex";
-  document.body.classList.add("modal-open");
-
-  modalTitle.innerText = card.dataset.title;
-
-  // FORCE desc-scroll wrapper every time (this was your bug)
-  modalDesc.innerHTML = `
-    <div class="desc-scroll">
-      ${card.dataset.desc}
-    </div>
-  `;
-
-  // Hard reset scroll (Android/iOS fix)
-  setTimeout(() => {
-    const scrollBox = modalDesc.querySelector(".desc-scroll");
-    if (scrollBox) {
-      scrollBox.scrollTop = 0;
-      scrollBox.style.overflowY = "scroll";
-      scrollBox.style.webkitOverflowScrolling = "touch";
-      scrollBox.style.touchAction = "pan-y";
-    }
-  }, 60);
-}
-
-document.querySelectorAll(".auto-card, .grid-card").forEach(card => {
-  card.addEventListener("click", () => openServiceModal(card));
+document.querySelectorAll(".service-card").forEach(card => {
+  card.onclick = () => {
+    modalTitle.innerText = card.dataset.title;
+    modalLine.innerText = card.dataset.line;
+    modalDesc.innerText = card.dataset.desc;
+    modal.style.display = "flex";
+  };
 });
 
-closeModal.onclick = () => {
-  modal.style.display = "none";
-  modalDesc.innerHTML = "";
-  document.body.classList.remove("modal-open");
+modal.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
 };
 
-function openServiceModal(card) {
-  modal.style.display = "flex";
-  document.body.classList.add("modal-open");
-
-  modalTitle.innerText = card.dataset.title;
-  modalDesc.innerHTML = card.dataset.desc;
-
-  requestAnimationFrame(() => {
-    const scrollBox = modalDesc.querySelector(".desc-scroll");
-    if (scrollBox) {
-      scrollBox.scrollTop = 0;
-
-      // Force mobile to rebind touch scroll every time
-      scrollBox.style.webkitOverflowScrolling = "auto";
-      scrollBox.offsetHeight;
-      scrollBox.style.webkitOverflowScrolling = "touch";
-    }
-  });
-}
-
-closeModal.onclick = () => {
-  modal.style.display = "none";
-  modalDesc.innerHTML = "";
-  document.body.classList.remove("modal-open");
-};
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
 const galleryImages = [
