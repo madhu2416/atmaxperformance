@@ -1,29 +1,37 @@
-const track = document.getElementById("servicesTrack");
-const cards = document.querySelectorAll("#servicesTrack .service-card");
-let index = 0;
-let autoSlide;
+const track = document.querySelector(".services-track");
+let cards = document.querySelectorAll(".auto-card"); // first 5 only
+let currentIndex = 0;
 
-function slideNext() {
-  index++;
-  if (index >= cards.length) index = 0;
-  updateSlider();
+// Duplicate first 5 cards for seamless loop
+cards.forEach(card => {
+  const clone = card.cloneNode(true);
+  track.appendChild(clone);
+});
+
+// Re-select after cloning
+cards = document.querySelectorAll(".auto-card");
+
+const cardGap = 16;
+
+function autoSlide() {
+  const cardWidth = cards[0].offsetWidth + cardGap;
+  currentIndex++;
+
+  track.style.transition = "transform 0.5s ease";
+  track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+  // Seamless reset (no blink)
+  if (currentIndex === 5) {
+    setTimeout(() => {
+      track.style.transition = "none";
+      track.style.transform = `translateX(0px)`;
+      currentIndex = 0;
+    }, 500);
+  }
 }
 
-function slidePrev() {
-  index--;
-  if (index < 0) index = cards.length - 1;
-  updateSlider();
-}
-
-function updateSlider() {
-  const cardWidth = cards[0].offsetWidth + 16;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
-}
-
-function startAutoSlide() {
-  autoSlide = setInterval(slideNext, 2000);
-}
-startAutoSlide();
+// Auto slide every 2s
+setInterval(autoSlide, 2000);
 
 /* SHOW MORE */
 function showAllServices() {
@@ -45,18 +53,21 @@ const modalTitle = modal.querySelector("h4");
 const modalLine = modal.querySelector("h3");
 const modalDesc = modal.querySelector("h2");
 
-document.querySelectorAll(".service-card").forEach(card => {
-  card.onclick = () => {
+// Attach click to ALL service cards (slider + grid)
+document.querySelectorAll(".auto-card").forEach(card => {
+  card.addEventListener("click", () => {
     modalTitle.innerText = card.dataset.title;
-    modalLine.innerText = card.dataset.line;
+    modalLine.innerText = card.dataset.tagline;
     modalDesc.innerText = card.dataset.desc;
     modal.style.display = "flex";
-  };
+    modalDesc.scrollTop = 0;
+  });
 });
 
-modal.onclick = e => {
+// Close modal on outside click
+modal.addEventListener("click", (e) => {
   if (e.target === modal) modal.style.display = "none";
-};
+});
 
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====

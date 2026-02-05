@@ -148,6 +148,28 @@ h1, h2, h3 {
   .service-card { min-width: 160px; }
 }
 
+.auto-card {
+  position: relative;
+  min-width: 220px;
+  aspect-ratio: 1 / 1;   /* perfect square */
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.auto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.service-modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
 
 
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
