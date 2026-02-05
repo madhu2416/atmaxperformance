@@ -164,12 +164,23 @@ h1, h2, h3 {
   align-items: center;
 }
 
-.modal-content {
-  background: white;
-  padding: 25px;
-  max-width: 500px;
-  border-radius: 12px;
-  color: black;
+.modal-content h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.modal-content h3 {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.modal-content h2 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
 }
 
 .close {
@@ -562,7 +573,7 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid green !important;
+  outline: 5px solid blue !important;
 }
 /* Popup background continuity (same as Founder section) */
 .popup-container,
