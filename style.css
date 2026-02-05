@@ -70,9 +70,6 @@ h1, h2, h3 {
 /* ========== MAKE SLIDER CARDS SAME AS SHOW MORE GRID ========== */
 /* Hide arrows in slider */
 
-.services-grid-wrapper {
-  display: none;
-}
 
 .services-window {
   overflow: hidden;
@@ -92,11 +89,35 @@ h1, h2, h3 {
   text-align: center
 }
 /* FORCE 2 COLUMNS ON MOBILE */
+/* 🔒 Hide ALL services grid before Show More */
+.services-grid-wrapper {
+  display: none;          /* hidden by default */
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ✅ Always 2 columns when shown (even on mobile) */
 .services-grid {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 12px;
   width: 100%;
+}
+
+/* 🟩 Square cards – same size everywhere */
+.services-grid .service-card {
+  width: 100% !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* 🚫 Kill horizontal scroll & green empty area */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .service-card {
