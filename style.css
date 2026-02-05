@@ -69,6 +69,11 @@ h1, h2, h3 {
 
 /* ========== MAKE SLIDER CARDS SAME AS SHOW MORE GRID ========== */
 /* Hide arrows in slider */
+
+.services-grid-wrapper {
+  display: none;
+}
+
 .services-window {
   overflow: hidden;
   width: 100%;
@@ -86,14 +91,23 @@ h1, h2, h3 {
   padding: 40px 16px;
   text-align: center
 }
+/* FORCE 2 COLUMNS ON MOBILE */
+.services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px;
+  width: 100%;
+}
 
 .service-card {
-  min-width: 160px;
-  aspect-ratio: 1 / 1;
-  border-radius: 12px;
-  overflow: hidden;
-  position: relative;
-  flex-shrink: 0;
+  width: 100% !important;
+  aspect-ratio: 1 / 1;  /* perfect square */
+}
+
+/* Prevent right empty space */
+.services-grid-wrapper {
+  padding: 10px;
+  overflow-x: hidden;
 }
 
 .service-card img {

@@ -33,6 +33,11 @@ function startAutoSlide() {
 
 startAutoSlide();
 
+function showAllServices() {
+  document.getElementById("allServices").style.display = "block";
+  document.querySelector(".slider-section").style.display = "none";
+  document.querySelector(".show-more-btn").style.display = "none";
+}
 
 
 
