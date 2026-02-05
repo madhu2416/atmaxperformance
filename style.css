@@ -81,6 +81,10 @@ h1, h2, h3 {
   will-change: transform;
 }
 
+.services {
+  background: linear-gradient(135deg, #005c4b, #00796b); /* dark green */
+  color: #ffffff;
+}
 .service-card {
   min-width: 160px;
   aspect-ratio: 1 / 1;
