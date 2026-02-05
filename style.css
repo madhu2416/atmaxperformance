@@ -81,10 +81,11 @@ h1, h2, h3 {
   will-change: transform;
 }
 
-.services {
-  background: linear-gradient(135deg, #005c4b, #00796b); /* dark green */
-  color: #ffffff;
+.services-section {
+  background: linear-gradient(135deg, #005c4b, #00796b);
+  padding: 40px 16px;
 }
+
 .service-card {
   min-width: 160px;
   aspect-ratio: 1 / 1;
