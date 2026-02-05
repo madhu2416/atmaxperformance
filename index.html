@@ -71,73 +71,68 @@
   <h2>What Sets Us Apart?</h2>
   <p>We listen, understand, and work alongside you every step of the way. Our focus is on accurate diagnosis, crafting a truly personalized exercise program, and guiding you with care and compassion. Beyond treatment, our aim is to restore your confidence, strength, and independence—helping you return to a life that feels as close to normal as possible.</p>
 </section>
-<section class="services-section">
+<section class="services-section" id="services">
   <h2>Our Services</h2>
 
-  <!-- SLIDER -->
-  <div class="slider-section" id="servicesSlider">
+  <!-- SLIDER (FIRST 5 ONLY) -->
+  <div class="slider-section">
     <div class="services-window">
       <div class="services-track" id="servicesTrack">
 
-        <!-- ONLY FIRST 5 -->
-          
+                 
 <div 
-  class="auto-card" 
+  class="service-card auto-card" 
   data-title="ORTHO REHAB"
-  data-tagline="Heal from injury, recover from surgery, and reclaim your active lifestyle."
+  data-line="Heal from injury, recover from surgery, and reclaim your active lifestyle."
   data-desc="At our clinic, we understand that recovering from an injury or surgery is more than a physical process—it’s a personal journey. Our expert team provides compassionate, one-on-one orthopaedic rehabilitation tailored specifically to your needs and goals. Through personalized exercise regimens and hands-on therapy, we focus on reducing your pain, restoring your strength, and rebuilding your mobility. We’re here to support and guide you every step of the way, helping you regain not just function, but also the confidence to return to the active life you love. Your journey to moving freely and living fully starts with us."
 >
   <img src="assets/service1.jpg">
-  <span class="service-name">ORTHO REHAB</span>
+  <div class="service-name">ORTHO REHAB</div>
 </div>
 
 
    <div 
-  class="auto-card" 
+  class="service-card auto-card" 
   data-title="NEURO REHAB"
-  data-tagline="Empowering you to achieve your highest potential for recovery. "
+  data-line="Empowering you to achieve your highest potential for recovery. "
   data-desc="Specialized neurological rehabilitation for stroke, brain injury, and Parkinson’s disease. We assist individuals in rebuilding pathways, restoring function, and regaining independence. Reclaim your strength, movement, and confidence for everyday activities. Retrain the brain and body following a neurological event or diagnosis. Our professional therapists restore skills using evidence-based strategies. A journey to better independence and quality of life begins here. "
 >
   <img src="assets/service2.jpg">
-  <span class="service-name">NEURO REHAB</span>
+  <div class="service-name">NEURO REHAB</div>
 </div>
 
 
 <div 
-  class="auto-card" 
+  class="service-card auto-card" 
   data-title="PEDIATRIC REHAB"
-  data-tagline="Guiding your child to achieve their unique goals and shine. "
+  data-line="Guiding your child to achieve their unique goals and shine. "
   data-desc="Utilizing individualized therapy to support the growth of kids of all abilities. We develop strength, mobility, and confidence via play-based exercises. Enabling your kid to realize their full potential. Professional paediatric rehabilitation for disabilities, injuries, and developmental delays. In order to accomplish milestones and promote independence, we collaborate with families. Helping your child on their path to a more promising and capable future. "
 >
   <img src="assets/service3.jpg">
-  <span class="service-name">PEDIATRIC REHAB</span>
-</div>
-
-
- <div 
-  class="auto-card" 
-  data-title="PRENATAL AND ANTENATAL REHAB"
-  data-tagline=" Nurturing strength for motherhood’s journey."
-  data-desc="Encourage your body’s progress through pregnancy and postpartum healing. Specialized treatment for diastasis recti, pelvic floor strength, and core repair. Empowering you to gain strength, reduce discomfort, and thrive in parenthood. Expert therapy for pregnant wellbeing and postnatal recovery. Address back discomfort and pelvic instability, and get your body ready for birth and beyond. Regain comfort, functionality, and confidence in your evolving body. Your path to recovery and renewed vitality begins with supportive care.">
-  <img src="assets/service4.jpg">
-  <span class="service-name">PRENATAL AND ANTENATAL REHAB</span>
+  <div class="service-name">PEDIATRIC REHAB</div>
 </div>
 
 
     <div 
-  class="auto-card" 
+  class="service-card auto-card" 
   data-title="SPORTS REHAB"
-  data-tagline=" Rehab your way back to 100% and perform at your best. "
+  data-line=" Rehab your way back to 100% and perform at your best. "
   data-desc="Get back into the game stronger, faster, and more resilient. Our sports-specific therapy addresses current injuries and avoids future ones. From sprains to post-surgery, we’ll help you regain your competitive advantage. Expert rehabilitation for sports injuries and recovery. We don’t just alleviate pain; we also improve strength, mobility, and confidence. Your focused plan for safely returning to top performance. "
 >
-  <img src="assets/service5.jpg">
-  <span class="service-name">SPORTS REHAB</span>
+  <img src="assets/service4.jpg">
+  <div class="service-name">SPORTS REHAB</div>
 </div>
 
+ <div 
+  class="service-card auto-card" 
+  data-title="PRENATAL AND ANTENATAL REHAB"
+  data-line=" Nurturing strength for motherhood’s journey."
+  data-desc="Encourage your body’s progress through pregnancy and postpartum healing. Specialized treatment for diastasis recti, pelvic floor strength, and core repair. Empowering you to gain strength, reduce discomfort, and thrive in parenthood. Expert therapy for pregnant wellbeing and postnatal recovery. Address back discomfort and pelvic instability, and get your body ready for birth and beyond. Regain comfort, functionality, and confidence in your evolving body. Your path to recovery and renewed vitality begins with supportive care.">
+  <img src="assets/service5.jpg">
+  <div class="service-name">PRENATAL AND ANTENATAL REHAB</div>
+</div>
       </div>
     </div>
-
-  
   </div>
 
   <button class="show-more-btn" onclick="showAllServices()">Show More</button>
@@ -147,7 +142,10 @@
     <button class="back-btn" onclick="goBack()">← Back</button>
 
     <div class="services-grid">
-      <!-- Put ALL 16 service-card blocks here (same structure as above) -->
+
+      <!-- COPY SAME STRUCTURE FOR ALL 16 SERVICES -->
+      <!-- SAMPLE -->
+            <!-- Put ALL 16 service-card blocks here (same structure as above) -->
           
 <div 
   class="service-card" 
@@ -333,12 +331,13 @@ Focus on fall prevention and safe exercise techniques. Achieve goals like better
   </div>
 </section>
 
+
 <!-- MODAL -->
 <div class="service-modal" id="serviceModal">
   <div class="service-modal-content">
-    <h4></h4>
-    <h3></h3>
-    <h2></h2>
+    <h4 id="modalTitle"></h4>
+    <h3 id="modalLine"></h3>
+    <p id="modalDesc"></p>
   </div>
 </div>
 
