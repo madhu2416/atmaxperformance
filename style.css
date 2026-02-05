@@ -68,6 +68,10 @@ h1, h2, h3 {
 }
 
 /* ========== MAKE SLIDER CARDS SAME AS SHOW MORE GRID ========== */
+/* Hide arrows in slider */
+.services-slider .arrow {
+  display: none !important;
+}
 
 /* Wrapper */
 .services-window {

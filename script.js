@@ -28,7 +28,7 @@ function autoSlide() {
 
 window.addEventListener("load", () => {
   setupSlider();
-  setInterval(autoSlide, 2500);
+  setInterval(autoSlide, 1200);
 });
 
 window.addEventListener("resize", setupSlider);
