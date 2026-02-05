@@ -71,17 +71,18 @@
   <h2>What Sets Us Apart?</h2>
   <p>We listen, understand, and work alongside you every step of the way. Our focus is on accurate diagnosis, crafting a truly personalized exercise program, and guiding you with care and compassion. Beyond treatment, our aim is to restore your confidence, strength, and independence—helping you return to a life that feels as close to normal as possible.</p>
 </section>
-
 <section class="services-section">
   <h2>Our Services</h2>
 
-  <!-- Slider -->
-  <div class="services-slider" id="servicesSlider">
-  
-    <button class="arrow left" onclick="prevService()">❮</button>
+  <!-- SLIDER -->
+  <div class="slider-section" id="servicesSlider">
+    <button class="arrow left" onclick="slidePrev()">❮</button>
 
-    <div class="services-track" id="servicesTrack">
-       
+    <div class="services-window">
+      <div class="services-track" id="servicesTrack">
+
+        <!-- ONLY FIRST 5 -->
+          
 <div 
   class="auto-card" 
   data-title="ORTHO REHAB"
@@ -135,18 +136,21 @@
   <span class="service-name">SPORTS REHAB</span>
 </div>
 
-    <button class="arrow right" onclick="nextService()">❯</button>
+      </div>
+    </div>
+
+    <button class="arrow right" onclick="slideNext()">❯</button>
   </div>
 
   <button class="show-more-btn" onclick="showAllServices()">Show More</button>
 
-  <!-- All Services -->
-  <div class="all-services hidden" id="allServices">
+  <!-- ALL SERVICES (HIDDEN INITIALLY) -->
+  <div class="services-grid-wrapper" id="allServices">
     <button class="back-btn" onclick="goBack()">← Back</button>
 
     <div class="services-grid">
-      <!-- Repeat for 16 services -->
-         
+      <!-- Put ALL 16 service-card blocks here (same structure as above) -->
+          
 <div 
   class="auto-card" 
   data-title="ORTHO REHAB"
@@ -321,6 +325,14 @@
   </div>
 </section>
 
+<!-- MODAL -->
+<div class="service-modal" id="serviceModal">
+  <div class="service-modal-content">
+    <h4></h4>
+    <h3></h3>
+    <h2></h2>
+  </div>
+</div>
 
 
 <!-- Treatment -->

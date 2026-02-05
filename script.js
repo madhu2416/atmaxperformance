@@ -1,34 +1,46 @@
-
-let track = document.querySelector(".services-track");
-let cards = document.querySelectorAll(".service-card");
+const track = document.getElementById("servicesTrack");
+const cards = document.querySelectorAll("#servicesTrack .service-card");
 let index = 0;
+let autoSlide;
 
-function moveSlider(dir) {
-  const cardWidth = cards[0].offsetWidth + 16;
-  index += dir;
-
-  if (index < 0) index = cards.length - 1;
+function slideNext() {
+  index++;
   if (index >= cards.length) index = 0;
+  updateSlider();
+}
 
+function slidePrev() {
+  index--;
+  if (index < 0) index = cards.length - 1;
+  updateSlider();
+}
+
+function updateSlider() {
+  const cardWidth = cards[0].offsetWidth + 16;
   track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
-setInterval(() => moveSlider(1), 2500);
+function startAutoSlide() {
+  autoSlide = setInterval(slideNext, 2000);
+}
+startAutoSlide();
 
 /* SHOW MORE */
-document.querySelector(".show-more-btn").onclick = () => {
-  document.querySelector(".slider-section").style.display = "none";
-  document.querySelector(".services-grid-wrapper").style.display = "block";
-};
+function showAllServices() {
+  document.getElementById("servicesSlider").style.display = "none";
+  document.querySelector(".show-more-btn").style.display = "none";
+  document.getElementById("allServices").style.display = "block";
+}
 
 /* BACK */
-document.querySelector(".back-btn").onclick = () => {
-  document.querySelector(".services-grid-wrapper").style.display = "none";
-  document.querySelector(".slider-section").style.display = "block";
-};
+function goBack() {
+  document.getElementById("allServices").style.display = "none";
+  document.getElementById("servicesSlider").style.display = "flex";
+  document.querySelector(".show-more-btn").style.display = "block";
+}
 
 /* MODAL */
-const modal = document.querySelector(".service-modal");
+const modal = document.getElementById("serviceModal");
 const modalTitle = modal.querySelector("h4");
 const modalLine = modal.querySelector("h3");
 const modalDesc = modal.querySelector("h2");
