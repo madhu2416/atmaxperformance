@@ -1,37 +1,28 @@
-const track = document.querySelector(".services-track");
-let cards = document.querySelectorAll(".auto-card");
+/* MODAL FIX – works for BOTH slider (5) + grid (16) */
+const modal = document.getElementById("serviceModal");
+const modalTitle = modal.querySelector("h4");
+const modalLine = modal.querySelector("h3");
+const modalDesc = modal.querySelector("h2");
 
-// Clone first 5 for smooth infinite loop
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  track.appendChild(clone);
-});
-
-let index = 0;
-let sliderTimer = null;
-
-function startAutoSlide() {
-  if (sliderTimer) clearInterval(sliderTimer);
-
-  const cardWidth = cards[0].offsetWidth + 12;
-
-  sliderTimer = setInterval(() => {
-    index++;
-    track.style.transition = "transform 0.4s linear";
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-    // When reaching clones → reset without blink
-    if (index >= cards.length) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = "translateX(0)";
-      }, 420);
-    }
-  }, 1200); // fast smooth speed
+function bindServiceClicks() {
+  document.querySelectorAll(".auto-card").forEach(card => {
+    card.onclick = () => {
+      modalTitle.innerText = card.dataset.title;
+      modalLine.innerText = card.dataset.tagline;
+      modalDesc.innerText = card.dataset.desc;
+      modal.style.display = "flex";
+    };
+  });
 }
 
-startAutoSlide();
+/* Bind on load */
+bindServiceClicks();
+
+/* Close modal */
+modal.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
+};
+
 
 
 /* SHOW MORE */
