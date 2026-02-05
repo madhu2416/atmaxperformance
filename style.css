@@ -63,14 +63,9 @@ h1, h2, h3 {
   margin: 20px 0;
 }
 
-.services-window {
-  overflow: hidden;
-  width: 240px; /* adjust if needed */
-}
-
 .services-track {
   display: flex;
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .service-card {
