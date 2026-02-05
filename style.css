@@ -657,7 +657,6 @@ body.modal-open {
   padding-right: 6px;
 }
 
-
 .gallery {
   max-width: 900px;
   margin: 0 auto;
@@ -668,7 +667,10 @@ body.modal-open {
 #galleryImage {
   width: 100%;
   height: auto;
+  display: block;
   opacity: 1;
   transition: opacity 0.6s ease-in-out;
 }
-
+#galleryImage {
+  will-change: opacity;
+}
