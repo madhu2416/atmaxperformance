@@ -112,21 +112,21 @@ closeModal.onclick = () => {
 // ===== Gallery Auto Slider =====
 const galleryImages = [
   "assets/gallery1.jpeg",
-  "assets/gallery2.jpg.jpeg",
-  "assets/gallery3.jpg.jpeg",
-  "assets/gallery4.jpg.jpeg",
-  "assets/gallery5.jpg.jpeg",
-  "assets/gallery6.jpg.jpeg",
-  "assets/gallery7.jpg.jpeg",
-  "assets/gallery9.jpg.jpeg",
-  "assets/gallery10.jpg.jpeg",
-  "assets/gallery11.jpg.jpeg",
-  "assets/gallery12.jpg.jpeg",
-  "assets/gallery13.jpg.jpeg",
-  "assets/gallery14.jpg.png",
-  "assets/gallery15.jpg.png",
-  "assets/gallery16.jpg.png",
-  "assets/gallery17.jpg.png"
+  "assets/gallery2.jpeg",
+  "assets/gallery3.jpeg",
+  "assets/gallery4.jpeg",
+  "assets/gallery5.jpeg",
+  "assets/gallery6.jpeg",
+  "assets/gallery7.jpeg",
+  "assets/gallery9.jpeg",
+  "assets/gallery10.jpeg",
+  "assets/gallery11.jpeg",
+  "assets/gallery12.jpeg",
+  "assets/gallery13.jpeg",
+  "assets/gallery14.png",
+  "assets/gallery15.png",
+  "assets/gallery16.png",
+  "assets/gallery17.png"
 ];
 
 const galleryImgEl = document.getElementById("galleryImage");
