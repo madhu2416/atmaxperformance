@@ -808,3 +808,68 @@ body.modal-open {
 .services-grid-wrapper {
   display: none !important;
 }
+
+/* ===== HARD RESET FOR SERVICES LAYOUT ===== */
+
+/* Slider container */
+#servicesSlider {
+  display: block;
+}
+
+/* Only slider cards scroll */
+.services-track {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+
+/* Slider card size (first 5 only) */
+.services-track .auto-card {
+  min-width: 150px;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Grid wrapper hidden by default */
+#allServices {
+  display: none !important;
+}
+
+/* Grid layout (Show More) */
+.services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+/* Grid cards */
+.services-grid .service-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Image sizing everywhere */
+.auto-card img,
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Service name overlay */
+.service-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}

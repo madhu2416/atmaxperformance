@@ -32,6 +32,17 @@ function startAutoSlide() {
 }
 
 startAutoSlide();
+function showAllServices() {
+  document.getElementById("servicesSlider").style.display = "none";
+  document.querySelector(".show-more-btn").style.display = "none";
+  document.getElementById("allServices").style.display = "block";
+}
+
+function goBack() {
+  document.getElementById("allServices").style.display = "none";
+  document.getElementById("servicesSlider").style.display = "block";
+  document.querySelector(".show-more-btn").style.display = "block";
+}
 
 
 
