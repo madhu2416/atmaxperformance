@@ -243,54 +243,6 @@ Experience
   </div>
 </section>
 
-<script>
-  const galleryImages = [
-    "assets/gallery1.jpeg",
-    "assets/gallery2.jpeg",
-    "assets/gallery3.jpeg",
-    "assets/gallery4.jpeg",
-    "assets/gallery5.jpeg",
-    "assets/gallery6.jpeg",
-    "assets/gallery7.jpeg",
-    "assets/gallery9.jpeg",
-    "assets/gallery10.jpeg",
-    "assets/gallery11.jpeg",
-    "assets/gallery12.jpeg",
-    "assets/gallery13.jpeg",
-    "assets/gallery14.png",
-    "assets/gallery15.png",
-    "assets/gallery16.png",
-    "assets/gallery17.png"
-  ];
-
-  const galleryImgEl = document.getElementById("galleryImage");
-  let galleryIndex = 0;
-
-  // Preload all images first (important)
-  const preloaded = [];
-  galleryImages.forEach(src => {
-    const img = new Image();
-    img.src = src;
-    preloaded.push(img);
-  });
-
-  function changeGalleryImage() {
-    galleryIndex = (galleryIndex + 1) % galleryImages.length;
-
-    const nextImage = preloaded[galleryIndex];
-
-    galleryImgEl.style.opacity = 0;
-
-    nextImage.onload = () => {
-      setTimeout(() => {
-        galleryImgEl.src = nextImage.src;
-        galleryImgEl.style.opacity = 1;
-      }, 200);
-    };
-  }
-
-  setInterval(changeGalleryImage, 2000);
-</script>
 
 
   <!-- Contact -->
