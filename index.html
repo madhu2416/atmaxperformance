@@ -77,93 +77,67 @@
   <h2 class="section-title">Our Services</h2>
 
   <!-- Top 5 Auto Carousel -->
-  <div class="auto-carousel-wrapper" id="topCarousel">
-    <div class="auto-carousel-track" id="autoCarouselTrack">
+  <section class="services-section">
+  <h2>Our Services</h2>
 
-    <div 
-  class="auto-card" 
-  data-title="ORTHO REHAB" 
-  data-desc="
-    <div class='desc-scroll'>
-      Heal from injury, recover from surgery, and reclaim your active lifestyle.
+  <!-- Slider -->
+  <div class="services-slider" id="servicesSlider">
+    <button class="arrow left" onclick="prevService()">❮</button>
 
-      At our clinic, we understand that recovering from an injury or surgery is more than a physical
-      process—it’s a personal journey. Our expert team provides compassionate, one-on-one
-      orthopaedic rehabilitation tailored specifically to your needs and goals. Through
-      personalized exercise regimens and hands-on therapy, we focus on reducing your pain,
-      restoring your strength, and rebuilding your mobility. We’re here to support and guide you
-      every step of the way, helping you regain not just function, but also the confidence to return
-      to the active life you love. Your journey to moving freely and living fully starts with us.
+    <div class="services-track" id="servicesTrack">
+      <div class="service-card">
+        <img src="assets/service1.jpg" alt="">
+        <span>Physiotherapy</span>
+      </div>
+      <div class="service-card">
+        <img src="assets/service2.jpg" alt="">
+        <span>Sports Rehab</span>
+      </div>
+      <div class="service-card">
+        <img src="assets/service3.jpg" alt="">
+        <span>Post Surgery Rehab</span>
+      </div>
+      <div class="service-card">
+        <img src="assets/service4.jpg" alt="">
+        <span>Dry Needling</span>
+      </div>
+      <div class="service-card">
+        <img src="assets/service5.jpg" alt="">
+        <span>Cupping Therapy</span>
+      </div>
     </div>
-  "
->
-  <img src="assets/service1.jpg" />
-  <span>ORTHO REHAB</span>
-</div>
 
-
-
-
-      <div class="auto-card" data-title="NEURO REHAB      
-      
-      <H3>Empowering you to achieve your highest potential for recovery.</H3>" data-desc="
-Specialized neurological rehabilitation for stroke, brain injury, and Parkinson’s disease. We
-assist individuals in rebuilding pathways, restoring function, and regaining independence.
-Reclaim your strength, movement, and confidence for everyday activities. Retrain the brain
-and body following a neurological event or diagnosis. Our professional therapists restore
-skills using evidence-based strategies. A journey to better independence and quality of life
-begins here. 
-">
-        <img src="assets/service2.jpg" />
-        <span>NEURO REHAB</span>
-      </div>
-
-      <div class="auto-card" data-title="PEDIATRIC REHAB" data-desc="Play-based child therapy.">
-        <img src="assets/service3.jpg" />
-        <span>PEDIATRIC REHAB</span>
-      </div>
-
-      <div class="auto-card" data-title="SPORTS REHAB" data-desc="Return stronger to sports.">
-        <img src="assets/service4.jpg" />
-        <span>SPORTS REHAB</span>
-      </div>
-
-      <div class="auto-card" data-title="PRENATAL REHAB" data-desc="Prenatal physiotherapy care.">
-        <img src="assets/service5.jpg" />
-        <span>PRENATAL REHAB</span>
-      </div>
-
-     
-]
-  <!-- Buttons -->
-  <div class="show-btn-wrapper" id="showBtnWrap">
-    <button id="showAllBtn">Show More Services</button>
+    <button class="arrow right" onclick="nextService()">❯</button>
   </div>
 
-  <div class="back-btn-wrapper" id="backBtnWrap" style="display:none;">
-    <button id="backToTopBtn">← Back to Top Services</button>
-  </div>
+  <button class="show-more-btn" onclick="showAllServices()">Show More</button>
 
-  <!-- Hidden Services -->
-  <div class="all-services-grid" id="allServicesGrid">
-    <div class="grid-card" data-title="FUNCTIONAL FITNESS" data-desc="Improve daily movement and strength.">
-      <img src="assets/service6.jpg">
-      <span>FUNCTIONAL FITNESS</span>
-    </div>
-    <div class="grid-card" data-title="ERGONOMIC CARE" data-desc="Workplace posture correction.">
-      <img src="assets/service7.jpg">
-      <span>ERGONOMIC CARE</span>
-    </div>
-    <div class="grid-card" data-title="GUT HEALTH" data-desc="Improve digestion naturally.">
-      <img src="assets/service9.jpg">
-      <span>GUT HEALTH</span>
-    </div>
-    <div class="grid-card" data-title="SPORTS NUTRITION" data-desc="Performance nutrition support.">
-      <img src="assets/service13.jpg">
-      <span>SPORTS NUTRITION</span>
+  <!-- All Services -->
+  <div class="all-services hidden" id="allServices">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+
+    <div class="services-grid">
+      <!-- Repeat for 16 services -->
+      <div class="service-box"><img src="assets/service1.jpg"><span>Physiotherapy</span></div>
+      <div class="service-box"><img src="assets/service2.jpg"><span>Sports Rehab</span></div>
+      <div class="service-box"><img src="assets/service3.jpg"><span>Post Surgery Rehab</span></div>
+      <div class="service-box"><img src="assets/service4.jpg"><span>Dry Needling</span></div>
+      <div class="service-box"><img src="assets/service5.jpg"><span>Cupping Therapy</span></div>
+      <div class="service-box"><img src="assets/service6.jpg"><span>Chiropractic</span></div>
+      <div class="service-box"><img src="assets/service7.jpg"><span>Electro Therapy</span></div>
+      <div class="service-box"><img src="assets/service8.jpg"><span>Neuro Rehab</span></div>
+      <div class="service-box"><img src="assets/service9.jpg"><span>Ortho Rehab</span></div>
+      <div class="service-box"><img src="assets/service10.jpg"><span>Manual Therapy</span></div>
+      <div class="service-box"><img src="assets/service11.jpg"><span>Strength Training</span></div>
+      <div class="service-box"><img src="assets/service12.jpg"><span>Posture Correction</span></div>
+      <div class="service-box"><img src="assets/service13.jpg"><span>Weight Loss</span></div>
+      <div class="service-box"><img src="assets/service14.jpg"><span>Spine Care</span></div>
+      <div class="service-box"><img src="assets/service15.jpg"><span>Pain Relief</span></div>
+      <div class="service-box"><img src="assets/service16.jpg"><span>Home Visit</span></div>
     </div>
   </div>
 </section>
+
 
 <!-- Modal -->
 <div class="modal" id="serviceModal">

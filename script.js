@@ -1,45 +1,40 @@
-const track = document.getElementById("autoCarouselTrack");
-const allCards = document.querySelectorAll(".auto-card"); // all auto cards
-const cards = Array.from(allCards).slice(0, 5); // ONLY FIRST 5 LOOP
-const topCarousel = document.getElementById("topCarousel");
-const allGrid = document.getElementById("allServicesGrid");
-const showBtnWrap = document.getElementById("showBtnWrap");
-const backBtnWrap = document.getElementById("backBtnWrap");
-
+const track = document.getElementById("servicesTrack");
 let index = 0;
-let sliderInterval;
 
-function startSlider() {
-  const cardWidth = cards[0].offsetWidth + 20;
-  clearInterval(sliderInterval);
-
-  sliderInterval = setInterval(() => {
-    index = (index + 1) % cards.length;
-
-    track.style.transition = "transform 0.6s ease";
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }, 2500);
+function updateSlider() {
+  track.style.transform = `translateX(-${index * 220}px)`;
 }
 
-startSlider();
+function nextService() {
+  index++;
+  if (index > 4) index = 0;
+  updateSlider();
+}
 
-// ================= SHOW MORE / BACK =================
+function prevService() {
+  index--;
+  if (index < 0) index = 4;
+  updateSlider();
+}
 
-document.getElementById("showAllBtn").addEventListener("click", () => {
-  topCarousel.style.display = "none";
-  showBtnWrap.style.display = "none";
-  allGrid.style.display = "grid";
-  backBtnWrap.style.display = "block";
-  clearInterval(sliderInterval);
-});
+// Auto Slide
+setInterval(() => {
+  nextService();
+}, 2500);
 
-document.getElementById("backToTopBtn").addEventListener("click", () => {
-  topCarousel.style.display = "block";
-  showBtnWrap.style.display = "block";
-  allGrid.style.display = "none";
-  backBtnWrap.style.display = "none";
-  startSlider();
-});
+// Show More
+function showAllServices() {
+  document.getElementById("servicesSlider").style.display = "none";
+  document.querySelector(".show-more-btn").style.display = "none";
+  document.getElementById("allServices").classList.remove("hidden");
+}
+
+// Back Button
+function goBack() {
+  document.getElementById("servicesSlider").style.display = "flex";
+  document.querySelector(".show-more-btn").style.display = "block";
+  document.getElementById("allServices").classList.add("hidden");
+}
 
 // ================= MODAL FIX =================
 
