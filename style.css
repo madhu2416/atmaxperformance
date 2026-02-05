@@ -120,8 +120,26 @@ h1, h2, h3 {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 🔥 true 2 columns */
+  gap: 12px;
+  padding: 0 10px;       /* avoid edge trimming */
+}
+
+.services-grid .auto-card {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* square */
+  border-radius: 12px;
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .services-grid .auto-card {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .service-modal {
@@ -148,28 +166,33 @@ h1, h2, h3 {
   .service-card { min-width: 160px; }
 }
 
-.auto-card {
-  position: relative;
-  min-width: 220px;
-  aspect-ratio: 1 / 1;   /* perfect square */
-  border-radius: 14px;
-  overflow: hidden;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.auto-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 .service-modal-content {
   max-height: 80vh;
   overflow-y: auto;
 }
 
+
+/* Slider card size fix */
+.services-track .auto-card {
+  min-width: 160px;        /* 🔽 smaller square */
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Image fit (no ugly zoom) */
+.services-track .auto-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* keeps square without stretching */
+}
+
+@media (max-width: 480px) {
+  .services-track .auto-card {
+    min-width: 140px;   /* 🔥 perfect size for phone */
+  }
+}
 
 
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
