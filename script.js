@@ -1,40 +1,30 @@
 const track = document.getElementById("servicesTrack");
+const cards = document.querySelectorAll("#servicesTrack .auto-card");
 let index = 0;
 
 function updateSlider() {
-  track.style.transform = `translateX(-${index * 220}px)`;
+  if (!cards.length) return;
+  const cardWidth = cards[0].offsetWidth + 20; // card + margin
+  track.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
 function nextService() {
   index++;
-  if (index > 4) index = 0;
+  if (index >= cards.length) index = 0;   // infinite loop
   updateSlider();
 }
 
 function prevService() {
   index--;
-  if (index < 0) index = 4;
+  if (index < 0) index = cards.length - 1; // infinite loop
   updateSlider();
 }
 
-// Auto Slide
+// Auto slide
 setInterval(() => {
   nextService();
 }, 2500);
 
-// Show More
-function showAllServices() {
-  document.getElementById("servicesSlider").style.display = "none";
-  document.querySelector(".show-more-btn").style.display = "none";
-  document.getElementById("allServices").classList.remove("hidden");
-}
-
-// Back Button
-function goBack() {
-  document.getElementById("servicesSlider").style.display = "flex";
-  document.querySelector(".show-more-btn").style.display = "block";
-  document.getElementById("allServices").classList.add("hidden");
-}
 
 // ================= MODAL FIX =================
 const modal = document.getElementById("serviceModal");

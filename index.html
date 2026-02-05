@@ -72,18 +72,13 @@
   <p>We listen, understand, and work alongside you every step of the way. Our focus is on accurate diagnosis, crafting a truly personalized exercise program, and guiding you with care and compassion. Beyond treatment, our aim is to restore your confidence, strength, and independence—helping you return to a life that feels as close to normal as possible.</p>
 </section>
 
-<!-- Services Section -->
-<section class="services-section reveal">
-  <h2 class="section-title">Our Services</h2>
 
-  <!-- Top 5 Auto Carousel -->
-  <section class="services-section">
-  <h2>Our Services</h2>
+<div class="services-slider" id="servicesSlider">
+  <button class="arrow left" onclick="prevService()">❮</button>
 
-  <!-- Slider -->
-  <div class="services-slider" id="servicesSlider">
-    <button class="arrow left" onclick="prevService()">❮</button>
-
+  <div class="services-window">
+    <div class="services-track" id="servicesTrack">
+     
 <div 
   class="auto-card" 
   data-title="ORTHO REHAB"
@@ -136,15 +131,12 @@
   <img src="assets/service5.jpg">
   <span class="service-name">SPORTS REHAB</span>
 </div>
-
-    <button class="arrow right" onclick="nextService()">❯</button>
+    </div>
   </div>
 
-  <button class="show-more-btn" onclick="showAllServices()">Show More</button>
+  <button class="arrow right" onclick="nextService()">❯</button>
+</div>
 
-  <!-- All Services -->
-  <div class="all-services hidden" id="allServices">
-    <button class="back-btn" onclick="goBack()">← Back</button>
 
     <div class="services-grid">
       <!-- Repeat for 16 services -->
