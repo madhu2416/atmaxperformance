@@ -555,7 +555,7 @@ h1, h2, h3 {
 
 
 .hero {
-  outline: 5px solid black !important;
+  outline: 5px solid red !important;
 }
 /* Popup background continuity (same as Founder section) */
 .popup-container,
