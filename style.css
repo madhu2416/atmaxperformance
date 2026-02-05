@@ -84,6 +84,7 @@ h1, h2, h3 {
 .services-section {
   background: linear-gradient(135deg, #005c4b, #00796b);
   padding: 40px 16px;
+  text-align: center
 }
 
 .service-card {
@@ -347,6 +348,7 @@ h1, h2, h3 {
   text-align: center;
   background-color: #d4f7e3;
   color: #004d40;
+  text-align: center
 }
 
 .expert-list {
@@ -375,7 +377,8 @@ h1, h2, h3 {
 .founder {
   padding: 50px 20px;
   background: linear-gradient(135deg, #005c4b, #00796b); /* SAME DARK GREEN AS CARDS */
-  color: #ffffff;  /* WHITE TEXT */
+  color: #ffffff; 
+  text-align: center /* WHITE TEXT */
 }
 
 .founder h2,
@@ -420,6 +423,7 @@ h1, h2, h3 {
   background: linear-gradient(135deg, #005c4b, #00796b); /* SAME AS FOUNDER */
   color: #ffffff;  /* WHITE TEXT */
   padding: 50px 20px;
+  text-align: center
 }
 
 .vision-mission  h2,
@@ -760,5 +764,6 @@ body.modal-open {
 .gallery-section {
   background-color: #004d40;
   color: #ffffff;
-  padding: 40px 15px;   /* nice spacing, optional */
+  padding: 40px 15px; 
+  text-align: center  /* nice spacing, optional */
 }
