@@ -99,20 +99,20 @@ h1, h2, h3 {
 }
 
 /* ✅ Always 2 columns when shown (even on mobile) */
+/* FORCE 2 columns on mobile */
 .services-grid {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px;
-  width: 100%;
+  gap: 12px !important;
 }
 
-/* 🟩 Square cards – same size everywhere */
+/* Prevent cards from becoming full width */
 .services-grid .service-card {
   width: 100% !important;
-  aspect-ratio: 1 / 1;
-  border-radius: 14px;
-  overflow: hidden;
+  max-width: 100% !important;
 }
+
+
 
 /* 🚫 Kill horizontal scroll & green empty area */
 html, body {
@@ -183,6 +183,7 @@ html, body {
   overflow: hidden;
   flex-shrink: 0;
   background: #000;
+  
 }
 
 /* Image fill */
@@ -282,10 +283,9 @@ html, body {
 }
 
 .services-grid .service-card {
-  width: 100%;
-  aspect-ratio: 1 / 1;   /* 🔥 Square in grid */
+  min-width: 0 !important;
+  aspect-ratio: 1 / 1;
 }
-
 /* Modal */
 .service-modal {
   position: fixed;
@@ -801,4 +801,10 @@ body.modal-open {
   color: #ffffff;
   padding: 40px 15px; 
   text-align: center  /* nice spacing, optional */
+}
+
+
+/* FORCE hide grid before Show More */
+.services-grid-wrapper {
+  display: none !important;
 }
