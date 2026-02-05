@@ -1,38 +1,15 @@
 const track = document.querySelector(".services-track");
-let cards = document.querySelectorAll(".auto-card");
-
-// Clone first 5 for smooth infinite loop
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  track.appendChild(clone);
-});
+const cards = document.querySelectorAll(".service-card");
 
 let index = 0;
-let sliderTimer = null;
+let cardWidth = 0;
 
-function startAutoSlide() {
-  if (sliderTimer) clearInterval(sliderTimer);
-
-  const cardWidth = cards[0].offsetWidth + 12;
-
-  sliderTimer = setInterval(() => {
-    index++;
-    track.style.transition = "transform 0.4s linear";
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-    // When reaching clones → reset without blink
-    if (index >= cards.length) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = "translateX(0)";
-      }, 420);
-    }
-  }, 1200); // fast smooth speed
+function setupSlider() {
+  cardWidth = cards[0].offsetWidth + 12; // gap included
 }
 
-startAutoSlide();
-
+function autoSlide() {
+  index++;
 
   if (index >= 5) {
     track.style.transition = "none";
