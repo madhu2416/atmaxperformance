@@ -1,51 +1,45 @@
 const track = document.getElementById("servicesTrack");
-let cards = document.querySelectorAll(".services-track .service-card");
-
+const cards = document.querySelectorAll(".services-track .service-card");
 let index = 0;
 let cardWidth = 0;
 
 function setupSlider() {
-  cards = document.querySelectorAll(".services-track .service-card");
   cardWidth = cards[0].offsetWidth + 12;
-
-  // clone for infinite loop
-  cards.forEach(card => {
-    const clone = card.cloneNode(true);
-    track.appendChild(clone);
-  });
 }
 
 function autoSlide() {
   index++;
-  track.style.transform = `translateX(-${index * cardWidth}px)`;
-
   if (index >= cards.length) {
+    index = 0;
+    track.style.transition = "none";
+    track.style.transform = "translateX(0)";
     setTimeout(() => {
-      track.style.transition = "none";
-      index = 0;
-      track.style.transform = "translateX(0)";
-      setTimeout(() => {
-        track.style.transition = "transform 2s linear";
-      }, 50);
-    }, 2000);
+      track.style.transition = "transform 1.2s linear";
+    }, 50);
+  } else {
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
 }
 
 window.addEventListener("load", () => {
   setupSlider();
-  setInterval(autoSlide, 2000);
+  setInterval(autoSlide, 1800);
 });
 
-/* Show More / Back */
-document.querySelector(".show-more-btn").onclick = () => {
+window.addEventListener("resize", setupSlider);
+
+// Show More
+document.getElementById("showMoreBtn").onclick = () => {
   document.querySelector(".slider-section").style.display = "none";
-  document.querySelector(".services-grid-wrapper").style.display = "block";
+  document.getElementById("allServices").style.display = "block";
 };
 
-document.querySelector(".back-btn").onclick = () => {
-  document.querySelector(".services-grid-wrapper").style.display = "none";
+// Back
+document.getElementById("backBtn").onclick = () => {
+  document.getElementById("allServices").style.display = "none";
   document.querySelector(".slider-section").style.display = "block";
 };
+
 
 /* MODAL */
 if (!window.__serviceModalInit) {
