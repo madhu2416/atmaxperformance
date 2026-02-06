@@ -1,18 +1,32 @@
-/* ---------- Scroll Reveal ---------- */
-const reveals = document.querySelectorAll(".reveal");
 
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < windowHeight - 100) {
-      el.classList.add("active");
-    }
+document.addEventListener("DOMContentLoaded", function () {
+
+  const modal = document.getElementById("serviceModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalLine = document.getElementById("modalLine");
+  const modalDesc = document.getElementById("modalDesc");
+  const closeBtn = document.querySelector(".close-modal");
+
+  document.querySelectorAll(".service-card").forEach(card => {
+    card.addEventListener("click", () => {
+      modalTitle.textContent = card.getAttribute("data-title");
+      modalLine.textContent = card.getAttribute("data-line");
+      modalDesc.textContent = card.getAttribute("data-desc");
+      modal.style.display = "flex";
+    });
   });
-}
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+
+});
+
+
 
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
