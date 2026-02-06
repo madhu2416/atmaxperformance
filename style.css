@@ -662,6 +662,21 @@ body.modal-open {
     max-width: 200px;
   }
 
+  /* Services Grid - 2 Columns */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+}
+
+/* Service Images - Square Shape */
+.service-card img {
+  width: 100%;
+  height: 250px; /* makes it a nice square */
+  object-fit: cover;
+}
+
+
   .treatments-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
