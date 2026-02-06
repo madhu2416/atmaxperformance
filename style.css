@@ -65,45 +65,60 @@ h1, h2, h3 {
 /* Section title "Our Services" */
 
 /* Service names under the images */
-#services .service-card h3 {
-  color: #ffffff;       /* make the text white */
-  font-size: 16px;      /* slightly smaller size */
-  font-weight: 600;     /* bold for readability */
-  margin: 10px 0 5px;   /* spacing above and below */
-  text-align: center;   /* center under the image */
+/* Services Section Grid - exactly 2 columns */
+#services .services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 columns */
+  gap: 20px !important;
+  width: 100% !important;
 }
 
-/* Optional: Description text below the name */
+/* Service Cards */
+#services .service-card {
+  display: flex !important;
+  flex-direction: column !important; /* stack items vertically */
+  align-items: center !important;    /* center everything */
+  background-color: #0d1f1a !important; /* optional: dark background */
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Service Images - square */
+#services .service-card img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important; /* square */
+  object-fit: cover !important;
+  order: 0;
+}
+
+/* Service Name - under image, white, smaller */
+#services .service-card h3 {
+  order: 1;              /* below image */
+  color: #ffffff !important; /* white */
+  font-size: 16px !important; /* smaller */
+  font-weight: 600;
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+/* Service Description */
 #services .service-card p {
-  color: #ddd;          /* light grey for readability */
-  font-size: 14px;      /* smaller, neat size */
+  order: 2; 
+  color: #ddd !important;    /* light grey for readability */
+  font-size: 14px !important;
   margin: 0 10px 20px;
   text-align: center;
 }
 
+/* Section Title */
 #services .section-title {
-  color: #ffffff; /* white color */
-}
-
-/* Service names under images */
-#services .service-card h3 {
-  color: #ffffff; /* white color */
-  font-weight: 600; /* optional: bold */
-  margin: 15px 0 10px;
+  color: #ffffff !important; /* white */
   text-align: center;
+  margin-bottom: 40px;
 }
 
-/* Optional: make description text slightly lighter for contrast */
-#services .service-card p {
-  color: #ddd; /* light grey for readability on dark background */
-}
-
-#services .service-card {
-  display: flex;
-  flex-direction: column; /* stack items vertically */
-  align-items: center;    /* center everything */
-  text-align: center;
-}
 
 /* Ensure image stays on top */
 #services .service-card img {
