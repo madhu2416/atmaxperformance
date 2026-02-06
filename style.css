@@ -68,44 +68,34 @@ h1, h2, h3 {
 /* Services Section Grid - exactly 2 columns */
 /* Force service card to stack vertically */
 /* Make the service card position relative so we can overlay text */
-#services .service-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Image */
-#services .service-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;  /* square */
-  object-fit: cover;
-  display: block;
-}
-
-/* Service name on top of image */
+/* Force service names under images to be white */
 #services .service-card h3 {
-  position: absolute;    /* position over image */
-  bottom: 10px;          /* adjust vertical position */
-  left: 50%;             /* center horizontally */
-  transform: translateX(-50%);
-  color: #ffffff;        /* white text */
-  font-size: 18px;       /* adjust size as needed */
-  font-weight: 600;
-  text-align: center;
-  background: rgba(0,0,0,0.4); /* optional: semi-transparent dark background for readability */
-  padding: 5px 10px;
-  border-radius: 5px;
+    color: #ffffff !important;  /* FORCED white */
+    font-size: 12px !important; /* slightly smaller */
+    font-weight: 600 !important;
+    margin: 10px 0 5px !important;
+    text-align: center !important;
 }
 
-/* Description stays below the image if needed */
+/* Optional: ensure card has dark background so text is visible */
+#services .service-card {
+    background-color: #0d1f1a !important; /* dark so white text is visible */
+}
+
+/* Image stays on top */
+#services .service-card img {
+    width: 100% !important;
+    aspect-ratio: 1 / 1 !important; /* square */
+    object-fit: cover !important;
+    display: block;
+}
+
+/* Description stays below the name */
 #services .service-card p {
-  margin: 10px 10px 20px;
-  color: #fff;
-  font-size: 10px;
-  text-align: center;
+    color: #ddd !important;
+    font-size: 10px !important;
+    text-align: center !important;
+    margin: 0 10px 20px !important;
 }
 
 /* Modal */
