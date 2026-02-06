@@ -59,46 +59,31 @@ h1, h2, h3 {
 /* ---------- Lively UI Enhancements ---------- */
 
 /* Gradient background for services section */
-.services-section {
-  padding: 40px 12px;
-  background: #0d1f1a; /* keep your green */
-}
-
-.services-grid {
+/* Services Grid - exactly 2 columns */
+#services .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 20px;
+  width: 100%;
 }
 
-.service-card {
-  position: relative;
-  border-radius: 12px;
+/* Service Cards */
+#services .service-card {
+  background-color: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
-  cursor: pointer;
-  background: #000;
-}
-/* Force Services Grid to 2 Columns */
-section#services .services-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important; /* exactly 2 columns */
-  gap: 20px !important;
-  width: 100% !important;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
-/* Make service images square and bigger */
-section#services .service-card img {
-  width: 100% !important;
-  height: auto !important;
-  aspect-ratio: 1 / 1 !important; /* perfectly square */
-  object-fit: cover !important;
-}
-
-/* Optional: Make the card itself adjust nicely */
-section#services .service-card {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: start !important;
+/* Service Images - perfectly square */
+#services .service-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* square image */
+  object-fit: cover;
 }
 
 
