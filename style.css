@@ -625,3 +625,63 @@ body.modal-open {
 }
 
 
+/* =========================
+   RESPONSIVE LAYOUT FIX
+   ========================= */
+
+/* Make services and treatments stack and center on mobile */
+@media (max-width: 992px) {
+
+  /* make sure main content does not overflow */
+  body, html {
+    overflow-x: hidden !important;
+  }
+
+  /* container for services & sections */
+  .services-section,
+  .treatments-section,
+  .founder,
+  .experts,
+  .gallery-section,
+  footer {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 15px !important;
+  }
+
+  /* unify grid layout */
+  .services-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    justify-items: center !important;
+  }
+
+  .service-card {
+    width: 100% !important;
+    max-width: 200px;
+  }
+
+  .treatments-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    justify-items: center !important;
+  }
+
+  /* center text and sections */
+  .services-section h2,
+  .treatments-section h2 {
+    text-align: center !important;
+  }
+
+  .treatments-section {
+    margin-top: 30px !important;
+  }
+
+  .treatments-grid .treatment-card {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+}
