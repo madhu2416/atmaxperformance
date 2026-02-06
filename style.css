@@ -128,56 +128,6 @@ h1, h2, h3 {
   line-height: 1.6;
 }
 
-.services-section {
-  background: linear-gradient(135deg, #005c4b, #00796b);
-}
-
-/* Hover effect on service cards */
-.service-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 255, 200, 0.35);
-}
-
-/* Scroll reveal animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Floating WhatsApp button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: #fff;
-  padding: 14px 16px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s ease;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.08);
-}
-
-
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
 .treatments {
   padding: 50px 20px;

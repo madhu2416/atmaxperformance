@@ -17,7 +17,6 @@ modal.addEventListener("click", (e) => {
 });
 
 
-
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
 const galleryImages = [
   "assets/gallery1.jpeg",
