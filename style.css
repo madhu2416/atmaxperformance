@@ -90,7 +90,8 @@ h1, h2, h3 {
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  background-color: #0d1f1a !important; /* dark so white text is visible */
+  background-color: #1f785f !important; 
+  color :#fff !important;/* dark so white text is visible */
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
@@ -133,7 +134,8 @@ h1, h2, h3 {
 }
 
 #showMoreServices:hover {
-  background-color: #0d1f1a;
+  background-color: #17634d;
+  color: #fff
 }
 
 /* Hidden Services */
