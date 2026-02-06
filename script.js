@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("serviceModal");
@@ -20,8 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
   modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 
 });
-</script>
-
 
 
 
