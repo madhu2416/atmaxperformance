@@ -63,6 +63,24 @@ h1, h2, h3 {
 /* Make the service card a column layout */
 
 /* Section title "Our Services" */
+
+/* Service names under the images */
+#services .service-card h3 {
+  color: #ffffff;       /* make the text white */
+  font-size: 16px;      /* slightly smaller size */
+  font-weight: 600;     /* bold for readability */
+  margin: 10px 0 5px;   /* spacing above and below */
+  text-align: center;   /* center under the image */
+}
+
+/* Optional: Description text below the name */
+#services .service-card p {
+  color: #ddd;          /* light grey for readability */
+  font-size: 14px;      /* smaller, neat size */
+  margin: 0 10px 20px;
+  text-align: center;
+}
+
 #services .section-title {
   color: #ffffff; /* white color */
 }
