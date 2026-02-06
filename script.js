@@ -1,19 +1,20 @@
-/* ---------- Scroll Reveal ---------- */
-const reveals = document.querySelectorAll(".reveal");
+const modal = document.getElementById("serviceModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
 
-function revealOnScroll() {
-  const windowHeight = window.innerHeight;
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < windowHeight - 100) {
-      el.classList.add("active");
-    }
+document.querySelectorAll(".service-card").forEach(card => {
+  card.addEventListener("click", () => {
+    modalTitle.innerText = card.dataset.title;
+    modalDesc.innerText = card.dataset.desc;
+    modal.style.display = "flex";
   });
-}
+});
 
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
 const galleryImages = [
