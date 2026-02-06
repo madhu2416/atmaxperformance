@@ -67,41 +67,44 @@ h1, h2, h3 {
 /* Service names under the images */
 /* Services Section Grid - exactly 2 columns */
 /* Force service card to stack vertically */
+/* Make the service card position relative so we can overlay text */
 #services .service-card {
-  display: flex !important;
-  flex-direction: column !important;  /* image on top, name below */
-  align-items: center !important;     /* center everything */
-  text-align: center;
-  background-color: #0d1f1a !important; /* dark background so white is visible */
+  position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Image stays on top */
+/* Image */
 #services .service-card img {
-  width: 100% !important;
-  aspect-ratio: 1 / 1 !important; /* square */
-  object-fit: cover !important;
-  order: 0;
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* square */
+  object-fit: cover;
+  display: block;
 }
 
-/* Service name directly under image, in white */
+/* Service name on top of image */
 #services .service-card h3 {
-  order: 1;                  /* comes right under image */
-  color: #ffffff !important; /* white text */
-  font-size: 16px;           /* smaller size */
+  position: absolute;    /* position over image */
+  bottom: 10px;          /* adjust vertical position */
+  left: 50%;             /* center horizontally */
+  transform: translateX(-50%);
+  color: #ffffff;        /* white text */
+  font-size: 18px;       /* adjust size as needed */
   font-weight: 600;
-  margin: 10px 0 5px;
   text-align: center;
+  background: rgba(0,0,0,0.4); /* optional: semi-transparent dark background for readability */
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-/* Description stays under name */
+/* Description stays below the image if needed */
 #services .service-card p {
-  order: 2;
-  color: #ddd !important;    /* light grey for readability */
+  margin: 10px 10px 20px;
+  color: #555;
   font-size: 14px;
-  margin: 0 10px 20px;
   text-align: center;
 }
 
