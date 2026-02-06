@@ -1,69 +1,18 @@
-const track = document.querySelector(".services-track");
-const cards = document.querySelectorAll(".slider-section .service-card");
+/* ---------- Scroll Reveal ---------- */
+const reveals = document.querySelectorAll(".reveal");
 
-let index = 0;
-let cardWidth = 0;
-
-function setupSlider() {
-  cardWidth = cards[0].offsetWidth + 12;
-}
-
-function autoSlide() {
-  index++;
-
-  if (index >= cards.length) {
-    track.style.transition = "none";
-    index = 0;
-    track.style.transform = `translateX(0px)`;
-
-    setTimeout(() => {
-      track.style.transition = "transform 1.2s linear";
-      index = 1;
-      track.style.transform = `translateX(-${cardWidth}px)`;
-    }, 40);
-  } else {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
-}
-
-window.addEventListener("load", () => {
-  setupSlider();
-  setInterval(autoSlide, 1800);
-});
-
-window.addEventListener("resize", setupSlider);
-
-/* SHOW MORE */
-function showAllServices() {
-  document.querySelector(".slider-section").style.display = "none";
-  document.querySelector(".services-grid-wrapper").style.display = "block";
-}
-
-/* BACK */
-function goBack() {
-  document.querySelector(".services-grid-wrapper").style.display = "none";
-  document.querySelector(".slider-section").style.display = "block";
-}
-
-/* MODAL */
-const modal = document.querySelector(".service-modal");
-const modalTitle = modal.querySelector("h4");
-const modalLine = modal.querySelector("h3");
-const modalDesc = modal.querySelector("h2");
-
-document.querySelectorAll(".service-card").forEach(card => {
-  card.addEventListener("click", () => {
-    modalTitle.innerText = card.dataset.title;
-    modalLine.innerText = card.dataset.line;
-    modalDesc.innerText = card.dataset.desc;
-    modal.style.display = "flex";
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < windowHeight - 100) {
+      el.classList.add("active");
+    }
   });
-});
+}
 
-modal.onclick = e => {
-  if (e.target === modal) modal.style.display = "none";
-};
-
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
