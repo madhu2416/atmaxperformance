@@ -1,5 +1,6 @@
-const track = document.getElementById("servicesTrack");
-const cards = document.querySelectorAll(".services-track .service-card");
+const track = document.querySelector(".services-track");
+const cards = document.querySelectorAll(".slider-section .service-card");
+
 let index = 0;
 let cardWidth = 0;
 
@@ -9,13 +10,17 @@ function setupSlider() {
 
 function autoSlide() {
   index++;
+
   if (index >= cards.length) {
-    index = 0;
     track.style.transition = "none";
-    track.style.transform = "translateX(0)";
+    index = 0;
+    track.style.transform = `translateX(0px)`;
+
     setTimeout(() => {
       track.style.transition = "transform 1.2s linear";
-    }, 50);
+      index = 1;
+      track.style.transform = `translateX(-${cardWidth}px)`;
+    }, 40);
   } else {
     track.style.transform = `translateX(-${index * cardWidth}px)`;
   }
@@ -28,42 +33,36 @@ window.addEventListener("load", () => {
 
 window.addEventListener("resize", setupSlider);
 
-// Show More
-document.getElementById("showMoreBtn").onclick = () => {
+/* SHOW MORE */
+function showAllServices() {
   document.querySelector(".slider-section").style.display = "none";
-  document.getElementById("allServices").style.display = "block";
-};
+  document.querySelector(".services-grid-wrapper").style.display = "block";
+}
 
-// Back
-document.getElementById("backBtn").onclick = () => {
-  document.getElementById("allServices").style.display = "none";
+/* BACK */
+function goBack() {
+  document.querySelector(".services-grid-wrapper").style.display = "none";
   document.querySelector(".slider-section").style.display = "block";
-};
-
+}
 
 /* MODAL */
-if (!window.__serviceModalInit) {
-  window.__serviceModalInit = true;
+const modal = document.querySelector(".service-modal");
+const modalTitle = modal.querySelector("h4");
+const modalLine = modal.querySelector("h3");
+const modalDesc = modal.querySelector("h2");
 
-  const modal = document.getElementById("serviceModal");
-  const modalTitle = modal.querySelector("h4");
-  const modalLine = modal.querySelector("h3");
-  const modalDesc = modal.querySelector("h2");
-
-  document.addEventListener("click", e => {
-    const card = e.target.closest(".service-card");
-    if (!card) return;
-
+document.querySelectorAll(".service-card").forEach(card => {
+  card.addEventListener("click", () => {
     modalTitle.innerText = card.dataset.title;
     modalLine.innerText = card.dataset.line;
     modalDesc.innerText = card.dataset.desc;
     modal.style.display = "flex";
   });
+});
 
-  modal.onclick = e => {
-    if (e.target === modal) modal.style.display = "none";
-  };
-}
+modal.onclick = e => {
+  if (e.target === modal) modal.style.display = "none";
+};
 
 
 
