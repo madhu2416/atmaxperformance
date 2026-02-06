@@ -144,6 +144,60 @@ h1, h2, h3 {
   font-size: 14px;
 }
 
+/* Services Section - Cards */
+#services .service-card {
+  background-color: #0d1f1a !important; /* dark background so white text is visible */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Service Images - square */
+#services .service-card img {
+  width: 100% !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  order: 0;
+}
+
+/* Service Name - white and under image */
+#services .service-card h3 {
+  order: 1;
+  color: #ffffff !important; /* FORCED white */
+  font-size: 16px !important; /* smaller font */
+  font-weight: 600;
+  margin: 10px 0 5px;
+  text-align: center;
+}
+
+/* Service Description */
+#services .service-card p {
+  order: 2;
+  color: #ddd !important; /* light grey for readability */
+  font-size: 14px !important;
+  margin: 0 10px 20px;
+  text-align: center;
+}
+
+/* Section Title - white */
+#services .section-title {
+  color: #ffffff !important;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Services Grid - 2 columns */
+#services .services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
 /* Modal */
 .service-modal {
   position: fixed;
