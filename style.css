@@ -63,21 +63,21 @@ h1, h2, h3 {
   padding: 40px 12px;
   background: #0d1f1a; /* keep your green */
 }
-/* Services Grid - Exactly 2 Columns */
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  gap: 20px;
-  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
-/* Service Images - Square and fit card */
-.service-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* makes image perfectly square */
-  object-fit: cover;
+.service-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  background: #000;
 }
-
 
 .service-card img {
   width: 100%;
