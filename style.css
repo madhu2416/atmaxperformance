@@ -103,8 +103,8 @@ h1, h2, h3 {
 /* Description stays below the image if needed */
 #services .service-card p {
   margin: 10px 10px 20px;
-  color: #555;
-  font-size: 14px;
+  color: #fff;
+  font-size: 10px;
   text-align: center;
 }
 
