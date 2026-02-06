@@ -1,50 +1,37 @@
 const track = document.querySelector(".services-track");
-let cards = document.querySelectorAll(".auto-card");
-
-// Clone first 5 for smooth infinite loop
-cards.forEach(card => {
-  const clone = card.cloneNode(true);
-  track.appendChild(clone);
-});
+const cards = document.querySelectorAll(".service-card");
 
 let index = 0;
-let sliderTimer = null;
+let cardWidth = 0;
 
-function startAutoSlide() {
-  if (sliderTimer) clearInterval(sliderTimer);
+function setupSlider() {
+  cardWidth = cards[0].offsetWidth + 12; // gap included
+}
 
-  const cardWidth = cards[0].offsetWidth + 12;
+function autoSlide() {
+  index++;
 
-  sliderTimer = setInterval(() => {
-    index++;
-    track.style.transition = "transform 0.4s linear";
+  if (index >= 5) {
+    track.style.transition = "none";
+    index = 0;
+    track.style.transform = `translateX(0px)`;
+
+    setTimeout(() => {
+      track.style.transition = "transform 2s linear";
+      index = 1;
+      track.style.transform = `translateX(-${cardWidth}px)`;
+    }, 50);
+  } else {
     track.style.transform = `translateX(-${index * cardWidth}px)`;
-
-    // When reaching clones → reset without blink
-    if (index >= cards.length) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        index = 0;
-        track.style.transform = "translateX(0)";
-      }, 420);
-    }
-  }, 1200); // fast smooth speed
+  }
 }
 
-startAutoSlide();
-function showAllServices() {
-  document.getElementById("servicesSlider").style.display = "none";
-  document.querySelector(".show-more-btn").style.display = "none";
-  document.getElementById("allServices").style.display = "block";
-}
+window.addEventListener("load", () => {
+  setupSlider();
+  setInterval(autoSlide, 2500);
+});
 
-function goBack() {
-  document.getElementById("allServices").style.display = "none";
-  document.getElementById("servicesSlider").style.display = "block";
-  document.querySelector(".show-more-btn").style.display = "block";
-}
-
-
+window.addEventListener("resize", setupSlider);
 
 /* SHOW MORE */
 document.querySelector(".show-more-btn").onclick = () => {
