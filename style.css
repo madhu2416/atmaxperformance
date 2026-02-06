@@ -61,6 +61,25 @@ h1, h2, h3 {
 /* Gradient background for services section */
 /* Services Grid - exactly 2 columns */
 /* Make the service card a column layout */
+
+/* Section title "Our Services" */
+#services .section-title {
+  color: #ffffff; /* white color */
+}
+
+/* Service names under images */
+#services .service-card h3 {
+  color: #ffffff; /* white color */
+  font-weight: 600; /* optional: bold */
+  margin: 15px 0 10px;
+  text-align: center;
+}
+
+/* Optional: make description text slightly lighter for contrast */
+#services .service-card p {
+  color: #ddd; /* light grey for readability on dark background */
+}
+
 #services .service-card {
   display: flex;
   flex-direction: column; /* stack items vertically */
