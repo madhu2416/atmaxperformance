@@ -48,25 +48,28 @@ document.querySelector(".back-btn").onclick = () => {
 };
 
 /* MODAL */
-const modal = document.getElementById("serviceModal");
-const modalTitle = modal.querySelector("h4");
-const modalLine = modal.querySelector("h3");
-const modalDesc = modal.querySelector("h2");
+if (!window.__serviceModalInit) {
+  window.__serviceModalInit = true;
 
-document.addEventListener("click", e => {
-  const card = e.target.closest(".service-card");
-  if (!card) return;
+  const modal = document.getElementById("serviceModal");
+  const modalTitle = modal.querySelector("h4");
+  const modalLine = modal.querySelector("h3");
+  const modalDesc = modal.querySelector("h2");
 
-  modalTitle.innerText = card.dataset.title;
-  modalLine.innerText = card.dataset.line;
-  modalDesc.innerText = card.dataset.desc;
-  modal.style.display = "flex";
-});
+  document.addEventListener("click", e => {
+    const card = e.target.closest(".service-card");
+    if (!card) return;
 
-modal.onclick = e => {
-  if (e.target === modal) modal.style.display = "none";
-};
+    modalTitle.innerText = card.dataset.title;
+    modalLine.innerText = card.dataset.line;
+    modalDesc.innerText = card.dataset.desc;
+    modal.style.display = "flex";
+  });
 
+  modal.onclick = e => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+}
 
 
 
