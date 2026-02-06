@@ -1,4 +1,4 @@
-
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const modal = document.getElementById("serviceModal");
@@ -9,22 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll(".service-card").forEach(card => {
     card.addEventListener("click", () => {
-      modalTitle.textContent = card.getAttribute("data-title");
-      modalLine.textContent = card.getAttribute("data-line");
-      modalDesc.textContent = card.getAttribute("data-desc");
+      modalTitle.textContent = card.dataset.title;
+      modalLine.textContent = card.dataset.line;
+      modalDesc.textContent = card.dataset.desc;
       modal.style.display = "flex";
     });
   });
 
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.style.display = "none";
-  });
+  closeBtn.onclick = () => modal.style.display = "none";
+  modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
 
 });
+</script>
 
 
 
