@@ -78,6 +78,29 @@ h1, h2, h3 {
   cursor: pointer;
   background: #000;
 }
+/* Force Services Grid to 2 Columns */
+section#services .services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* exactly 2 columns */
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+/* Make service images square and bigger */
+section#services .service-card img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1 !important; /* perfectly square */
+  object-fit: cover !important;
+}
+
+/* Optional: Make the card itself adjust nicely */
+section#services .service-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: start !important;
+}
+
 
 .service-card img {
   width: 100%;
