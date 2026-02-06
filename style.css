@@ -192,6 +192,30 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
+/* 🔥 ENSURE GRID ALWAYS 2 COLUMNS */
+.services-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px;
+}
+
+/* 🔥 HIDE GRID BEFORE SHOW MORE */
+.services-grid-wrapper {
+  display: none;
+}
+
+/* 🔥 ENSURE ONLY FIRST 5 IN SLIDER */
+.services-track .service-card:not(.auto-card) {
+  display: none;
+}
+
+/* 🔥 SAME SIZE FOR SLIDER + GRID */
+.services-track .service-card {
+  width: calc(50vw - 24px);
+  max-width: 170px;
+  aspect-ratio: 1 / 1;
+}
+
 
 /* ---------- Treatments (DO NOT CHANGE) ---------- */
 .treatments {

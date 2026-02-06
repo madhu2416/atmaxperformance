@@ -1,68 +1,93 @@
-const track = document.querySelector(".services-track");
-const cards = document.querySelectorAll(".service-card");
+const track = document.querySelector("#servicesTrack");
+let cards = document.querySelectorAll(".auto-card");
 
 let index = 0;
 let cardWidth = 0;
+let intervalId;
 
 function setupSlider() {
-  cardWidth = cards[0].offsetWidth + 12; // gap included
+  cards = document.querySelectorAll(".auto-card");
+  if (!cards.length) return;
+
+  cardWidth = cards[0].offsetWidth + 12;
+
+  // Clone first 5 for smooth infinite loop
+  const clones = [];
+  cards.forEach(card => {
+    clones.push(card.cloneNode(true));
+  });
+
+  // Remove old clones if any
+  track.querySelectorAll(".clone").forEach(c => c.remove());
+
+  clones.forEach(clone => {
+    clone.classList.add("clone");
+    track.appendChild(clone);
+  });
+
+  track.style.transition = "transform 2s linear";
 }
 
-function autoSlide() {
-  index++;
+function startAutoLoop() {
+  clearInterval(intervalId);
 
-  if (index >= 5) {
-    track.style.transition = "none";
-    index = 0;
-    track.style.transform = `translateX(0px)`;
-
-    setTimeout(() => {
-      track.style.transition = "transform 2s linear";
-      index = 1;
-      track.style.transform = `translateX(-${cardWidth}px)`;
-    }, 50);
-  } else {
+  intervalId = setInterval(() => {
+    index++;
     track.style.transform = `translateX(-${index * cardWidth}px)`;
-  }
+
+    if (index === cards.length) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = "translateX(0px)";
+        index = 0;
+
+        setTimeout(() => {
+          track.style.transition = "transform 2s linear";
+        }, 50);
+      }, 2000);
+    }
+  }, 2200);
 }
 
 window.addEventListener("load", () => {
   setupSlider();
-  setInterval(autoSlide, 2500);
+  startAutoLoop();
 });
 
 window.addEventListener("resize", setupSlider);
 
 /* SHOW MORE */
-document.querySelector(".show-more-btn").onclick = () => {
+function showAllServices() {
   document.querySelector(".slider-section").style.display = "none";
   document.querySelector(".services-grid-wrapper").style.display = "block";
-};
+}
 
 /* BACK */
-document.querySelector(".back-btn").onclick = () => {
+function goBack() {
   document.querySelector(".services-grid-wrapper").style.display = "none";
   document.querySelector(".slider-section").style.display = "block";
-};
+}
 
-/* MODAL (keep yours – this is safe) */
-const modal = document.querySelector(".service-modal");
-const modalTitle = modal.querySelector("h4");
-const modalLine = modal.querySelector("h3");
-const modalDesc = modal.querySelector("h2");
+/* MODAL */
+const modal = document.getElementById("serviceModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalLine = document.getElementById("modalLine");
+const modalDesc = document.getElementById("modalDesc");
 
-document.querySelectorAll(".service-card").forEach(card => {
-  card.onclick = () => {
-    modalTitle.innerText = card.dataset.title;
-    modalLine.innerText = card.dataset.line;
-    modalDesc.innerText = card.dataset.desc;
-    modal.style.display = "flex";
-  };
+document.addEventListener("click", e => {
+  const card = e.target.closest(".service-card");
+  if (!card) return;
+
+  modalTitle.innerText = card.dataset.title || "";
+  modalLine.innerText = card.dataset.line || "";
+  modalDesc.innerText = card.dataset.desc || "";
+  modal.style.display = "flex";
 });
 
-modal.onclick = e => {
+modal.addEventListener("click", e => {
   if (e.target === modal) modal.style.display = "none";
-};
+});
+
 
 
 // ===== Gallery Auto Slider (No Blink, No Duplicate) =====
