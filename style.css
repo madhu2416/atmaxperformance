@@ -60,50 +60,36 @@ h1, h2, h3 {
 
 /* Gradient background for services section */
 /* Services Grid - exactly 2 columns */
-#services .services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  gap: 20px;
-  width: 100%;
-}
-
-/* Service Cards */
+/* Make the service card a column layout */
 #services .service-card {
-  background-color: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
-/* Service Images - perfectly square */
-#services .service-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* square image */
-  object-fit: cover;
-}
-
-
-.service-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.service-name {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 8px;
-  background: rgba(0,0,0,0.65);
-  color: #fff;
-  font-weight: 600;
-  font-size: 13px;
+  flex-direction: column; /* stack items vertically */
+  align-items: center;    /* center everything */
   text-align: center;
+}
+
+/* Ensure image stays on top */
+#services .service-card img {
+  order: 0;      /* image first */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Make the service name appear directly under the image */
+#services .service-card h3 {
+  order: 1;      /* name comes right after image */
+  margin: 15px 0 10px;
+  font-size: 18px; /* optional: slightly bigger */
+  font-weight: 600;
+}
+
+/* Description stays below the name */
+#services .service-card p {
+  order: 2; 
+  margin: 0 10px 20px;
+  color: #555;
+  font-size: 14px;
 }
 
 /* Modal */
