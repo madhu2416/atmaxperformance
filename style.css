@@ -66,26 +66,19 @@ h1, h2, h3 {
 
 /* Service names under the images */
 /* Services Section Grid - exactly 2 columns */
-#services .services-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important; /* 2 columns */
-  gap: 20px !important;
-  width: 100% !important;
-}
-
-/* Service Cards */
+/* Force service card to stack vertically */
 #services .service-card {
   display: flex !important;
-  flex-direction: column !important; /* stack items vertically */
-  align-items: center !important;    /* center everything */
-  background-color: #0d1f1a !important; /* optional: dark background */
+  flex-direction: column !important;  /* image on top, name below */
+  align-items: center !important;     /* center everything */
+  text-align: center;
+  background-color: #0d1f1a !important; /* dark background so white is visible */
   border-radius: 10px;
   overflow: hidden;
-  text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Service Images - square */
+/* Image stays on top */
 #services .service-card img {
   width: 100% !important;
   aspect-ratio: 1 / 1 !important; /* square */
@@ -93,109 +86,23 @@ h1, h2, h3 {
   order: 0;
 }
 
-/* Service Name - under image, white, smaller */
+/* Service name directly under image, in white */
 #services .service-card h3 {
-  order: 1;              /* below image */
-  color: #ffffff !important; /* white */
-  font-size: 16px !important; /* smaller */
+  order: 1;                  /* comes right under image */
+  color: #ffffff !important; /* white text */
+  font-size: 16px;           /* smaller size */
   font-weight: 600;
   margin: 10px 0 5px;
   text-align: center;
 }
 
-/* Service Description */
-#services .service-card p {
-  order: 2; 
-  color: #ddd !important;    /* light grey for readability */
-  font-size: 14px !important;
-  margin: 0 10px 20px;
-  text-align: center;
-}
-
-/* Section Title */
-#services .section-title {
-  color: #ffffff !important; /* white */
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-
-/* Ensure image stays on top */
-#services .service-card img {
-  order: 0;      /* image first */
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-/* Make the service name appear directly under the image */
-#services .service-card h3 {
-  order: 1;      /* name comes right after image */
-  margin: 15px 0 10px;
-  font-size: 18px; /* optional: slightly bigger */
-  font-weight: 600;
-}
-
-/* Description stays below the name */
-#services .service-card p {
-  order: 2; 
-  margin: 0 10px 20px;
-  color: #ffffff;
-  font-size: 14px;
-}
-
-/* Services Section - Cards */
-#services .service-card {
-  background-color: #0d1f1a !important; /* dark background so white text is visible */
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  text-align: center;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Service Images - square */
-#services .service-card img {
-  width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
-  object-fit: cover !important;
-  order: 0;
-}
-
-/* Service Name - white and under image */
-#services .service-card h3 {
-  order: 1;
-  color: #ffffff !important; /* FORCED white */
-  font-size: 16px !important; /* smaller font */
-  font-weight: 600;
-  margin: 10px 0 5px;
-  text-align: center;
-}
-
-/* Service Description */
+/* Description stays under name */
 #services .service-card p {
   order: 2;
-  color: #ddd !important; /* light grey for readability */
-  font-size: 14px !important;
+  color: #ddd !important;    /* light grey for readability */
+  font-size: 14px;
   margin: 0 10px 20px;
   text-align: center;
-}
-
-/* Section Title - white */
-#services .section-title {
-  color: #ffffff !important;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Services Grid - 2 columns */
-#services .services-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 20px !important;
-  width: 100% !important;
 }
 
 /* Modal */
