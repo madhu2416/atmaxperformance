@@ -733,3 +733,11 @@ body.modal-open {
     text-align: center;
   }
 }
+
+#services .services-grid .service-card h3 {
+  font-size: 13px !important;   /* smaller service name */
+  line-height: 1.2 !important; /* tighter spacing */
+}
+#services .services-grid .service-card h3 {
+  color: red !important;
+}
