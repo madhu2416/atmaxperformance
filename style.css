@@ -97,9 +97,7 @@ h1, h2, h3 {
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-#services .service-card h3 {
-  font-size: 10px !important;  /* reduce size */
-}
+
 
 /* Images - square */
 #services .service-card img {
@@ -121,7 +119,7 @@ h1, h2, h3 {
 /* Description */
 #services .service-card p {
   color: #ddd !important; 
-  font-size: 14px !important;
+  font-size: 10px !important;
   margin: 0 10px 20px !important;
   text-align: center !important;
 }
