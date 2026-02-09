@@ -734,10 +734,10 @@ body.modal-open {
   }
 }
 
-#services .services-grid .service-card h3 {
-  font-size: 13px !important;   /* smaller service name */
-  line-height: 1.2 !important; /* tighter spacing */
+section#services .service-card > h3 {
+  font-size: 12px !important;   /* clearly smaller */
+  line-height: 1.2 !important;
 }
-#services .services-grid .service-card h3 {
+section#services .service-card > h3 {
   color: red !important;
 }
