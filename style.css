@@ -734,10 +734,7 @@ body.modal-open {
   }
 }
 
-section#services .service-card > h3 {
-  font-size: 12px !important;   /* clearly smaller */
+#services h3 {
+  font-size: 11px !important;
   line-height: 1.2 !important;
-}
-section#services .service-card > h3 {
-  color: red !important;
 }
