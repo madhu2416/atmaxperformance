@@ -8,52 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<div class="enquiry-popup" id="enquiryPopup">
-  <div class="enquiry-box">
-    <span class="close-btn" onclick="closeEnquiry()">×</span>
-    <h2>Enquire Now</h2>
-
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="phone" placeholder="Your Phone Number" required>
-    <input type="email" id="email" placeholder="Your Email ID" required>
-
-    <button onclick="submitEnquiry()">Submit Enquiry</button>
+<div class="popup" id="popup">
+  <div class="box">
+    <span onclick="closePopup()" class="close">×</span>
+    <h2>Need Help?</h2>
+    <p>Chat with us directly on WhatsApp.</p>
+    <button onclick="openWhatsApp()">Chat Now</button>
   </div>
 </div>
 
+
 <script>
-document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+window.onload = function() {
+  document.getElementById("popup").style.display = "flex";
+};
 
-  e.preventDefault(); // stop normal form submit
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
 
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
-
-  var whatsappNumber = "919361861764"; // no + no spaces
-
-  var message =
-    "New Enquiry:\n" +
-    "Name: " + name + "\n" +
-    "Phone: " + phone + "\n" +
-    "Email: " + email;
-
-  var encodedMessage = encodeURIComponent(message);
-
-  // Open WhatsApp
-  window.location.href = "https://wa.me/" + whatsappNumber + "?text=" + encodedMessage;
-
-  // Send email in background
-  fetch("send-enquiry.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: "name=" + name + "&phone=" + phone + "&email=" + email
-  });
-
-});
+function openWhatsApp() {
+  window.location.href = "https://wa.me/919361861764";
+}
 </script>
+
 
 
 <body>
