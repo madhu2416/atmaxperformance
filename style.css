@@ -70,16 +70,6 @@ h1, h2, h3 {
   100% { background-position: 200% center; }
 }
 
-.hero-title {
-  font-size: 4rem;
-  font-weight: bold;
-  letter-spacing: 6px;
-  color: #00c896;
-  text-shadow:
-    0 0 10px rgba(0, 255, 200, 0.7),
-    0 0 20px rgba(0, 255, 200, 0.5),
-    0 0 40px rgba(0, 255, 200, 0.3);
-}
 
 
 /* ---------- SERVICES LAYOUT FIX (FINAL) ---------- */
