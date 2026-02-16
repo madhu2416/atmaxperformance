@@ -21,50 +21,45 @@
   </div>
 </div>
 
-
+<form id="enquiryForm">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="tel" id="phone" placeholder="Your Phone Number" required>
+  <input type="email" id="email" placeholder="Your Email ID" required>
+  <button type="submit">Submit</button>
+</form>
 
 <script>
-window.onload = function() {
-  setTimeout(function() {
-    document.getElementById("enquiryPopup").style.display = "flex";
-  }, 2000);
-};
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
 
-function closeEnquiry() {
-  document.getElementById("enquiryPopup").style.display = "none";
-}
+  e.preventDefault(); // stop normal form submit
 
-function submitEnquiry() {
   var name = document.getElementById("name").value;
   var phone = document.getElementById("phone").value;
   var email = document.getElementById("email").value;
 
-  if(name === "" || phone === "" || email === "") {
-    alert("Please fill all fields");
-    return;
-  }
+  var whatsappNumber = "919361861764"; // no + no spaces
 
-  var whatsappNumber = "919361861764"; // Your clinic number
-  var clinicEmail = "madhuvijayan2416@email.com"; // Your clinic email
-
-  var message = 
-    "New Enquiry:%0A" +
-    "Name: " + name + "%0A" +
-    "Phone: " + phone + "%0A" +
+  var message =
+    "New Enquiry:\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
     "Email: " + email;
 
+  var encodedMessage = encodeURIComponent(message);
+
   // Open WhatsApp
-  window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank");
+  window.location.href = "https://wa.me/" + whatsappNumber + "?text=" + encodedMessage;
 
-  // Open Email
-  window.location.href = "mailto:" + clinicEmail +
-    "?subject=New Clinic Enquiry" +
-    "&body=Name: " + name +
-    "%0APhone: " + phone +
-    "%0AEmail: " + email;
+  // Send email in background
+  fetch("send-enquiry.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: "name=" + name + "&phone=" + phone + "&email=" + email
+  });
 
-  closeEnquiry();
-}
+});
 </script>
 
 
