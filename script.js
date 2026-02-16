@@ -40,3 +40,4 @@ window.addEventListener("load", function() {
    }, 1500);
 });
 
+window.open("https://wa.me/919456789064?text=" + encodedMessage, "_blank");

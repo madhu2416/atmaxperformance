@@ -53,6 +53,7 @@ document.getElementById("enquiryForm").addEventListener("submit", function(e) {
 
   // Use window.open to avoid mobile browser blocking
   window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+  window.open("https://wa.me/919361861764?text=" + encodedMessage, "_blank");
 
   // Optionally close the popup after submit
   closeEnquiry();
