@@ -34,3 +34,16 @@ function changeGalleryImage() {
 // Start slider
 setInterval(changeGalleryImage, 3000);
 
+window.addEventListener("load", function() {
+   setTimeout(function() {
+      // popup
+   }, 1500);
+});
+
+
+window.location.href = "https://wa.me/919361861764";
+
+
+var message = "New Enquiry";
+var encodedMessage = encodeURIComponent(message);
+window.location.href = "https://wa.me/919361861764?text=" + encodedMessage;
