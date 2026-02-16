@@ -819,3 +819,19 @@ body.modal-open {
         font-size: 13px !important;
     }
 }
+
+.expert-card h1,
+.expert-card h2,
+.expert-card h3,
+.expert-card h4,
+.expert-card h5,
+.expert-card h6 {
+  font-size: 1rem !important;   /* same as body */
+  font-weight: 400 !important;  /* remove bold */
+  margin: 0 0 8px 0;            /* clean spacing */
+}
+
+.expert-name {
+  font-size: 1rem;
+  font-weight: 400;
+}
