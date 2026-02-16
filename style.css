@@ -55,6 +55,20 @@ h1, h2, h3 {
   z-index: 2;
 }
 
+.hero-title {
+  background: linear-gradient(90deg, #00c896, #00ffcc, #00c896);
+  background-size: 200%;
+
+  background-clip: text;              /* Standard */
+  -webkit-background-clip: text;      /* Chrome / Safari */
+
+  color: transparent;                 /* Standard */
+  -webkit-text-fill-color: transparent; /* Safari */
+
+  animation: shine 4s linear infinite;
+}
+
+
 /* ---------- SERVICES LAYOUT FIX (FINAL) ---------- */
 /* ---------- Lively UI Enhancements ---------- */
 
