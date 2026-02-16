@@ -14,7 +14,23 @@ body {
   padding: 0;
   background-color: #0d1f1a;
   line-height: 1.6;
+  font-size: 16px;      /* Standard professional size */
+  line-height: 1.6;     /* Good readability */
 }
+p,
+li,
+span,
+a {
+  font-size: 1rem;      /* Same everywhere */
+}
+p {
+  text-align: justify;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
 
 img {
   max-width: 100%;
