@@ -10,7 +10,7 @@
 
 <!-- Enquire Now Popup -->
 <div class="enquiry-popup" id="enquiryPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; justify-content:center; align-items:center; background:rgba(0,0,0,0.5); z-index:9999;">
-  <div class="enquiry-box" style="background:#fff; padding:20px; border-radius:8px; max-width:400px; width:90%; box-shadow:0 0 15px rgba(0,0,0,0.3);">
+  <div class="enquiry-box" style="background:#d4f7e3 padding:20px; border-radius:8px; max-width:400px; width:90%; box-shadow:0 0 15px rgba(0,0,0,0.3);">
     <span class="close-btn" onclick="closeEnquiry()" style="cursor:pointer; float:right; font-size:20px;">×</span>
     <h2 style="margin-bottom:10px;">Enquire Now</h2>
 
@@ -24,42 +24,21 @@
   </div>
 </div>
 
+<button id="submitBtn">Submit</button>
+
 <script>
-// Auto-popup after 1.5 seconds
-window.addEventListener('load', function(){
-  setTimeout(function(){
-    document.getElementById("enquiryPopup").style.display = "flex";
-  }, 1500);
-});
-
-// Close popup
-function closeEnquiry() {
-  document.getElementById("enquiryPopup").style.display = "none";
-}
-
-// WhatsApp redirect on Submit
 document.getElementById("submitBtn").addEventListener("click", function() {
-  var name = document.getElementById("name").value.trim();
-  var phone = document.getElementById("phone").value.trim();
-  var email = document.getElementById("email").value.trim();
-
-  if(!name || !phone || !email){
-    alert("Please fill all fields");
-    return;
-  }
-
-  var whatsappNumber = "919361861764"; // replace with YOUR number in international format
-  var message = `New Enquiry:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}`;
+  var whatsappNumber = "919361861764"; // Your number in international format
+  var message = "Hello! This is a test message.";
   var encodedMessage = encodeURIComponent(message);
 
-  // Open WhatsApp in new tab to avoid mobile browser blocking
+  // Open WhatsApp safely in new tab
   var win = window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-  if(!win){
-    alert("Please make sure WhatsApp is installed and popups are allowed.");
-  }
 
-  // Close popup after submit
-  closeEnquiry();
+  // Friendly fallback if popups blocked
+  if(!win){
+    alert("Cannot open WhatsApp. Make sure it is installed and popups are allowed.");
+  }
 });
 </script>
 
