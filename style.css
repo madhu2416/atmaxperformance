@@ -138,8 +138,8 @@ h1, h2, h3 {
 }
 /* Service Cards */
 /* Compact Service Cards */
+/* Service Card */
 #services .service-card {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,7 +147,7 @@ h1, h2, h3 {
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
-  padding: 0;       /* no extra padding */
+  padding: 0;         /* no extra padding */
 }
 
 /* Image */
@@ -159,22 +159,23 @@ h1, h2, h3 {
   border-radius: 10px 10px 0 0;
 }
 
-/* Service Name under Image */
+/* Service Name below image */
 #services .service-card h3 {
-  width: 100%;
-  margin: 5px 0;      /* small spacing under image */
-  padding: 5px 0;     /* ensure it’s not touching border */
+  margin: 10px 0;          /* separate from image */
+  padding: 0;
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #1f785f; /* matches card */
+  color: #ffffff;          /* white text */
+  background: none;        /* no background linking it to image */
   text-align: center;
+  width: 100%;
 }
 
 /* Hide description */
 #services .service-card p {
   display: none;
 }
+
 
 /* Show More Button */
 #showMoreServices {
