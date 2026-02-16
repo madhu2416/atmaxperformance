@@ -631,10 +631,6 @@ h1, h2, h3 {
   }
 }
 
-
-.hero {
-  outline: 5px solid green !important;
-}
 /* Popup background continuity (same as Founder section) */
 .popup-container,
 .service-popup,
