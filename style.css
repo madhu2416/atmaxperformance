@@ -734,7 +734,8 @@ body.modal-open {
   }
 }
 
-#services h3 {
-  font-size: 11px !important;
-  line-height: 1.2 !important;
+/* Force smaller font for service names only */
+#services .service-card h3 {
+    font-size: 14px !important;
+    line-height: 1.3 !important;
 }
