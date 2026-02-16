@@ -8,30 +8,55 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<div class="popup" id="popup">
-  <div class="box">
-    <span onclick="closePopup()" class="close">×</span>
-    <h2>Need Help?</h2>
-    <p>Chat with us directly on WhatsApp.</p>
-    <button onclick="openWhatsApp()">Chat Now</button>
+<div class="enquiry-popup" id="enquiryPopup">
+  <div class="enquiry-box">
+    <span class="close-btn" onclick="closeEnquiry()">×</span>
+    <h2>Enquire Now</h2>
+
+    <form id="enquiryForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Your Phone Number" required>
+      <input type="email" id="email" placeholder="Your Email ID" required>
+      <button type="submit">Submit</button>
+    </form>
+
   </div>
 </div>
 
-
 <script>
 window.onload = function() {
-  document.getElementById("popup").style.display = "flex";
+  setTimeout(function() {
+    document.getElementById("enquiryPopup").style.display = "flex";
+  }, 1500);
 };
 
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
+function closeEnquiry() {
+  document.getElementById("enquiryPopup").style.display = "none";
 }
 
-function openWhatsApp() {
-  window.location.href = "https://wa.me/919361861764";
-}
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+
+  e.preventDefault(); // stop reload
+
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+
+  var whatsappNumber = "919361861764"; // replace with yours
+
+  var message =
+    "New Enquiry:\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "Email: " + email;
+
+  var encodedMessage = encodeURIComponent(message);
+
+  // This works because it's triggered by submit click
+  window.location.href = "https://wa.me/" + whatsappNumber + "?text=" + encodedMessage;
+
+});
 </script>
-
 
 
 <body>

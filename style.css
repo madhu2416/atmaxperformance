@@ -845,14 +845,14 @@ section h2 {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
   z-index: 9999;
 }
 
 .enquiry-box {
-  background: #ffffff;
+  background: #fff;
   padding: 30px;
   border-radius: 12px;
   width: 90%;
@@ -865,9 +865,8 @@ section h2 {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 14px;
+  border: 1px solid #ccc;
 }
 
 .enquiry-box button {
@@ -886,6 +885,6 @@ section h2 {
   right: 15px;
   font-size: 20px;
   cursor: pointer;
-  font-weight: bold;
 }
+
 
