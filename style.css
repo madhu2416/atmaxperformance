@@ -407,7 +407,7 @@ h1, h2, h3 {
 .atp-section p,
 .atp-section li {
   color: #004d40;
-  font-weight: 800;    /* Bold */
+  font-weight: 400;    /* Bold */
   font-size: 1.2em;    /* One size bigger */
   line-height: 1;
 }
