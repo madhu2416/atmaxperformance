@@ -131,10 +131,9 @@ h1, h2, h3 {
 
 /* Services Grid - 2 Columns */
 #services .services-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on phones/tablets */
   gap: 15px;
-  width: 100%;
 }
 /* Service Cards */
 /* Compact Service Cards */
@@ -146,25 +145,24 @@ h1, h2, h3 {
   background-color: #b8dac7;
   border-radius: 10px;
   overflow: hidden;
-  text-align: center;
+text-align: center;
   padding: 0;         /* no extra padding */
 }
 
 /* Image */
 #services .service-card img {
-  width: 100%;
+ width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  display: block;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px;
 }
 
 /* Service Name below image */
 #services .service-card h3 {
-  margin: 10px 0;          /* spacing below image */
-  padding: 0;
+ margin-top: 6px;
   font-size: 14px;
   font-weight: 600;
+  width: 100%;
   color: #144733 !important;  /* force white */
   background: none;           
   text-align: center;
