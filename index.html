@@ -8,16 +8,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<div class="enquiry-popup" id="enquiryPopup">
-  <div class="enquiry-box">
-    <span class="close-btn" onclick="closeEnquiry()">×</span>
+<div class="enquiry-popup" id="enquiryPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; justify-content:center; align-items:center; background:rgba(0,0,0,0.5); z-index:9999;">
+  <div class="enquiry-box" style="background:#fff; padding:20px; border-radius:8px; max-width:400px; width:90%;">
+    <span class="close-btn" onclick="closeEnquiry()" style="cursor:pointer; float:right; font-size:20px;">×</span>
     <h2>Enquire Now</h2>
 
     <form id="enquiryForm">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="tel" id="phone" placeholder="Your Phone Number" required>
-      <input type="email" id="email" placeholder="Your Email ID" required>
-      <button type="submit">Submit</button>
+      <input type="text" id="name" placeholder="Your Name" required style="width:100%; margin:5px 0; padding:8px;">
+      <input type="tel" id="phone" placeholder="Your Phone Number" required style="width:100%; margin:5px 0; padding:8px;">
+      <input type="email" id="email" placeholder="Your Email ID" required style="width:100%; margin:5px 0; padding:8px;">
+      <button type="submit" style="margin-top:10px; padding:10px 20px;">Submit</button>
     </form>
 
   </div>
@@ -34,27 +34,28 @@ function closeEnquiry() {
   document.getElementById("enquiryPopup").style.display = "none";
 }
 
+// SINGLE submit listener
 document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // prevent page reload
 
-  e.preventDefault(); // stop reload
+  var name = document.getElementById("name").value.trim();
+  var phone = document.getElementById("phone").value.trim();
+  var email = document.getElementById("email").value.trim();
 
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
+  if(!name || !phone || !email){
+    alert("Please fill all fields");
+    return;
+  }
 
-  var whatsappNumber = "919361861764"; // replace with yours
-
-  var message =
-    "New Enquiry:\n" +
-    "Name: " + name + "\n" +
-    "Phone: " + phone + "\n" +
-    "Email: " + email;
-
+  var whatsappNumber = "919361861764"; // YOUR number in international format
+  var message = `New Enquiry:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}`;
   var encodedMessage = encodeURIComponent(message);
 
-  // This works because it's triggered by submit click
-  window.location.href = "https://wa.me/" + whatsappNumber + "?text=" + encodedMessage;
+  // Use window.open to avoid mobile browser blocking
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
 
+  // Optionally close the popup after submit
+  closeEnquiry();
 });
 </script>
 
