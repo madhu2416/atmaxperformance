@@ -334,14 +334,17 @@ h1, h2, h3 {
    font-size: 1rem;   
    text-align: justify;
 }
-
 .expert-card {
   background: linear-gradient(135deg, #005c4b, #00796b);
-  color: #fff;
+  color: #ffffff;
   padding: 20px;
   border-radius: 12px;
   transition: transform 0.3s ease;
+
+  font-size: 1rem;      /* Match website text size */
+  font-weight: 400;     /* Normal weight */
 }
+
 
 .expert-card:hover {
   transform: scale(1.02);
