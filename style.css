@@ -406,9 +406,13 @@ h1, h2, h3 {
 .atp-section h3,
 .atp-section p,
 .atp-section li,
-.atp-section span {
-  color: #004d40;             /* FORCE SAME TEXT COLOR */
+.atp-letter {
+  color: #002e26;
+  font-weight: 800;
+  font-size: 1.1em;   /* Very small increase */
+  line-height: 1;
 }
+
 
 
 /* ---------- Get in Touch Section (MATCH WHAT SETS US APART) ---------- */
