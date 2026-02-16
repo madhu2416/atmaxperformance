@@ -1,6 +1,3 @@
-
-
-// ===== Gallery Auto Slider (No Blink, No Duplicate) =====
 const galleryImages = [
   "assets/gallery1.jpeg",
   "assets/gallery2.jpeg",
@@ -23,7 +20,7 @@ const galleryImages = [
 const galleryImgEl = document.getElementById("galleryImage");
 let galleryIndex = 0;
 
-// Preload images
+// Preload
 galleryImages.forEach(src => {
   const img = new Image();
   img.src = src;
@@ -35,19 +32,13 @@ function changeGalleryImage() {
   setTimeout(() => {
     galleryIndex = (galleryIndex + 1) % galleryImages.length;
     galleryImgEl.src = galleryImages[galleryIndex];
-    galleryImgEl.style.opacity = 1;
-  }, 600);
+  }, 500);
 }
 
-// Start after 2 seconds (so first image doesn’t repeat)
-let galleryInterval;
+// Wait until image loads before fading in
+galleryImgEl.addEventListener("load", () => {
+  galleryImgEl.style.opacity = 1;
+});
 
-function startGallery() {
-  if (!galleryInterval) {
-    galleryInterval = setInterval(changeGalleryImage, 3000);
-  }
-}
-
-startGallery();
-
-galleryInterval = setInterval(changeGalleryImage, 3500);
+// Start slider (slower + smoother)
+setInterval(changeGalleryImage, 4000);
