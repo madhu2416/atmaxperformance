@@ -852,7 +852,8 @@ section h2 {
 }
 
 .enquiry-box {
-  background: #fff;
+  background-color: #d4f7e3;  /* SAME AS What Sets Us Apart */
+  color: #004d40; 
   padding: 30px;
   border-radius: 12px;
   width: 90%;
@@ -870,7 +871,7 @@ section h2 {
 }
 
 .enquiry-box button {
-  background: #00c896;
+  background: #004d40;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
