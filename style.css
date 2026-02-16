@@ -137,42 +137,43 @@ h1, h2, h3 {
   width: 100%;
 }
 /* Service Cards */
+/* Compact Service Cards */
 #services .service-card {
   position: relative;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  background-color: #1f785f !important;
-  color: #fff !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f785f;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 0 !important;        /* remove extra padding */
-  height: auto !important;      /* auto height based on image */
+  padding: 0;       /* no extra padding */
 }
 
-/* Images - square */
+/* Image */
 #services .service-card img {
-  width: 100% !important;
-  aspect-ratio: 1 / 1 !important; 
-  object-fit: cover !important;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   display: block;
-  border-radius: 10px 10px 0 0; /* rounded top corners */
+  border-radius: 10px 10px 0 0;
 }
 
-/* Service Name under image, white */
+/* Service Name under Image */
 #services .service-card h3 {
-  color: #ffffff !important;
-  font-size: 14px !important;  /* small and consistent */
+  width: 100%;
+  margin: 5px 0;      /* small spacing under image */
+  padding: 5px 0;     /* ensure it’s not touching border */
+  font-size: 14px;
   font-weight: 600;
-  margin: 5px 0 10px !important; /* small spacing below image */
-  text-align: center !important;
+  color: #ffffff;
+  background-color: #1f785f; /* matches card */
+  text-align: center;
 }
 
-/* Description */
+/* Hide description */
 #services .service-card p {
-  display: none !important;
+  display: none;
 }
 
 /* Show More Button */
