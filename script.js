@@ -40,10 +40,3 @@ window.addEventListener("load", function() {
    }, 1500);
 });
 
-
-window.location.href = "https://wa.me/919361861764";
-
-
-var message = "New Enquiry";
-var encodedMessage = encodeURIComponent(message);
-window.location.href = "https://wa.me/919361861764?text=" + encodedMessage;
