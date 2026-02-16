@@ -404,7 +404,6 @@ h1, h2, h3 {
 
 .atp-section h2,
 .atp-section h3,
-.atp-section p,
 .atp-section li {
   color: #004d40;
   font-weight: 300;    /* Bold */
@@ -412,10 +411,14 @@ h1, h2, h3 {
   line-height: 1;
 }
 
+.atp-section p {
+  font-weight: 400;   /* normal text */
+}
+
 .atp-letter {
-  color: #002e26;   /* Dark highlight */
-  font-weight: 800;
-  font-size: 1.4em;
+  color: #002e26;     /* highlight color */
+  font-weight: 700;   /* bold only */
+  font-size: inherit; /* SAME size as paragraph */
 }
 
 
