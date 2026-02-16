@@ -20,25 +20,16 @@ const galleryImages = [
 const galleryImgEl = document.getElementById("galleryImage");
 let galleryIndex = 0;
 
-// Preload
+// Preload images
 galleryImages.forEach(src => {
   const img = new Image();
   img.src = src;
 });
 
 function changeGalleryImage() {
-  galleryImgEl.style.opacity = 0;
-
-  setTimeout(() => {
-    galleryIndex = (galleryIndex + 1) % galleryImages.length;
-    galleryImgEl.src = galleryImages[galleryIndex];
-  }, 500);
+  galleryIndex = (galleryIndex + 1) % galleryImages.length;
+  galleryImgEl.src = galleryImages[galleryIndex];
 }
 
-// Wait until image loads before fading in
-galleryImgEl.addEventListener("load", () => {
-  galleryImgEl.style.opacity = 1;
-});
-
-// Start slider (slower + smoother)
-setInterval(changeGalleryImage, 4000);
+// Start slider
+setInterval(changeGalleryImage, 3000);
