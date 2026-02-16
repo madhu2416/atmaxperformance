@@ -407,9 +407,9 @@ h1, h2, h3 {
 .atp-section p,
 .atp-section li,
 .atp-letter {
-  color: #002e26;
-  font-weight: 800;
-  font-size: 1.1em;   /* Very small increase */
+  color: #002e26;      /* Dark highlight */
+  font-weight: 800;    /* Bold */
+  font-size: 1.2em;    /* One size bigger */
   line-height: 1;
 }
 
