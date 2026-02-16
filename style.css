@@ -675,6 +675,13 @@ body.modal-open {
   display: block;
 }
 
+.gallery-title {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* =========================
    RESPONSIVE LAYOUT FIX
    ========================= */
