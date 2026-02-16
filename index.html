@@ -24,23 +24,46 @@
   </div>
 </div>
 
-<button id="submitBtn">Submit</button>
-
 <script>
+// Auto-popup after 1.5 seconds
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    document.getElementById("enquiryPopup").style.display = "flex";
+  }, 1500);
+});
+
+// Close popup
+function closeEnquiry() {
+  document.getElementById("enquiryPopup").style.display = "none";
+}
+
+// WhatsApp redirect on Submit
 document.getElementById("submitBtn").addEventListener("click", function() {
-  var whatsappNumber = "919361861764"; // Your number in international format
-  var message = "Hello! This is a test message.";
+  var name = document.getElementById("name").value.trim();
+  var phone = document.getElementById("phone").value.trim();
+  var email = document.getElementById("email").value.trim();
+
+  if(!name || !phone || !email){
+    alert("Please fill all fields");
+    return;
+  }
+
+  var whatsappNumber = "919361861764"; // replace with YOUR number in international format
+  var message = `New Enquiry:\nName: ${name}\nPhone: ${phone}\nEmail: ${email}`;
   var encodedMessage = encodeURIComponent(message);
 
-  // Open WhatsApp safely in new tab
+  // Open WhatsApp in new tab to avoid mobile browser blocking
   var win = window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-
-  // Friendly fallback if popups blocked
   if(!win){
-    alert("Cannot open WhatsApp. Make sure it is installed and popups are allowed.");
+    alert("Please make sure WhatsApp is installed and popups are allowed.");
   }
+
+  // Close popup after submit
+  closeEnquiry();
 });
 </script>
+
+
 
 
 <body>
