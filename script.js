@@ -33,3 +33,35 @@ function changeGalleryImage() {
 
 // Start slider
 setInterval(changeGalleryImage, 3000);
+
+
+
+
+
+
+
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById("enquiryPopup").style.display = "flex";
+  }, 2000); // popup after 2 seconds
+};
+
+function closeEnquiry() {
+  document.getElementById("enquiryPopup").style.display = "none";
+}
+
+function sendToWhatsApp() {
+  var name = document.getElementById("name").value;
+  var goal = document.getElementById("goal").value;
+  var message = document.getElementById("message").value;
+
+  var phone = "91XXXXXXXXXX"; // <-- PUT YOUR NUMBER
+
+  var url = "https://wa.me/" + phone + "?text="
+    + "Name: " + encodeURIComponent(name) + "%0A"
+    + "Goal: " + encodeURIComponent(goal) + "%0A"
+    + "Message: " + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+

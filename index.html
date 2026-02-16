@@ -8,6 +8,19 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<div class="enquiry-popup" id="enquiryPopup">
+  <div class="enquiry-box">
+    <span class="close-btn" onclick="closeEnquiry()">×</span>
+    <h2>Enquire Now</h2>
+
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="goal" placeholder="Your Goal (Fat loss / Rehab / Strength)">
+    <textarea id="message" placeholder="Your Message"></textarea>
+
+    <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
+  </div>
+</div>
+
 
 
 <body>
