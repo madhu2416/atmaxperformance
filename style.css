@@ -54,11 +54,8 @@ h1, h2, h3 {
   margin-top: 20px;
   z-index: 2;
 }
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: bold;
-  letter-spacing: 10px;
+.bubble-letter {
+  display: inline-block;
 
   background: linear-gradient(90deg, #00c896, #00ffcc, #00c896);
   background-size: 200% auto;
@@ -76,6 +73,12 @@ h1, h2, h3 {
   0% { background-position: 0% center; }
   100% { background-position: 200% center; }
 }
+
+.bubble-letter:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
 
 /* ---------- SERVICES LAYOUT FIX (FINAL) ---------- */
 /* ---------- Lively UI Enhancements ---------- */
