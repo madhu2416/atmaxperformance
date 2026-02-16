@@ -605,22 +605,29 @@ h1, h2, h3 {
 }
 
 /* ===== Bold Brand Name on Hero ===== */
+/* Remove default margins */
 .hero-title {
-  font-weight: 1000;   /* Extra bold */
+  font-size: 3.4rem;   /* as you have */
+  font-weight: 900;
+  margin: 0;           /* REMOVE default top/bottom margin */
   letter-spacing: 1px;
 }
 
-/* Make each bubble letter bold */
 .hero-title .bubble-letter {
   font-weight: 900;
 }
 
-/* Mobile: normal bold letters (no bubbles), still bold */
-/* ===== Increase Hero Title Size ===== */
-.hero-title {
-  font-size: 3.4rem;   /* was smaller – bigger for desktop */
-  font-weight: 900;
+/* Tagline spacing */
+.tagline {
+  margin: 5px 0 0 0;    /* small space only below hero-title */
+  font-weight: 400;
 }
+
+/* Optional: control hero container spacing */
+header div {
+  padding: 10px 0;      /* adjust top/bottom padding as needed */
+}
+
 
 /* Mobile: slightly bigger but still fits in one line */
 @media (max-width: 768px) {
