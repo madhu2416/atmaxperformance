@@ -133,48 +133,46 @@ h1, h2, h3 {
 #services .services-grid {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
-  gap: 20px;
+  gap: 15px;
   width: 100%;
 }
-
 /* Service Cards */
 #services .service-card {
   position: relative;
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  background-color: #1f785f !important; 
-  color :#fff !important;/* dark so white text is visible */
+  background-color: #1f785f !important;
+  color: #fff !important;
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 0 !important;        /* remove extra padding */
+  height: auto !important;      /* auto height based on image */
 }
-
 
 /* Images - square */
 #services .service-card img {
   width: 100% !important;
-  aspect-ratio: 1 / 1 !important;
+  aspect-ratio: 1 / 1 !important; 
   object-fit: cover !important;
   display: block;
+  border-radius: 10px 10px 0 0; /* rounded top corners */
 }
 
 /* Service Name under image, white */
 #services .service-card h3 {
-  color: #ffffff !important;  /* white */
-  font-size: 16px !important; /* smaller */
+  color: #ffffff !important;
+  font-size: 14px !important;  /* small and consistent */
   font-weight: 600;
-  margin: 10px 0 5px !important;
+  margin: 5px 0 10px !important; /* small spacing below image */
   text-align: center !important;
 }
 
 /* Description */
 #services .service-card p {
-  color: #ddd !important; 
-  font-size: 10px !important;
-  margin: 0 10px 20px !important;
-  text-align: center !important;
+  display: none !important;
 }
 
 /* Show More Button */
