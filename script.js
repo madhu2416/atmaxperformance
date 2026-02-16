@@ -40,6 +40,14 @@ function changeGalleryImage() {
 }
 
 // Start after 2 seconds (so first image doesn’t repeat)
-setTimeout(() => {
-  setInterval(changeGalleryImage, 2000);
-}, 2000);
+let galleryInterval;
+
+function startGallery() {
+  if (!galleryInterval) {
+    galleryInterval = setInterval(changeGalleryImage, 3000);
+  }
+}
+
+startGallery();
+
+galleryInterval = setInterval(changeGalleryImage, 3500);
