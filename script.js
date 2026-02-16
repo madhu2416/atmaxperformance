@@ -40,3 +40,10 @@ window.addEventListener("load", function() {
    }, 1500);
 });
 
+document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  var whatsappNumber = "919361861764"; // replace correctly
+
+  window.location.href = "https://wa.me/" + whatsappNumber;
+});
