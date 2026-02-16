@@ -859,15 +859,9 @@ section h2 {
   max-width: 400px;
   position: relative;
   text-align: center;
-  animation: fadeIn 0.3s ease;
 }
 
-.enquiry-box h2 {
-  margin-bottom: 15px;
-}
-
-.enquiry-box input,
-.enquiry-box textarea {
+.enquiry-box input {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
@@ -895,7 +889,3 @@ section h2 {
   font-weight: bold;
 }
 
-@keyframes fadeIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}

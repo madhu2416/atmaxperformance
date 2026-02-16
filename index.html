@@ -14,40 +14,58 @@
     <h2>Enquire Now</h2>
 
     <input type="text" id="name" placeholder="Your Name" required>
-    <input type="text" id="goal" placeholder="Your Goal (Fat loss / Rehab / Strength)">
-    <textarea id="message" placeholder="Your Message"></textarea>
+    <input type="tel" id="phone" placeholder="Your Phone Number" required>
+    <input type="email" id="email" placeholder="Your Email ID" required>
 
-    <button onclick="sendToWhatsApp()">Send via WhatsApp</button>
+    <button onclick="submitEnquiry()">Submit Enquiry</button>
   </div>
 </div>
+
+
 
 <script>
 window.onload = function() {
   setTimeout(function() {
     document.getElementById("enquiryPopup").style.display = "flex";
-  }, 2000); // popup after 2 seconds
+  }, 2000);
 };
 
 function closeEnquiry() {
   document.getElementById("enquiryPopup").style.display = "none";
 }
 
-function sendToWhatsApp() {
+function submitEnquiry() {
   var name = document.getElementById("name").value;
-  var goal = document.getElementById("goal").value;
-  var message = document.getElementById("message").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
 
-  var phone = "91XXXXXXXXXX"; // <-- PUT YOUR NUMBER
+  if(name === "" || phone === "" || email === "") {
+    alert("Please fill all fields");
+    return;
+  }
 
-  var url = "https://wa.me/" + phone + "?text="
-    + "Name: " + encodeURIComponent(name) + "%0A"
-    + "Goal: " + encodeURIComponent(goal) + "%0A"
-    + "Message: " + encodeURIComponent(message);
+  var whatsappNumber = "+919361861764"; // Your clinic number
+  var clinicEmail = "madhuvijayan2416@email.com"; // Your clinic email
 
-  window.open(url, "_blank");
+  var message = 
+    "New Enquiry:%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Email: " + email;
+
+  // Open WhatsApp
+  window.open("https://wa.me/" + whatsappNumber + "?text=" + message, "_blank");
+
+  // Open Email
+  window.location.href = "mailto:" + clinicEmail +
+    "?subject=New Clinic Enquiry" +
+    "&body=Name: " + name +
+    "%0APhone: " + phone +
+    "%0AEmail: " + email;
+
+  closeEnquiry();
 }
 </script>
-
 
 
 <body>
