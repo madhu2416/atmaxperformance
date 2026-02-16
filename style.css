@@ -70,6 +70,14 @@ h1, h2, h3 {
   100% { background-position: 200% center; }
 }
 
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;       /* smaller for phone */
+    letter-spacing: 2px;   /* reduce spacing */
+    line-height: 1.2;
+    white-space: normal;   /* allow wrapping */
+  }
+}
 
 
 /* ---------- SERVICES LAYOUT FIX (FINAL) ---------- */
