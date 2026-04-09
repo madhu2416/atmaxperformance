@@ -34,11 +34,7 @@ function changeGalleryImage() {
 // Start slider
 setInterval(changeGalleryImage, 3000);
 
-window.addEventListener("load", function() {
-   setTimeout(function() {
-      // popup
-   }, 1500);
-});
+
 
 window.open("https://wa.me/919456789064?text=" + encodedMessage, "_blank");
 
