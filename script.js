@@ -41,3 +41,18 @@ window.addEventListener("load", function() {
 });
 
 window.open("https://wa.me/919456789064?text=" + encodedMessage, "_blank");
+
+
+const enquireBtn = document.getElementById("enquireBtn");
+const popup = document.getElementById("enquirePopup");
+const closePopup = document.getElementById("closePopup");
+
+// Open popup
+enquireBtn.addEventListener("click", () => {
+  popup.classList.add("active");
+});
+
+// Close popup
+closePopup.addEventListener("click", () => {
+  popup.classList.remove("active");
+});

@@ -898,3 +898,65 @@ section h2 {
 }
 
 
+/* Enquire Button (fixed right side) */
+#enquireBtn {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #007BFF;
+  color: white;
+  padding: 15px 10px;
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  border-radius: 8px 0 0 8px;
+  z-index: 1000;
+}
+
+/* Popup Background */
+.popup {
+  position: fixed;
+  top: 0;
+  right: -100%; /* hidden initially */
+  width: 350px;
+  height: 100%;
+  background: white;
+  box-shadow: -5px 0 10px rgba(0,0,0,0.3);
+  transition: 0.4s;
+  z-index: 1001;
+}
+
+/* When active */
+.popup.active {
+  right: 0;
+}
+
+/* Content */
+.popup-content {
+  padding: 20px;
+}
+
+/* Close button */
+#closePopup {
+  font-size: 25px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Form styling */
+.popup input,
+.popup textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.popup button {
+  width: 100%;
+  padding: 10px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
