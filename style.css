@@ -284,17 +284,14 @@ text-align: center;
 }
 
 /* Mobile tweak to make 3 columns fit properly */
-@media (max-width: 576px) {
-  .treatment-grid {
-    grid-template-columns: repeat(3, 1fr); /* FORCE 3 columns on phone */
-    gap: 10px;
-  }
+.treatment-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-  .treatment-card {
-    padding: 12px;
-    font-size: 12px;  /* smaller text so 3 fit well */
-    border-radius: 10px;
-  }
+.treatment-card {
+  width: calc(50% - 20px); /* 2 per row */
 }
 
 .treatment-card {
